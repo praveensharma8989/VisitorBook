@@ -14,6 +14,7 @@
 		79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29C7213DAD9500CE95CE /* AppDelegate.swift */; };
 		79FE29D4213DAD9500CE95CE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C8213DAD9500CE95CE /* Info.plist */; };
 		79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29DD213DC70400CE95CE /* ViewController.swift */; };
+		79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		79FE29C7213DAD9500CE95CE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79FE29C8213DAD9500CE95CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79FE29DD213DC70400CE95CE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		79FE29D9213DC70400CE95CE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
