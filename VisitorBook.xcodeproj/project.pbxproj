@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29BF213DAD9500CE95CE /* VisitorBook.xcdatamodeld */; };
-		79FE29CF213DAD9500CE95CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29C1213DAD9500CE95CE /* ViewController.swift */; };
 		79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C2213DAD9500CE95CE /* Assets.xcassets */; };
 		79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C3213DAD9500CE95CE /* LaunchScreen.storyboard */; };
 		79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C5213DAD9500CE95CE /* Main.storyboard */; };
 		79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29C7213DAD9500CE95CE /* AppDelegate.swift */; };
 		79FE29D4213DAD9500CE95CE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C8213DAD9500CE95CE /* Info.plist */; };
+		79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29DD213DC70400CE95CE /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		79FE29A4213DABAB00CE95CE /* VisitorBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitorBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FE29C0213DAD9500CE95CE /* VisitorBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VisitorBook.xcdatamodel; sourceTree = "<group>"; };
-		79FE29C1213DAD9500CE95CE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79FE29C2213DAD9500CE95CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79FE29C4213DAD9500CE95CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79FE29C6213DAD9500CE95CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79FE29C7213DAD9500CE95CE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79FE29C8213DAD9500CE95CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79FE29DD213DC70400CE95CE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,35 +57,20 @@
 		79FE29A6213DABAB00CE95CE /* VisitorBook */ = {
 			isa = PBXGroup;
 			children = (
+				79FE29DC213DC70400CE95CE /* Controllers */,
+				79FE29D9213DC70400CE95CE /* Helper */,
+				79FE29DE213DC70400CE95CE /* Model */,
+				79FE29DA213DC70400CE95CE /* Resources */,
+				79FE29DB213DC70400CE95CE /* Screens */,
 				79FE29BE213DAD9500CE95CE /* Applications */,
-				79FE29CB213DAD9500CE95CE /* Custom Views */,
-				79FE29CA213DAD9500CE95CE /* Helpers */,
-				79FE29BC213DAD9500CE95CE /* Resources */,
-				79FE29C9213DAD9500CE95CE /* Screens */,
 			);
 			path = VisitorBook;
-			sourceTree = "<group>";
-		};
-		79FE29BC213DAD9500CE95CE /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				79FE29BD213DAD9500CE95CE /* AppConstants */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		79FE29BD213DAD9500CE95CE /* AppConstants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppConstants;
 			sourceTree = "<group>";
 		};
 		79FE29BE213DAD9500CE95CE /* Applications */ = {
 			isa = PBXGroup;
 			children = (
 				79FE29BF213DAD9500CE95CE /* VisitorBook.xcdatamodeld */,
-				79FE29C1213DAD9500CE95CE /* ViewController.swift */,
 				79FE29C2213DAD9500CE95CE /* Assets.xcassets */,
 				79FE29C3213DAD9500CE95CE /* LaunchScreen.storyboard */,
 				79FE29C5213DAD9500CE95CE /* Main.storyboard */,
@@ -95,41 +80,40 @@
 			path = Applications;
 			sourceTree = "<group>";
 		};
-		79FE29C9213DAD9500CE95CE /* Screens */ = {
+		79FE29D9213DC70400CE95CE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		79FE29DA213DC70400CE95CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		79FE29DB213DC70400CE95CE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		79FE29CA213DAD9500CE95CE /* Helpers */ = {
+		79FE29DC213DC70400CE95CE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				79FE29DD213DC70400CE95CE /* ViewController.swift */,
 			);
-			path = Helpers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		79FE29CB213DAD9500CE95CE /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				79FE29CC213DAD9500CE95CE /* Model */,
-				79FE29CD213DAD9500CE95CE /* Categories */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		79FE29CC213DAD9500CE95CE /* Model */ = {
+		79FE29DE213DC70400CE95CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		79FE29CD213DAD9500CE95CE /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
-				79FE29CF213DAD9500CE95CE /* ViewController.swift in Sources */,
+				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
