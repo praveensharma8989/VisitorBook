@@ -16,6 +16,7 @@
 		79FE29D4213DAD9500CE95CE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C8213DAD9500CE95CE /* Info.plist */; };
 		79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29DD213DC70400CE95CE /* ViewController.swift */; };
 		79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */; };
+		79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		79FE29C8213DAD9500CE95CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79FE29DD213DC70400CE95CE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanFunctions.swift; sourceTree = "<group>"; };
+		79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		C232C6E640FBD6DCE8A93376 /* Pods_VisitorBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitorBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 		79FE29DA213DC70400CE95CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -253,9 +256,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ImageTextField/ImageTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageTextField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
@@ -419,7 +426,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -434,7 +444,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
