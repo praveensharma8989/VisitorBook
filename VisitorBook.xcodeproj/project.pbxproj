@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6DC17AAD6958D0958BB14C71 /* Pods_VisitorBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C232C6E640FBD6DCE8A93376 /* Pods_VisitorBook.framework */; };
+		79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A8B213F11090010952B /* AllPageViewController.swift */; };
+		79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A8F213F12610010952B /* UIViewController+PS.swift */; };
+		79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */; };
 		79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29BF213DAD9500CE95CE /* VisitorBook.xcdatamodeld */; };
 		79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C2213DAD9500CE95CE /* Assets.xcassets */; };
 		79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C3213DAD9500CE95CE /* LaunchScreen.storyboard */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		2E66423D006BD9857E3CDB4B /* Pods-VisitorBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitorBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook.release.xcconfig"; sourceTree = "<group>"; };
 		40360B1922E8AAD2C2BA88F6 /* Pods-VisitorBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitorBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook.debug.xcconfig"; sourceTree = "<group>"; };
+		79B49A8B213F11090010952B /* AllPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPageViewController.swift; sourceTree = "<group>"; };
+		79B49A8F213F12610010952B /* UIViewController+PS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PS.swift"; sourceTree = "<group>"; };
+		79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		79FE29A4213DABAB00CE95CE /* VisitorBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitorBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FE29C0213DAD9500CE95CE /* VisitorBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VisitorBook.xcdatamodel; sourceTree = "<group>"; };
 		79FE29C2213DAD9500CE95CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79B49A8D213F12240010952B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				79B49A8E213F12240010952B /* Categories */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		79B49A8E213F12240010952B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				79B49A8F213F12610010952B /* UIViewController+PS.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		79FE299B213DABAB00CE95CE = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +92,7 @@
 			children = (
 				79FE29DC213DC70400CE95CE /* Controllers */,
 				79FE29D9213DC70400CE95CE /* Helper */,
+				79B49A8D213F12240010952B /* CustomView */,
 				79FE29DE213DC70400CE95CE /* Model */,
 				79FE29DA213DC70400CE95CE /* Resources */,
 				79FE29DB213DC70400CE95CE /* Screens */,
@@ -103,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */,
+				79B49A8B213F11090010952B /* AllPageViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -118,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				79FE29DD213DC70400CE95CE /* ViewController.swift */,
+				79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -257,11 +282,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ImageTextField/ImageTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -275,11 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
 				79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
+				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
+				79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
