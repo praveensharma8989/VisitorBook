@@ -68,3 +68,296 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
+Pods/Alamofire/LICENSE
+Pods/Alamofire/README.md
+Pods/Alamofire/Source/AFError.swift
+Pods/Alamofire/Source/Alamofire.swift
+Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+Pods/Alamofire/Source/MultipartFormData.swift
+Pods/Alamofire/Source/NetworkReachabilityManager.swift
+Pods/Alamofire/Source/Notifications.swift
+Pods/Alamofire/Source/ParameterEncoding.swift
+Pods/Alamofire/Source/Request.swift
+Pods/Alamofire/Source/Response.swift
+Pods/Alamofire/Source/ResponseSerialization.swift
+Pods/Alamofire/Source/Result.swift
+Pods/Alamofire/Source/ServerTrustPolicy.swift
+Pods/Alamofire/Source/SessionDelegate.swift
+Pods/Alamofire/Source/SessionManager.swift
+Pods/Alamofire/Source/TaskDelegate.swift
+Pods/Alamofire/Source/Timeline.swift
+Pods/Alamofire/Source/Validation.swift
+Pods/IQKeyboardManagerSwift/LICENSE.md
+Pods/IQKeyboardManagerSwift/README.md
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQTextView/IQTextView.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowDown@2x.png
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowDown@3x.png
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowLeft@2x.png
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowLeft@3x.png
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowRight@2x.png
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowRight@3x.png
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowUp@2x.png
+Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle/IQButtonBarArrowUp@3x.png
+Pods/pop/LICENSE
+Pods/pop/README.md
+Pods/pop/pop/POP.h
+Pods/pop/pop/POPAction.h
+Pods/pop/pop/POPAnimatableProperty.h
+Pods/pop/pop/POPAnimatableProperty.mm
+Pods/pop/pop/POPAnimatablePropertyTypes.h
+Pods/pop/pop/POPAnimation.h
+Pods/pop/pop/POPAnimation.mm
+Pods/pop/pop/POPAnimationEvent.h
+Pods/pop/pop/POPAnimationEvent.mm
+Pods/pop/pop/POPAnimationEventInternal.h
+Pods/pop/pop/POPAnimationExtras.h
+Pods/pop/pop/POPAnimationExtras.mm
+Pods/pop/pop/POPAnimationInternal.h
+Pods/pop/pop/POPAnimationPrivate.h
+Pods/pop/pop/POPAnimationRuntime.h
+Pods/pop/pop/POPAnimationRuntime.mm
+Pods/pop/pop/POPAnimationTracer.h
+Pods/pop/pop/POPAnimationTracer.mm
+Pods/pop/pop/POPAnimationTracerInternal.h
+Pods/pop/pop/POPAnimator.h
+Pods/pop/pop/POPAnimator.mm
+Pods/pop/pop/POPAnimatorPrivate.h
+Pods/pop/pop/POPBasicAnimation.h
+Pods/pop/pop/POPBasicAnimation.mm
+Pods/pop/pop/POPBasicAnimationInternal.h
+Pods/pop/pop/POPCGUtils.h
+Pods/pop/pop/POPCGUtils.mm
+Pods/pop/pop/POPCustomAnimation.h
+Pods/pop/pop/POPCustomAnimation.mm
+Pods/pop/pop/POPDecayAnimation.h
+Pods/pop/pop/POPDecayAnimation.mm
+Pods/pop/pop/POPDecayAnimationInternal.h
+Pods/pop/pop/POPDefines.h
+Pods/pop/pop/POPGeometry.h
+Pods/pop/pop/POPGeometry.mm
+Pods/pop/pop/POPLayerExtras.h
+Pods/pop/pop/POPLayerExtras.mm
+Pods/pop/pop/POPMath.h
+Pods/pop/pop/POPMath.mm
+Pods/pop/pop/POPPropertyAnimation.h
+Pods/pop/pop/POPPropertyAnimation.mm
+Pods/pop/pop/POPPropertyAnimationInternal.h
+Pods/pop/pop/POPSpringAnimation.h
+Pods/pop/pop/POPSpringAnimation.mm
+Pods/pop/pop/POPSpringAnimationInternal.h
+Pods/pop/pop/POPSpringSolver.h
+Pods/pop/pop/POPVector.h
+Pods/pop/pop/POPVector.mm
+Pods/pop/pop/WebCore/FloatConversion.h
+Pods/pop/pop/WebCore/TransformationMatrix.cpp
+Pods/pop/pop/WebCore/TransformationMatrix.h
+Pods/pop/pop/WebCore/UnitBezier.h
+Pods/SDWebImage/LICENSE
+Pods/SDWebImage/README.md
+Pods/SDWebImage/SDWebImage/NSButton+WebCache.h
+Pods/SDWebImage/SDWebImage/NSButton+WebCache.m
+Pods/SDWebImage/SDWebImage/NSData+ImageContentType.h
+Pods/SDWebImage/SDWebImage/NSData+ImageContentType.m
+Pods/SDWebImage/SDWebImage/NSImage+WebCache.h
+Pods/SDWebImage/SDWebImage/NSImage+WebCache.m
+Pods/SDWebImage/SDWebImage/SDAnimatedImageRep.h
+Pods/SDWebImage/SDWebImage/SDAnimatedImageRep.m
+Pods/SDWebImage/SDWebImage/SDImageCache.h
+Pods/SDWebImage/SDWebImage/SDImageCache.m
+Pods/SDWebImage/SDWebImage/SDImageCacheConfig.h
+Pods/SDWebImage/SDWebImage/SDImageCacheConfig.m
+Pods/SDWebImage/SDWebImage/SDWebImageCoder.h
+Pods/SDWebImage/SDWebImage/SDWebImageCoder.m
+Pods/SDWebImage/SDWebImage/SDWebImageCoderHelper.h
+Pods/SDWebImage/SDWebImage/SDWebImageCoderHelper.m
+Pods/SDWebImage/SDWebImage/SDWebImageCodersManager.h
+Pods/SDWebImage/SDWebImage/SDWebImageCodersManager.m
+Pods/SDWebImage/SDWebImage/SDWebImageCompat.h
+Pods/SDWebImage/SDWebImage/SDWebImageCompat.m
+Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h
+Pods/SDWebImage/SDWebImage/SDWebImageDownloader.m
+Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h
+Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m
+Pods/SDWebImage/SDWebImage/SDWebImageFrame.h
+Pods/SDWebImage/SDWebImage/SDWebImageFrame.m
+Pods/SDWebImage/SDWebImage/SDWebImageGIFCoder.h
+Pods/SDWebImage/SDWebImage/SDWebImageGIFCoder.m
+Pods/SDWebImage/SDWebImage/SDWebImageImageIOCoder.h
+Pods/SDWebImage/SDWebImage/SDWebImageImageIOCoder.m
+Pods/SDWebImage/SDWebImage/SDWebImageManager.h
+Pods/SDWebImage/SDWebImage/SDWebImageManager.m
+Pods/SDWebImage/SDWebImage/SDWebImageOperation.h
+Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h
+Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.m
+Pods/SDWebImage/SDWebImage/SDWebImageTransition.h
+Pods/SDWebImage/SDWebImage/SDWebImageTransition.m
+Pods/SDWebImage/SDWebImage/UIButton+WebCache.h
+Pods/SDWebImage/SDWebImage/UIButton+WebCache.m
+Pods/SDWebImage/SDWebImage/UIImage+ForceDecode.h
+Pods/SDWebImage/SDWebImage/UIImage+ForceDecode.m
+Pods/SDWebImage/SDWebImage/UIImage+GIF.h
+Pods/SDWebImage/SDWebImage/UIImage+GIF.m
+Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h
+Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.m
+Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h
+Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.m
+Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h
+Pods/SDWebImage/SDWebImage/UIImageView+WebCache.m
+Pods/SDWebImage/SDWebImage/UIView+WebCache.h
+Pods/SDWebImage/SDWebImage/UIView+WebCache.m
+Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.h
+Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.m
+Pods/SVProgressHUD/LICENSE
+Pods/SVProgressHUD/README.md
+Pods/SVProgressHUD/SVProgressHUD/SVIndefiniteAnimatedView.h
+Pods/SVProgressHUD/SVProgressHUD/SVIndefiniteAnimatedView.m
+Pods/SVProgressHUD/SVProgressHUD/SVProgressAnimatedView.h
+Pods/SVProgressHUD/SVProgressHUD/SVProgressAnimatedView.m
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.h
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.m
+Pods/SVProgressHUD/SVProgressHUD/SVRadialGradientLayer.h
+Pods/SVProgressHUD/SVProgressHUD/SVRadialGradientLayer.m
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/angle-mask.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/angle-mask@2x.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/angle-mask@3x.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/error.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/error@2x.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/error@3x.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/info.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/info@2x.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/info@3x.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/success.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/success@2x.png
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle/success@3x.png
+Pods/SwiftMessages/LICENSE.md
+Pods/SwiftMessages/README.md
+Pods/SwiftMessages/SwiftMessages/AccessibleMessage.swift
+Pods/SwiftMessages/SwiftMessages/Animator.swift
+Pods/SwiftMessages/SwiftMessages/Array+Utils.swift
+Pods/SwiftMessages/SwiftMessages/BackgroundViewable.swift
+Pods/SwiftMessages/SwiftMessages/BaseView.swift
+Pods/SwiftMessages/SwiftMessages/CALayer+Utils.swift
+Pods/SwiftMessages/SwiftMessages/CornerRoundingView.swift
+Pods/SwiftMessages/SwiftMessages/Error.swift
+Pods/SwiftMessages/SwiftMessages/Identifiable.swift
+Pods/SwiftMessages/SwiftMessages/MarginAdjustable+Animation.swift
+Pods/SwiftMessages/SwiftMessages/MarginAdjustable.swift
+Pods/SwiftMessages/SwiftMessages/MaskingView.swift
+Pods/SwiftMessages/SwiftMessages/MessageView.swift
+Pods/SwiftMessages/SwiftMessages/NSBundle+Utils.swift
+Pods/SwiftMessages/SwiftMessages/PassthroughView.swift
+Pods/SwiftMessages/SwiftMessages/PassthroughWindow.swift
+Pods/SwiftMessages/SwiftMessages/PhysicsAnimation.swift
+Pods/SwiftMessages/SwiftMessages/PhysicsPanHandler.swift
+Pods/SwiftMessages/SwiftMessages/Presenter.swift
+Pods/SwiftMessages/SwiftMessages/SwiftMessages.swift
+Pods/SwiftMessages/SwiftMessages/SwiftMessagesSegue.swift
+Pods/SwiftMessages/SwiftMessages/Theme.swift
+Pods/SwiftMessages/SwiftMessages/TopBottomAnimation.swift
+Pods/SwiftMessages/SwiftMessages/UIEdgeInsets+Utils.swift
+Pods/SwiftMessages/SwiftMessages/UIViewController+Utils.swift
+Pods/SwiftMessages/SwiftMessages/ViewControllerContainerView.swift
+Pods/SwiftMessages/SwiftMessages/Weak.swift
+Pods/SwiftMessages/SwiftMessages/WindowViewController.swift
+Pods/SwiftMessages/SwiftMessages/Resources/CardView.xib
+Pods/SwiftMessages/SwiftMessages/Resources/CenteredView.xib
+Pods/SwiftMessages/SwiftMessages/Resources/errorIcon.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIcon@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIcon@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIconLight.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIconLight@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIconLight@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIconSubtle.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIconSubtle@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/errorIconSubtle@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIcon.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIcon@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIcon@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIconLight.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIconLight@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIconLight@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIconSubtle.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIconSubtle@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/infoIconSubtle@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/MessageView.xib
+Pods/SwiftMessages/SwiftMessages/Resources/StatusLine.xib
+Pods/SwiftMessages/SwiftMessages/Resources/successIcon.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIcon@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIcon@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIconLight.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIconLight@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIconLight@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIconSubtle.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIconSubtle@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/successIconSubtle@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/TabView.xib
+Pods/SwiftMessages/SwiftMessages/Resources/warningIcon.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIcon@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIcon@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIconLight.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIconLight@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIconLight@3x.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIconSubtle.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIconSubtle@2x.png
+Pods/SwiftMessages/SwiftMessages/Resources/warningIconSubtle@3x.png
+Pods/SwiftyJSON/LICENSE
+Pods/SwiftyJSON/README.md
+Pods/SwiftyJSON/Source/SwiftyJSON.swift
+Pods/Target Support Files/Alamofire/Alamofire-dummy.m
+Pods/Target Support Files/Alamofire/Alamofire-prefix.pch
+Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
+Pods/Target Support Files/Alamofire/Alamofire.modulemap
+Pods/Target Support Files/Alamofire/Alamofire.xcconfig
+Pods/Target Support Files/Alamofire/Info.plist
+Pods/Target Support Files/IQKeyboardManagerSwift/Info.plist
+Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-dummy.m
+Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch
+Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-umbrella.h
+Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap
+Pods/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.xcconfig
+Pods/Target Support Files/pop/Info.plist
+Pods/Target Support Files/pop/pop-dummy.m
+Pods/Target Support Files/pop/pop-prefix.pch
+Pods/Target Support Files/pop/pop-umbrella.h
+Pods/Target Support Files/pop/pop.modulemap
+Pods/Target Support Files/pop/pop.xcconfig
+Pods/Target Support Files/SDWebImage/Info.plist
+Pods/Target Support Files/SDWebImage/SDWebImage-dummy.m
+Pods/Target Support Files/SDWebImage/SDWebImage-prefix.pch
+Pods/Target Support Files/SDWebImage/SDWebImage-umbrella.h
+Pods/Target Support Files/SDWebImage/SDWebImage.modulemap
+Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig
+Pods/Target Support Files/SVProgressHUD/Info.plist
+Pods/Target Support Files/SVProgressHUD/SVProgressHUD-dummy.m
+Pods/Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch
+Pods/Target Support Files/SVProgressHUD/SVProgressHUD-umbrella.h
+Pods/Target Support Files/SVProgressHUD/SVProgressHUD.modulemap
+Pods/Target Support Files/SVProgressHUD/SVProgressHUD.xcconfig
+Pods/Target Support Files/SwiftMessages/Info.plist
+Pods/Target Support Files/SwiftMessages/ResourceBundle-SwiftMessages-Info.plist
+Pods/Target Support Files/SwiftMessages/SwiftMessages-dummy.m
+Pods/Target Support Files/SwiftMessages/SwiftMessages-prefix.pch
+Pods/Target Support Files/SwiftMessages/SwiftMessages-umbrella.h
+Pods/Target Support Files/SwiftMessages/SwiftMessages.modulemap
+Pods/Target Support Files/SwiftMessages/SwiftMessages.xcconfig
+Pods/Target Support Files/SwiftyJSON/Info.plist
+Pods/Target Support Files/SwiftyJSON/SwiftyJSON-dummy.m
+Pods/Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch
+Pods/Target Support Files/SwiftyJSON/SwiftyJSON-umbrella.h
+Pods/Target Support Files/SwiftyJSON/SwiftyJSON.modulemap
+Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig
