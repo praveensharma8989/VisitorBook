@@ -1,23 +1,34 @@
 PODS:
   - Alamofire (4.7.3)
   - IQKeyboardManagerSwift (6.1.1)
+  - pop (1.0.10)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SVProgressHUD (2.2.5)
+  - SwiftMessages (5.0.1):
+    - SwiftMessages/App (= 5.0.1)
+  - SwiftMessages/App (5.0.1)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
+  - pop (~> 1.0)
   - SDWebImage
   - SVProgressHUD
+  - SwiftMessages
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftMessages: 32ce3cfc8388b41aae56ff4853cc752a20101147
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 3145327b93ff44706039e2593c5b514d0424ff87
+PODFILE CHECKSUM: e84c912cf96b26ee741de3519fd9eb2e1d6d2a52
 
 COCOAPODS: 1.4.0

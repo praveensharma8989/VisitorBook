@@ -13,8 +13,9 @@ import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static let sharedInstance =  UIApplication.shared.delegate as! AppDelegate
     var window: UIWindow?
-
+    var currentView: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func appInilize(){
         
+        AppIntializer.shared.setupIntial()
         IQKeyboardManager.shared.enable = true
         
     }

@@ -21,6 +21,20 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         // Dispose of any resources that can be recreated.
     }
     
+    func setBackBarButton() {
+        
+        let btn = UIButton(type: .custom)
+        btn.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
+        btn.addTarget(self, action: #selector(BackButtonClicked), for: .touchUpInside)
+       
+        btn.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
+        
+        self.navigationItem.setLeftBarButton(UIBarButtonItem(customView: btn), animated: true)
+    }
+    
+    @objc func BackButtonClicked() {
+        PopBack()
+    }
 
     /*
     // MARK: - Navigation

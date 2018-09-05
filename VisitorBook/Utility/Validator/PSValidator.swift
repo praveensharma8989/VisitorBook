@@ -41,7 +41,7 @@ class PSValidator: NSObject {
             break;
             
         case 200:
-            result = "Pin Required";
+            result = "Password Required";
             break;
         case 201:
             result = "pin should be minimum 4 characters.";
@@ -227,9 +227,9 @@ class PSValidator: NSObject {
         if (pass.count == 0){
             return 200
         }
-        if pass.count < 4 {
-            return 201
-        }
+//        if pass.count < 4 {
+//            return 201
+//        }
         return 0
     }
     
@@ -256,12 +256,12 @@ class PSValidator: NSObject {
         if mobile.count  == 0 {
             return 500
         }
-        if mobile.count < 7 || mobile.count > 15 {
+        if mobile.count != 10 {
             return 501
         }
-        if mobile.range(of:" ") != nil  {
-            return 502
-        }
+//        if mobile.range(of:" ") != nil  {
+//            return 502
+//        }
         return 0
     }
     
@@ -610,7 +610,7 @@ class PSValidator: NSObject {
    static let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     
     class func isAlphaBets(_ str: String) -> Bool {
-        let cs = CharacterSet(charactersIn: MBValidator.ACCEPTABLE_CHARACTERS).inverted
+        let cs = CharacterSet(charactersIn: PSValidator.ACCEPTABLE_CHARACTERS).inverted
         if (str.rangeOfCharacter(from: cs) == nil) {
             return true
         }

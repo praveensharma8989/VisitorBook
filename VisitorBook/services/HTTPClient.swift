@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 import Alamofire
-//import SwiftyJSON
+import SwiftyJSON
 
 typealias CompletionBlock = (Dictionary<String, Any>?,Int, Error?) -> (Void)
 typealias ProgressBlock = (Float) -> (Void)
@@ -61,10 +61,12 @@ class HTTPClient : NSObject{
         
         let headers: [String:String] = setAllAuthenticationKeys()
         
+        
+        
         var request: URLRequest? = nil
         do {
             request = try URLRequest.init(url: url, method: method, headers: headers)
-            request?.timeoutInterval = 15
+            request?.timeoutInterval = 60
             if params != nil {
                 request?.httpBody = try! JSONSerialization.data(withJSONObject: params!, options: [])
             }
@@ -78,8 +80,8 @@ class HTTPClient : NSObject{
     func getRequest(baseUrl:String, params:[String: Any]?, completionBlock:@escaping CompletionBlock )  {
         
         let request = setHTTPRequest(withAPIUrl: baseUrl, withHttpMethod: .get, withParameters: params)
-        
-        Alamofire.request(request! as URLRequestConvertible).responseJSON { (responseData: DataResponse<Any>) in
+        Alamofire.request(baseUrl, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData: DataResponse<Any>) in
+//        Alamofire.request(request! as URLRequestConvertible).responseJSON { (responseData: DataResponse<Any>) in
             
             print("Request: \(String(describing: responseData.request))")   // original url request
             print("Response: \(String(describing: responseData.response))") // http url response
@@ -135,10 +137,13 @@ class HTTPClient : NSObject{
     
     func PostHTTPRequest(baseUrl:String, params:[String:Any], completionBlock:@escaping CompletionBlock) -> Void {
         
-        let request = setHTTPRequest(withAPIUrl: baseUrl, withHttpMethod: .post, withParameters: params)
-        Alamofire.request(request! as URLRequestConvertible).responseJSON { (responseData: DataResponse<Any>) in
+//        let request = setHTTPRequest(withAPIUrl: baseUrl, withHttpMethod: .post, withParameters: params)
+        Alamofire.request(baseUrl, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData: DataResponse<Any>) in
             
             print("Request: \(String(describing: responseData.request))")   // original url request
+            
+            print(String.init(data: responseData.data!, encoding: String.Encoding.utf8)!)
+            
             print("Response: \(String(describing: responseData.response))") // http url response
             print("Result: \(responseData.result)")
             // response serialization result
@@ -181,6 +186,54 @@ class HTTPClient : NSObject{
                 break
             }
         }
+//        Alamofire.request(request! as URLRequestConvertible).responseJSON { (responseData: DataResponse<Any>) in
+//
+//            print("Request: \(String(describing: responseData.request))")   // original url request
+//
+//            print(String.init(data: responseData.data!, encoding: String.Encoding.utf8)!)
+//
+//            print("Response: \(String(describing: responseData.response))") // http url response
+//            print("Result: \(responseData.result)")
+//            // response serialization result
+//            //            print(String(data: (responseData.request?.httpBody)!, encoding: String.Encoding(rawValue: 0)) as Any)
+//            switch (responseData.result){
+//
+//            case .success(_):
+//
+//                if let response = responseData.result.value{
+//                    if let acesstoken = responseData.response?.allHeaderFields["AccessToken"] as? String{
+//                        if acesstoken != ""{
+//                            AppConstants.SAVE_USER_DEFAULTS(value: acesstoken, key: AppConstants.K_ACCESSTOKEN)
+//                        }
+//
+//                    }
+//                    print("JSON://////////// \(response)") // serialized json response
+//
+//                }
+//                completionBlock(responseData.result.value as? [String : Any] ,(responseData.response?.statusCode) ?? 0,responseData.result.error)
+//
+//                break
+//            case .failure(let error):
+//
+//                if (responseData.result.value == nil) {
+//
+//                    if error._code == NSURLErrorNotConnectedToInternet{
+//                        completionBlock(nil ,600,responseData.result.error)
+//
+//                    } else if responseData.response?.statusCode == 500 {
+//                        completionBlock(nil ,500,"Unable to connect to server. Please try again after sometime." as? Error)
+//
+//                    }
+//                    else{
+//                        completionBlock(nil ,(responseData.response?.statusCode) ?? 0,responseData.result.error)
+//                    }
+//                }
+//                else{
+//                    completionBlock(responseData.result.value as? [String : Any] ,(responseData.response?.statusCode) ?? 0,responseData.result.error)
+//                }
+//                break
+//            }
+//        }
     }
     
     ///MARK:- Multipart Post Service Call
@@ -328,27 +381,27 @@ class HTTPClient : NSObject{
         
         var headers: [String:String] = [
             "Content-Type": "application/json",
-            "DeviceType" : "ios"
+            "Accept" : "application/json"
         ]
         
-        if let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"]{
-            headers["appVersion"] = appVersion as? String
-        }
-        
-        if let authtoken = AppConstants.GET_USER_DEFAULTS(Key: AppConstants.K_ACCESSTOKEN){
-            headers[AppConstants.K_ACCESSTOKEN] = authtoken
-        }
-        if let deviceToken = AppConstants.GET_USER_DEFAULTS(Key: AppConstants.K_DEVICE_TOKEN){
-            headers[AppConstants.K_DEVICE_TOKEN] = deviceToken
-        }
-        
-        if let deviceid = AppConstants.GET_USER_DEFAULTS(Key: AppConstants.K_DEVICE_ID){
-            headers[AppConstants.K_DEVICE_ID] = deviceid
-        }
-        else{
-            
-            headers[AppConstants.K_DEVICE_ID] = "asfdads43534534534"
-        }
+//        if let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"]{
+//            headers["appVersion"] = appVersion as? String
+//        }
+//
+//        if let authtoken = AppConstants.GET_USER_DEFAULTS(Key: AppConstants.K_ACCESSTOKEN){
+//            headers[AppConstants.K_ACCESSTOKEN] = authtoken
+//        }
+//        if let deviceToken = AppConstants.GET_USER_DEFAULTS(Key: AppConstants.K_DEVICE_TOKEN){
+//            headers[AppConstants.K_DEVICE_TOKEN] = deviceToken
+//        }
+//
+//        if let deviceid = AppConstants.GET_USER_DEFAULTS(Key: AppConstants.K_DEVICE_ID){
+//            headers[AppConstants.K_DEVICE_ID] = deviceid
+//        }
+//        else{
+//
+//            headers[AppConstants.K_DEVICE_ID] = "asfdads43534534534"
+//        }
         
         return headers
     }

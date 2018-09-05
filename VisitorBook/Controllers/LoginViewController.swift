@@ -25,6 +25,8 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneText: DesignableUITextField!
     @IBOutlet weak var residentSignInButton: UIButton!
     
+    var userData : VisitorUsers?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
@@ -101,19 +103,106 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
     @IBAction func gateKeeperSignInButton_press(_ sender: Any) {
         self.view.endEditing(true)
         
+        let code = validateFields()
+        
+        if(code != 0){
+            
+            print(code)
+            let str:String = PSValidator.message(forCode: code)
+            self.showAlertMessage(titleStr: "Error", messageStr: str)
+        }
+        else{
+            gateKeeperLoginApi()
+            
+        }
+        
     }
     
     @IBAction func registerHereButton_press(_ sender: Any) {
         self.view.endEditing(true)
         
+        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        registerVC.isGateKeeper = gateKeeperButton.isSelected ? true : false
+        Push(controller: registerVC)
+        
     }
     @IBAction func forgetPasswordButton_press(_ sender: Any) {
         self.view.endEditing(true)
+        
+        let forgotPasswordVC = self.storyboard?.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
+        forgotPasswordVC.isGateKeeper = gateKeeperButton.isSelected ? true : false
+        Push(controller: forgotPasswordVC)
         
     }
     
     @IBAction func residentSignInButton_press(_ sender: Any) {
         self.view.endEditing(true)
+        
+    }
+    
+    func validateFields()->Int {
+        
+        if(gateKeeperButton.isSelected){
+        
+            if (PSValidator.validateEmail(Email: emailText.text) != 0)
+            {
+                return PSValidator.validateEmail(Email: emailText.text)
+            }
+            if (PSValidator.validatePassword(passwordText.text) != 0)
+            {
+                return PSValidator.validatePassword(passwordText.text)
+            }
+        }else{
+            if (PSValidator.validateMobile(Mobile: phoneText.text) != 0){
+                return PSValidator.validateMobile(Mobile: phoneText.text)
+            }
+        }
+        return 0
+    }
+    
+    
+    func gateKeeperLoginApi(){
+        
+        view.endEditing(true)
+        showLoader()
+        
+        var param : [String : Any]
+        
+        if gateKeeperButton.isSelected{
+            param = [
+                "email": emailText.text!,
+                "password": passwordText.text!,
+                "usertype": "Visitor",
+                "token": ""
+            ]
+        }else{
+            param = [
+                "phone": phoneText.text!,
+                "usertype": "Flat",
+                "token": ""
+            ]
+        }
+        
+        
+        PSServiceManager.userloginApi(param: param) { (response, status, error) -> (Void) in
+            
+            self.dismissLoader()
+            
+            if(status){
+                
+                if (response!["code"] as! Int) == 0 {
+                    self.showAlertMessage(titleStr: "Error", messageStr: response!["msg"] as! String)
+                }else{
+                    let jsonData = try? JSONSerialization.data(withJSONObject: response!)
+                    let jsonDecoder = JSONDecoder()
+                    self.userData = try? jsonDecoder.decode(VisitorUsers.self, from: jsonData!)
+                }
+                
+            }else{
+                
+            }
+            
+        }
         
     }
     

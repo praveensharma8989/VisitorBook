@@ -21,7 +21,6 @@
 		79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */; };
 		79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */; };
 		E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4B213FEE90006202FA /* HTTPClient.swift */; };
-		E98C4A4E213FEE90006202FA /* MBServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4C213FEE90006202FA /* MBServiceManager.swift */; };
 		E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4F213FEF92006202FA /* UIImage+PS.swift */; };
 		E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A50213FEF92006202FA /* UIView+PS.swift */; };
 		E98C4A58213FEF92006202FA /* UIColor+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A51213FEF92006202FA /* UIColor+PS.swift */; };
@@ -30,6 +29,12 @@
 		E98C4A5B213FEF92006202FA /* UIButton+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A54213FEF92006202FA /* UIButton+PS.swift */; };
 		E98C4A5C213FEF92006202FA /* NSDate+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A55213FEF92006202FA /* NSDate+PS.swift */; };
 		E98C4A60213FF084006202FA /* PSValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A5F213FF083006202FA /* PSValidator.swift */; };
+		E98C4A63213FF457006202FA /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A62213FF456006202FA /* AppConstants.swift */; };
+		E98C4A67213FFC5E006202FA /* AppIntializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A66213FFC5E006202FA /* AppIntializer.swift */; };
+		E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A68213FFFEA006202FA /* PSServiceManager.swift */; };
+		E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7121402982006202FA /* VisitorUsers.swift */; };
+		E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7321403ADC006202FA /* RegisterViewController.swift */; };
+		E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +55,6 @@
 		79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		C232C6E640FBD6DCE8A93376 /* Pods_VisitorBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitorBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98C4A4B213FEE90006202FA /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		E98C4A4C213FEE90006202FA /* MBServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBServiceManager.swift; sourceTree = "<group>"; };
 		E98C4A4F213FEF92006202FA /* UIImage+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PS.swift"; sourceTree = "<group>"; };
 		E98C4A50213FEF92006202FA /* UIView+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PS.swift"; sourceTree = "<group>"; };
 		E98C4A51213FEF92006202FA /* UIColor+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PS.swift"; sourceTree = "<group>"; };
@@ -59,6 +63,12 @@
 		E98C4A54213FEF92006202FA /* UIButton+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+PS.swift"; sourceTree = "<group>"; };
 		E98C4A55213FEF92006202FA /* NSDate+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+PS.swift"; sourceTree = "<group>"; };
 		E98C4A5F213FF083006202FA /* PSValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSValidator.swift; sourceTree = "<group>"; };
+		E98C4A62213FF456006202FA /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		E98C4A66213FFC5E006202FA /* AppIntializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntializer.swift; sourceTree = "<group>"; };
+		E98C4A68213FFFEA006202FA /* PSServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSServiceManager.swift; sourceTree = "<group>"; };
+		E98C4A7121402982006202FA /* VisitorUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorUsers.swift; sourceTree = "<group>"; };
+		E98C4A7321403ADC006202FA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +127,12 @@
 		79FE29A6213DABAB00CE95CE /* VisitorBook */ = {
 			isa = PBXGroup;
 			children = (
+				E98C4A6D214028FE006202FA /* Model */,
 				E98C4A5D213FF083006202FA /* Utility */,
 				E98C4A4A213FEE90006202FA /* services */,
 				79FE29DC213DC70400CE95CE /* Controllers */,
 				79FE29D9213DC70400CE95CE /* Helper */,
 				79B49A8D213F12240010952B /* CustomView */,
-				79FE29DE213DC70400CE95CE /* Model */,
 				79FE29DA213DC70400CE95CE /* Resources */,
 				79FE29DB213DC70400CE95CE /* Screens */,
 				79FE29BE213DAD9500CE95CE /* Applications */,
@@ -139,6 +149,7 @@
 				79FE29C5213DAD9500CE95CE /* Main.storyboard */,
 				79FE29C7213DAD9500CE95CE /* AppDelegate.swift */,
 				79FE29C8213DAD9500CE95CE /* Info.plist */,
+				E98C4A66213FFC5E006202FA /* AppIntializer.swift */,
 			);
 			path = Applications;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 		79FE29DA213DC70400CE95CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E98C4A61213FF456006202FA /* Constants */,
 				79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */,
 				79B49A8B213F11090010952B /* AllPageViewController.swift */,
 			);
@@ -172,15 +184,10 @@
 			children = (
 				79FE29DD213DC70400CE95CE /* ViewController.swift */,
 				79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */,
+				E98C4A7321403ADC006202FA /* RegisterViewController.swift */,
+				E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		79FE29DE213DC70400CE95CE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AD2BAB78CFE7235328412D6B /* Frameworks */ = {
@@ -203,8 +210,8 @@
 		E98C4A4A213FEE90006202FA /* services */ = {
 			isa = PBXGroup;
 			children = (
+				E98C4A68213FFFEA006202FA /* PSServiceManager.swift */,
 				E98C4A4B213FEE90006202FA /* HTTPClient.swift */,
-				E98C4A4C213FEE90006202FA /* MBServiceManager.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -223,6 +230,30 @@
 				E98C4A5F213FF083006202FA /* PSValidator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		E98C4A61213FF456006202FA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E98C4A62213FF456006202FA /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		E98C4A6D214028FE006202FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E98C4A6E214028FE006202FA /* VisitorUsers */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E98C4A6E214028FE006202FA /* VisitorUsers */ = {
+			isa = PBXGroup;
+			children = (
+				E98C4A7121402982006202FA /* VisitorUsers.swift */,
+			);
+			path = VisitorUsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,9 +333,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -340,6 +376,9 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -347,6 +386,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,8 +402,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
+				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
+				E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */,
 				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
 				E98C4A60213FF084006202FA /* PSValidator.swift in Sources */,
+				E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */,
 				E98C4A5A213FEF92006202FA /* NSString+PS.swift in Sources */,
 				E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */,
 				79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */,
@@ -373,9 +419,10 @@
 				E98C4A59213FEF92006202FA /* UIFont+PS.swift in Sources */,
 				E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */,
 				E98C4A58213FEF92006202FA /* UIColor+PS.swift in Sources */,
-				E98C4A4E213FEE90006202FA /* MBServiceManager.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
+				E98C4A67213FFC5E006202FA /* AppIntializer.swift in Sources */,
+				E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */,
 				E98C4A5C213FEF92006202FA /* NSDate+PS.swift in Sources */,
 				79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */,
 			);

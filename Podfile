@@ -7,6 +7,9 @@ target 'VisitorBook' do
   # Pods for VisitorBook
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
+  pod 'SwiftyJSON'
   pod 'SDWebImage'
   pod 'SVProgressHUD'
+  pod 'pop', '~> 1.0'
+  pod 'SwiftMessages'
 end
