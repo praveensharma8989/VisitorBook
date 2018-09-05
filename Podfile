@@ -6,4 +6,7 @@ target 'VisitorBook' do
   use_frameworks!
   # Pods for VisitorBook
   pod 'IQKeyboardManagerSwift'
+  pod 'Alamofire'
+  pod 'SDWebImage'
+  pod 'SVProgressHUD'
 end
