@@ -80,7 +80,13 @@ class PSServiceManager: NSObject {
         HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.LogIn.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
             if statuscode == 200 {
                 
-                completionBlock(responsedata,true, nil)
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+                
                 
             }
             else{

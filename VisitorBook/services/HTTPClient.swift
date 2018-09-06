@@ -153,12 +153,12 @@ class HTTPClient : NSObject{
             case .success(_):
                 
                 if let response = responseData.result.value{
-                    if let acesstoken = responseData.response?.allHeaderFields["AccessToken"] as? String{
-                        if acesstoken != ""{
-                            AppConstants.SAVE_USER_DEFAULTS(value: acesstoken, key: AppConstants.K_ACCESSTOKEN)
-                        }
-                        
-                    }
+//                    if let acesstoken = responseData.response?.allHeaderFields["AccessToken"] as? String{
+//                        if acesstoken != ""{
+//                            AppConstants.SAVE_USER_DEFAULTS(value: acesstoken, key: AppConstants.K_ACCESSTOKEN)
+//                        }
+//
+//                    }
                     print("JSON://////////// \(response)") // serialized json response
                     
                 }

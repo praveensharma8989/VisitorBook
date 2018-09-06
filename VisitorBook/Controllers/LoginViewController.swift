@@ -190,16 +190,16 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
             
             if(status){
                 
-                if (response!["code"] as! Int) == 0 {
-                    self.showAlertMessage(titleStr: "Error", messageStr: response!["msg"] as! String)
-                }else{
+//                if (response!["code"] as! Int) == 0 {
+//                    self.showAlertMessage(titleStr: "Error", messageStr: response!["msg"] as! String)
+//                }else{
                     let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                     let jsonDecoder = JSONDecoder()
                     self.userData = try? jsonDecoder.decode(VisitorUsers.self, from: jsonData!)
-                }
+//                }
                 
             }else{
-                
+                self.showAlertMessage(titleStr: "Error", messageStr: error!)
             }
             
         }
