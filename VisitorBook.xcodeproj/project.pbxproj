@@ -35,6 +35,11 @@
 		E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7121402982006202FA /* VisitorUsers.swift */; };
 		E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7321403ADC006202FA /* RegisterViewController.swift */; };
 		E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */; };
+		E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D6522121413A5700B61425 /* GateKeeper.storyboard */; };
+		E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */; };
+		E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D6523221416D6700B61425 /* NewVisitViewController.swift */; };
+		E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652342141A04400B61425 /* NewVisitorData.swift */; };
+		E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652362141A74600B61425 /* VerifyOTPViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +74,11 @@
 		E98C4A7121402982006202FA /* VisitorUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorUsers.swift; sourceTree = "<group>"; };
 		E98C4A7321403ADC006202FA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		E9D6522121413A5700B61425 /* GateKeeper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GateKeeper.storyboard; sourceTree = "<group>"; };
+		E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateKeeperTabBatController.swift; sourceTree = "<group>"; };
+		E9D6523221416D6700B61425 /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
+		E9D652342141A04400B61425 /* NewVisitorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitorData.swift; sourceTree = "<group>"; };
+		E9D652362141A74600B61425 /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,7 @@
 				79FE29C7213DAD9500CE95CE /* AppDelegate.swift */,
 				79FE29C8213DAD9500CE95CE /* Info.plist */,
 				E98C4A66213FFC5E006202FA /* AppIntializer.swift */,
+				E9D6522121413A5700B61425 /* GateKeeper.storyboard */,
 			);
 			path = Applications;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 		79FE29DC213DC70400CE95CE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9D652232141440D00B61425 /* GateKeeper */,
 				79FE29DD213DC70400CE95CE /* ViewController.swift */,
 				79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */,
 				E98C4A7321403ADC006202FA /* RegisterViewController.swift */,
@@ -252,8 +264,19 @@
 			isa = PBXGroup;
 			children = (
 				E98C4A7121402982006202FA /* VisitorUsers.swift */,
+				E9D652342141A04400B61425 /* NewVisitorData.swift */,
 			);
 			path = VisitorUsers;
+			sourceTree = "<group>";
+		};
+		E9D652232141440D00B61425 /* GateKeeper */ = {
+			isa = PBXGroup;
+			children = (
+				E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */,
+				E9D6523221416D6700B61425 /* NewVisitViewController.swift */,
+				E9D652362141A74600B61425 /* VerifyOTPViewController.swift */,
+			);
+			path = GateKeeper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +342,7 @@
 			files = (
 				79FE29D4213DAD9500CE95CE /* Info.plist in Resources */,
 				79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */,
+				E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */,
 				79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */,
 				79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */,
 			);
@@ -373,6 +397,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -383,6 +408,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -412,14 +438,18 @@
 				E98C4A5B213FEF92006202FA /* UIButton+PS.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
+				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
 				E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */,
 				E98C4A59213FEF92006202FA /* UIFont+PS.swift in Sources */,
+				E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */,
 				E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */,
 				E98C4A58213FEF92006202FA /* UIColor+PS.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
+				E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */,
 				E98C4A67213FFC5E006202FA /* AppIntializer.swift in Sources */,
+				E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */,
 				E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */,
 				E98C4A5C213FEF92006202FA /* NSDate+PS.swift in Sources */,
 				79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */,

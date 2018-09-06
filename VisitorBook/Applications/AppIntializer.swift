@@ -12,14 +12,65 @@ import SVProgressHUD
 
 class AppIntializer: NSObject {
     
+    
     var messagePopUp = MessageView.viewFromNib(layout: .centeredView)
     var config = SwiftMessages.Config()
     static let shared = AppIntializer()
     
     func setupIntial()
     {
+        
+        checkUserType()
+        
         setProgressSetting()
         setupPopUp()
+    }
+    
+    func checkUserType(){
+        
+        let userType = CommanFunction.instance.checkUserType()
+        
+        if userType == .GateKeeper{
+            moveToGateKeeperScreen()
+        }else if userType == .Residant{
+            
+        }else{
+            moveToLoginScreen()
+        }
+        
+        
+    }
+    
+    func moveToLoginScreen(){
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        let loginViewController = storyboard.instantiateViewController(withIdentifier:"LoginViewController") as! LoginViewController
+        
+        let navigationcontroller = UINavigationController.init(rootViewController: loginViewController)
+        
+        navigationcontroller.setNavigationBarHidden(false, animated: false)
+        
+        AppDelegate.sharedInstance.window?.rootViewController = navigationcontroller
+        
+        AppDelegate.sharedInstance.window?.makeKeyAndVisible()
+        
+    }
+    
+    func moveToGateKeeperScreen(){
+        
+        let storyboard = UIStoryboard.init(name: "GateKeeper", bundle: nil)
+        
+        let NewVisitorController = storyboard.instantiateViewController(withIdentifier:"GateKeeperTabBatController") as! GateKeeperTabBatController
+        
+        let navigationcontroller = UINavigationController.init(rootViewController: NewVisitorController)
+        
+        navigationcontroller.setNavigationBarHidden(false, animated: false)
+        
+        AppDelegate.sharedInstance.window?.rootViewController = navigationcontroller
+        
+        AppDelegate.sharedInstance.window?.makeKeyAndVisible()
+        
     }
     
     func showPopUp(message : String){

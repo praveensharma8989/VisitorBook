@@ -51,6 +51,9 @@ struct AppConstants {
     static var k_NOTIFY: String = ""
     static var k_masterData : String = "masterData"
     
+    static var k_userType : String = "userType"
+    static var k_gateKeeperUser : String = "gateKeeperUser"
+    
     // Date Format
     static var K_DATE_MMDDYY: String = "yy-MM-dd"
     static var K_DATE_MMDDYYYY: String = "yyyy-MM-dd"

@@ -421,7 +421,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="fieldImage" value="radio_selected"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="userIcon"/>
@@ -439,7 +439,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="fieldImage" value="radio_selected"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="mobileIcon"/>
@@ -457,7 +457,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="fieldImage" value="radio_selected"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="GateEmailIcon"/>
@@ -475,7 +475,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="fieldImage" value="radio_selected"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="addressIcon"/>
@@ -636,7 +636,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="fieldImage" value="radio_selected"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="GateEmailIcon"/>
@@ -664,6 +664,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="residentSignInButton_press:" destination="w1K-AD-YFz" eventType="touchUpInside" id="sJu-7d-gmc"/>
+                                                            <action selector="submitButton_press:" destination="cMr-Qz-ZZ6" eventType="touchUpInside" id="XwC-fs-BRY"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6no-Fr-m2g">
@@ -683,6 +684,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="residentSignInButton_press:" destination="w1K-AD-YFz" eventType="touchUpInside" id="Nbl-ul-cWX"/>
+                                                            <action selector="signInButton_press:" destination="cMr-Qz-ZZ6" eventType="touchUpInside" id="9Et-oJ-UK5"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -731,6 +733,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s29-1d-fvx"/>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="15a-kt-zwA" id="ELr-kV-hY4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxS-Rf-JLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
