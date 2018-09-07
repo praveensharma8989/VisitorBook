@@ -20,6 +20,7 @@
 		79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29DD213DC70400CE95CE /* ViewController.swift */; };
 		79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */; };
 		79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */; };
+		E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */; };
 		E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4B213FEE90006202FA /* HTTPClient.swift */; };
 		E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4F213FEF92006202FA /* UIImage+PS.swift */; };
 		E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A50213FEF92006202FA /* UIView+PS.swift */; };
@@ -40,6 +41,7 @@
 		E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D6523221416D6700B61425 /* NewVisitViewController.swift */; };
 		E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652342141A04400B61425 /* NewVisitorData.swift */; };
 		E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652362141A74600B61425 /* VerifyOTPViewController.swift */; };
+		E9D9BF00214282FE0004FB6E /* VisitorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,7 @@
 		79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanFunctions.swift; sourceTree = "<group>"; };
 		79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		C232C6E640FBD6DCE8A93376 /* Pods_VisitorBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitorBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldVisitorConfirmScreenViewController.swift; sourceTree = "<group>"; };
 		E98C4A4B213FEE90006202FA /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		E98C4A4F213FEF92006202FA /* UIImage+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PS.swift"; sourceTree = "<group>"; };
 		E98C4A50213FEF92006202FA /* UIView+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PS.swift"; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		E9D6523221416D6700B61425 /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
 		E9D652342141A04400B61425 /* NewVisitorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitorData.swift; sourceTree = "<group>"; };
 		E9D652362141A74600B61425 /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
+		E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +279,8 @@
 				E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */,
 				E9D6523221416D6700B61425 /* NewVisitViewController.swift */,
 				E9D652362141A74600B61425 /* VerifyOTPViewController.swift */,
+				E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */,
+				E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */,
 			);
 			path = GateKeeper;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */,
 				79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */,
 				E98C4A5B213FEF92006202FA /* UIButton+PS.swift in Sources */,
+				E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
@@ -452,6 +459,7 @@
 				E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */,
 				E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */,
 				E98C4A5C213FEF92006202FA /* NSDate+PS.swift in Sources */,
+				E9D9BF00214282FE0004FB6E /* VisitorDetailsViewController.swift in Sources */,
 				79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,7 +607,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -614,7 +625,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

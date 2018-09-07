@@ -12,6 +12,8 @@ import SRCountdownTimer
 class VerifyOTPViewController: AllPageViewController {
 
     var newVisitorData : NewVisitorData?
+    var gateKeeperData : VisitorUsers?
+    
     
     @IBOutlet weak var countDownView: SRCountdownTimer!
     @IBOutlet weak var resendButton: UIButton!
@@ -53,13 +55,32 @@ class VerifyOTPViewController: AllPageViewController {
     }
     
     @IBAction func submitButton_press(_ sender: Any) {
+        self.view.endEditing(true)
+        if newVisitorData?.otp == OTPText.text{
+            
+            if newVisitorData?.msg == "Old Visitor"{
+                let OldVisitorVC = self.storyboard?.instantiateViewController(withIdentifier: "OldVisitorConfirmScreenViewController") as! OldVisitorConfirmScreenViewController
+                OldVisitorVC.oldVisitorData = newVisitorData
+                OldVisitorVC.gateKeeperData = gateKeeperData
+                Push(controller: OldVisitorVC)
+            }else{
+                let VisitorDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "VisitorDetailsViewController") as! VisitorDetailsViewController
+                VisitorDetailVC.oldVisitorData = newVisitorData
+                VisitorDetailVC.gateKeeperData = gateKeeperData
+                Push(controller: VisitorDetailVC)
+            }
+            
+        }else{
+            self.showAlertMessage(titleStr: "Error", messageStr: "OTP Dose not match please try again!")
+        }
         
     }
     @IBAction func reSendOTPButton_press(_ sender: Any) {
+        self.view.endEditing(true)
         callVisitorOtp()
     }
     @IBAction func editNumber_press(_ sender: Any) {
-        
+        self.view.endEditing(true)
         PopBack()
         
     }
@@ -71,7 +92,7 @@ class VerifyOTPViewController: AllPageViewController {
         
         let param : [String : Any] = [
             "mobile": (newVisitorData?.mobile)!,
-            "empid": (newVisitorData?.id)!
+            "empid": (gateKeeperData?.id)!
         ]
         
         PSServiceManager.visitorOTP(param: param) { (response, status, error) -> (Void) in
@@ -83,7 +104,6 @@ class VerifyOTPViewController: AllPageViewController {
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
                 self.newVisitorData = try? jsonDecoder.decode(NewVisitorData.self, from: jsonData!)
-                
                 self.startTimer()
                 
             }else{

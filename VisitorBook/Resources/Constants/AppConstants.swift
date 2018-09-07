@@ -20,7 +20,8 @@ enum CARequestApiName:String {
     ForgotPassowrd          = "forgot_pwd.php",
     SignUp                  = "enquiry.php",
     VisitorOTP              = "visitorOTP.php",
-    NewVisitor              = "newvisitor.php"
+    NewVisitor              = "newvisitor.php",
+    OldVisitor              = "submit_repeat_visitor.php"
     
 }
 

@@ -154,9 +154,34 @@ class PSServiceManager: NSObject {
         }
     }
     
-    public static func  newVisitor(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+    public static func  newVisitor(param:[String:Any], imageData:Data,completionBlock:@escaping completionBlock) -> Void {
         
-        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.VisitorOTP.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+        HTTPClient.shared?.multiPartPostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.NewVisitor.rawValue, imageData: imageData, imageName: "photo", params: param, progressBlock: { (progress) -> (Void) in
+            
+        }, completionBlock: { (responsedata, statuscode, error) -> (Void) in
+            
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+                
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+            
+        })
+    }
+    
+    public static func  OldVisitor(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.OldVisitor.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
             if statuscode == 200 {
                 
                 if responsedata!["error"] as? Bool == true{
@@ -174,6 +199,7 @@ class PSServiceManager: NSObject {
             }
         }
     }
+    
     
 //    public static func resendOTPCall(completionBlock:@escaping completionBlock) -> Void {
 //        

@@ -361,3 +361,12 @@ Pods/Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch
 Pods/Target Support Files/SwiftyJSON/SwiftyJSON-umbrella.h
 Pods/Target Support Files/SwiftyJSON/SwiftyJSON.modulemap
 Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig
+SRCountdownTimer.swift
+Pods/SRCountdownTimer/LICENSE.txt
+Pods/SRCountdownTimer/README.md
+Pods/Target Support Files/SRCountdownTimer/Info.plist
+Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer-dummy.m
+Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer-prefix.pch
+Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer-umbrella.h
+Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer.modulemap
+Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer.xcconfig

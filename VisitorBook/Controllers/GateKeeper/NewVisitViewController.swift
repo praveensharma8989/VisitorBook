@@ -51,7 +51,7 @@ class NewVisitViewController: AllPageViewController {
         
         var param : [String : Any] = [
                 "mobile": visitorPhoneNumer.text!,
-                "empid": gateKeeperData?.cid
+                "empid": gateKeeperData?.id
             ]
         
         
@@ -80,6 +80,7 @@ class NewVisitViewController: AllPageViewController {
         
         let VerifyOtpVC = self.storyboard?.instantiateViewController(withIdentifier: "VerifyOTPViewController") as! VerifyOTPViewController
         VerifyOtpVC.newVisitorData = newVisitorData
+        VerifyOtpVC.gateKeeperData = gateKeeperData
         Push(controller: VerifyOtpVC)
         
     }
