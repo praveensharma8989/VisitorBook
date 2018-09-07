@@ -56,9 +56,9 @@ class OldVisitorConfirmScreenViewController: UIViewController {
         view.endEditing(true)
         showLoader()
         
-        var param : [String : Any] = [
-            "id": oldVisitorData?.id,
-            "empid": gateKeeperData?.id
+        let param : [String : Any] = [
+            "id": (oldVisitorData?.id)!,
+            "empid": (gateKeeperData?.cid)!
         ]
         
         
