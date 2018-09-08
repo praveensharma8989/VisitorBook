@@ -21,7 +21,11 @@ enum CARequestApiName:String {
     SignUp                  = "enquiry.php",
     VisitorOTP              = "visitorOTP.php",
     NewVisitor              = "newvisitor.php",
-    OldVisitor              = "submit_repeat_visitor.php"
+    OldVisitor              = "submit_repeat_visitor.php",
+    AllTower                = "AllTower.php",
+    AllFloor                = "AllFloor.php",
+    AllFlat                 = "AllFlat.php",
+    AllPurpose              = "AllPurpose.php"
     
 }
 

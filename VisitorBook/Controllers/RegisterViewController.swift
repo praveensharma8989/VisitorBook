@@ -34,7 +34,7 @@ class RegisterViewController: AllPageViewController {
     
     func initialize(){
         
-        setBackBarButton()
+        setBackBarButton(buttonType: .Defauld)
     }
     
     func validateFields()->Int {

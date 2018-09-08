@@ -36,7 +36,7 @@ class VerifyOTPViewController: AllPageViewController {
     
     func initilize(){
         
-        setBackBarButton()
+        setBackBarButton(buttonType: .Defauld)
         phoneNumberLabel.text = "+91 " + (newVisitorData?.mobile)!
         startTimer()
         

@@ -21,6 +21,11 @@ class NewVisitViewController: AllPageViewController {
         initilize()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        visitorPhoneNumer.text = ""
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,6 +34,7 @@ class NewVisitViewController: AllPageViewController {
     
 
     func initilize(){
+        
         setNavigationBar(Navigationtype: .defaultColor)
         gateKeeperData = CommanFunction.instance.getUserDataGateKeeper()
     }

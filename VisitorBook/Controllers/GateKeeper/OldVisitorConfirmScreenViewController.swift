@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class OldVisitorConfirmScreenViewController: UIViewController {
+class OldVisitorConfirmScreenViewController: AllPageViewController {
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var namelabel: UILabel!
@@ -30,6 +30,7 @@ class OldVisitorConfirmScreenViewController: UIViewController {
 
     func initilize(){
         
+        setBackBarButton(buttonType: .Home)
         userImage.set_sdWebImage(With: (oldVisitorData?.photo)!, placeHolderImage: "CameraImage")
         namelabel.text = oldVisitorData?.name
         towerLabel.text = oldVisitorData?.tower
@@ -69,9 +70,7 @@ class OldVisitorConfirmScreenViewController: UIViewController {
             
             if(status){
                 
-                let jsonData = try? JSONSerialization.data(withJSONObject: response!)
-                let jsonDecoder = JSONDecoder()
-                
+                self.PopToRoot()
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
