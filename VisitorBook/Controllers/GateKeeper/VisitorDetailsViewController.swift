@@ -21,6 +21,8 @@ class VisitorDetailsViewController: AllPageViewController, UIImagePickerControll
     var oldVisitorData : NewVisitorData?
     var gateKeeperData : VisitorUsers?
     
+    var newId : String?
+    
     var isImage : Bool = false
     let imagePickerView = UIImagePickerController()
     
@@ -114,6 +116,7 @@ class VisitorDetailsViewController: AllPageViewController, UIImagePickerControll
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
 //                self.userData = try? jsonDecoder.decode(VisitorUsers.self, from: jsonData!)
+                self.newId = (response?["id"])! as? String
                 self.MoveToTowerAndPurposeScreen()
                 
             }else{
@@ -128,6 +131,7 @@ class VisitorDetailsViewController: AllPageViewController, UIImagePickerControll
         
         let TowerAndPurposeVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectTowerAndPusposeViewController") as! SelectTowerAndPusposeViewController
         TowerAndPurposeVC.newVisitorData = oldVisitorData
+        TowerAndPurposeVC.newId = newId
         TowerAndPurposeVC.gateKeeperData = gateKeeperData
         Push(controller: TowerAndPurposeVC)
         
@@ -159,7 +163,8 @@ class VisitorDetailsViewController: AllPageViewController, UIImagePickerControll
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        userImage.image = image
+        
+        userImage.image = image.resized(toWidth: 200)
         isImage = true
         picker.dismiss(animated: true, completion: nil)
     }
@@ -178,4 +183,22 @@ class VisitorDetailsViewController: AllPageViewController, UIImagePickerControll
     }
     */
 
+}
+
+extension UIImage {
+    
+    func resized(withPercentage percentage: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    func resized(toWidth width: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }

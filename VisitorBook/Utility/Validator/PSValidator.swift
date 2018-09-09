@@ -27,7 +27,7 @@ class PSValidator: NSObject {
             result = "Agree terms and condition. Please check.";
             break;
         case 90:
-            result = "%@ is blank. Please check.";
+            result = "%@ is blank. Please select %@.";
             break;
             
         case 100:
@@ -58,13 +58,16 @@ class PSValidator: NSObject {
             
             
         case 300:
-            result = "BBM pin is blank. Please check.";
+            result = "Please select Tower!";
             break;
         case 301:
-            result = "BBM pin can not contain spaces. Please check.";
+            result = "Please select Floor!";
             break;
         case 302:
-            result = "Invalid BBM pin. Please check.";
+            result = "Please select Flat!";
+            break;
+        case 303:
+            result = "Please select purpose!";
             break;
             
         case 400:
@@ -243,6 +246,50 @@ class PSValidator: NSObject {
         }
         if pass.count < 4 {
             return 204
+        }
+        return 0
+    }
+    
+    class func isTowerSelected(str: String?) -> Int {
+        
+        guard let string = str else {
+            return 300
+        }
+        if string.trimmingCharacters(in: CharacterSet.whitespaces).count == 0 {
+            return 300
+        }
+        return 0
+    }
+    
+    class func isFloorSelected(str: String?) -> Int {
+        
+        guard let string = str else {
+            return 301
+        }
+        if string.trimmingCharacters(in: CharacterSet.whitespaces).count == 0 {
+            return 301
+        }
+        return 0
+    }
+    
+    class func isFlatSelected(str: String?) -> Int {
+        
+        guard let string = str else {
+            return 302
+        }
+        if string.trimmingCharacters(in: CharacterSet.whitespaces).count == 0 {
+            return 302
+        }
+        return 0
+    }
+    
+    class func isPurposeSelected(str: String?) -> Int {
+        
+        guard let string = str else {
+            return 303
+        }
+        if string.trimmingCharacters(in: CharacterSet.whitespaces).count == 0 {
+            return 303
         }
         return 0
     }
@@ -566,6 +613,8 @@ class PSValidator: NSObject {
         }
         return 0
     }
+    
+    
     class func textIsValidEmailFormat(_ email: String) -> Int {
       //  let stricterFilter: Bool = true
         let stricterFilterString: String = "[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}"

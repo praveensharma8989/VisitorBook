@@ -63,3 +63,19 @@ struct Flat: Codable {
     let id, flat, name, email: String
     let mobile, status: String
 }
+
+struct PurposeData: Codable {
+    let code: Int
+    let error: Bool
+    let msg: String
+    let purpose: [Purpose]
+    
+    enum CodingKeys: String, CodingKey {
+        case code, error, msg
+        case purpose = "Purpose"
+    }
+}
+
+struct Purpose: Codable {
+    let id, purpose, status: String
+}

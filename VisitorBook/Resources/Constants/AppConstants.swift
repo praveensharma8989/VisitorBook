@@ -25,7 +25,8 @@ enum CARequestApiName:String {
     AllTower                = "AllTower.php",
     AllFloor                = "AllFloor.php",
     AllFlat                 = "AllFlat.php",
-    AllPurpose              = "AllPurpose.php"
+    AllPurpose              = "AllPurpose.php",
+    UpdateVisitor           = "updatevisitor.php"
     
 }
 

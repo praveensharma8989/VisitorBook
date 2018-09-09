@@ -42,11 +42,12 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
     
     var gateKeeperData : VisitorUsers?
     var newVisitorData : NewVisitorData?
+    var newId : String?
     
     var towerData : TowerData?
     var floorData : FloorData?
     var flateData : FlateData?
-//    var towerData : pu?
+    var purposeData : PurposeData?
     
     var PickerType : pickerType!
     
@@ -130,14 +131,48 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
     
     @IBAction func purposeButton_press(_ sender: Any) {
         
-//        self.PickerType = .purpose
-//        pickerView.reloadAllComponents()
-//        pickerView.isHidden = false
-//        toolbarView.isHidden = false
+        guard purposeData != nil else{
+            showAlertMessage(titleStr: "Error", messageStr: "No flat!")
+            return
+        }
+        self.PickerType = .purpose
+        pickerView.reloadAllComponents()
+        pickerView.selectRow(purposeIndex, inComponent: 0, animated: false)
+        pickerView.isHidden = false
+        toolbarView.isHidden = false
     }
 
     @IBAction func submitButton_press(_ sender: Any) {
         
+        let code = validate()
+        
+        if(code != 0){
+            
+            print(code)
+            let str:String = PSValidator.message(forCode: code)
+            self.showAlertMessage(titleStr: "Error", messageStr: str)
+        }
+        else{
+            callUpdateVisitor()
+        }
+        
+    }
+    
+    func validate()->Int{
+        
+        if (PSValidator.isTowerSelected(str: towerId)) != 0 {
+            return PSValidator.isTowerSelected(str: towerId)
+        }
+        if (PSValidator.isFloorSelected(str: floorId)) != 0 {
+            return PSValidator.isTowerSelected(str: floorId)
+        }
+        if (PSValidator.isFlatSelected(str: flateId)) != 0 {
+            return PSValidator.isTowerSelected(str: flateId)
+        }
+        if (PSValidator.isPurposeSelected(str: purposeText.text)) != 0 {
+            return PSValidator.isTowerSelected(str: purposeText.text)
+        }
+        return 0
     }
     
     func callTower(){
@@ -229,7 +264,7 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
         showLoader()
         
         let param : [String : Any] = [
-            "cid": (gateKeeperData?.cid)!
+            "id": (gateKeeperData?.cid)!
         ]
         
         PSServiceManager.CallAllPurpose(param: param) { (response, status, error) -> (Void) in
@@ -240,8 +275,39 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
                 
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
-//                self.flateData = try? jsonDecoder.decode(FlateData.self, from: jsonData!)
+                self.purposeData = try? jsonDecoder.decode(PurposeData.self, from: jsonData!)
                 
+                
+            }else{
+                self.showAlertMessage(titleStr: "Error", messageStr: error!)
+            }
+            
+        }
+        
+    }
+    
+    func callUpdateVisitor(){
+        
+        showLoader()
+        
+        let param : [String : Any] = [
+            "id": newId!,
+            "tower" : towerId!,
+            "floors" : floorId!,
+            "flats" : flateId!,
+            "meet_purpose" : (purposeText.text)!
+        ]
+        
+        PSServiceManager.CallUpdateVisitor(param: param) { (response, status, error) -> (Void) in
+            
+            self.dismissLoader()
+            
+            if(status){
+                
+//                let jsonData = try? JSONSerialization.data(withJSONObject: response!)
+//                let jsonDecoder = JSONDecoder()
+                
+                self.PopToRoot()
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
@@ -260,6 +326,8 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
             return (floorData?.floor.count)!
         case .flat:
             return (flateData?.flat.count)!
+        case .purpose:
+            return (purposeData?.purpose.count)!
         default:
             return 0
         }
@@ -278,6 +346,8 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
             return floorData?.floor[row].floor
         case .flat:
             return flateData?.flat[row].flat
+        case .purpose:
+            return purposeData?.purpose[row].purpose
         default:
             return ""
         }
@@ -299,6 +369,11 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
             flateText.text = flateData?.flat[row].flat
             flateId = flateData?.flat[row].id
             flateIndex = row
+            pickerView.resignFirstResponder()
+        case .purpose:
+            purposeText.text = purposeData?.purpose[row].purpose
+            purposeId = purposeData?.purpose[row].id
+            purposeIndex = row
             pickerView.resignFirstResponder()
         default:
             break
@@ -340,14 +415,19 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
             flateId = nil
             callFlat()
         case .flat:
-            
             if flateId == nil{
                 flateId = flateData?.flat[0].id
                 flateText.text = flateData?.flat[0].flat
                 flateIndex = 0
             }
             tempFlateId = flateId
-            callFlat()
+        case .purpose:
+            if purposeId == nil{
+                purposeId = purposeData?.purpose[0].id
+                purposeText.text = purposeData?.purpose[0].purpose
+                purposeIndex = 0
+            }
+            tempPurposeId = purposeId
         default:
             break
         }
@@ -367,6 +447,8 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
             floorId = tempFloorId
         case .flat:
             flateId = tempFlateId
+        case .purpose:
+            purposeId = tempPurposeId
         default:
             break
         }
