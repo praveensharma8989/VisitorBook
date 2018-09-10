@@ -95,6 +95,14 @@ class GateKeeperTabBatController: UITabBarController, UITabBarControllerDelegate
         print(" **** ERROR: Could not find the shadow view \(self.self) \(#function)")
     }
     
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        if tabBarController.selectedIndex == 0 || tabBarController.selectedIndex == 1{
+            AppDelegate.sharedInstance.gateKeeperSelectedIndex = tabBarController.selectedIndex
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -42,6 +42,8 @@
 		E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652342141A04400B61425 /* NewVisitorData.swift */; };
 		E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652362141A74600B61425 /* VerifyOTPViewController.swift */; };
 		E9D9BF00214282FE0004FB6E /* VisitorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */; };
+		E9FEF7062146A503006F72C8 /* PendingVisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FEF7042146A503006F72C8 /* PendingVisitTableViewCell.swift */; };
+		E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FEF7052146A503006F72C8 /* PendingVisitTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		E9D652342141A04400B61425 /* NewVisitorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitorData.swift; sourceTree = "<group>"; };
 		E9D652362141A74600B61425 /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
 		E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorDetailsViewController.swift; sourceTree = "<group>"; };
+		E9FEF7042146A503006F72C8 /* PendingVisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitTableViewCell.swift; sourceTree = "<group>"; };
+		E9FEF7052146A503006F72C8 /* PendingVisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingVisitTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +152,7 @@
 				79FE29D9213DC70400CE95CE /* Helper */,
 				79B49A8D213F12240010952B /* CustomView */,
 				79FE29DA213DC70400CE95CE /* Resources */,
-				79FE29DB213DC70400CE95CE /* Screens */,
+				E9FEF7022146A4CC006F72C8 /* Screens */,
 				79FE29BE213DAD9500CE95CE /* Applications */,
 			);
 			path = VisitorBook;
@@ -185,13 +189,6 @@
 				79B49A8B213F11090010952B /* AllPageViewController.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		79FE29DB213DC70400CE95CE /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		79FE29DC213DC70400CE95CE /* Controllers */ = {
@@ -285,6 +282,23 @@
 			path = GateKeeper;
 			sourceTree = "<group>";
 		};
+		E9FEF7022146A4CC006F72C8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E9FEF7032146A4CC006F72C8 /* PendingVisitCell */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E9FEF7032146A4CC006F72C8 /* PendingVisitCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9FEF7042146A503006F72C8 /* PendingVisitTableViewCell.swift */,
+				E9FEF7052146A503006F72C8 /* PendingVisitTableViewCell.xib */,
+			);
+			path = PendingVisitCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,6 +365,7 @@
 				E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */,
 				79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */,
 				79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */,
+				E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +462,7 @@
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
+				E9FEF7062146A503006F72C8 /* PendingVisitTableViewCell.swift in Sources */,
 				E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */,
 				E98C4A59213FEF92006202FA /* UIFont+PS.swift in Sources */,
 				E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */,

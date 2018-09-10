@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let sharedInstance =  UIApplication.shared.delegate as! AppDelegate
     var window: UIWindow?
     var currentView: UIViewController?
+    var gateKeeperSelectedIndex : Int = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
