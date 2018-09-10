@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VisitorDetailsViewController: UIViewController {
+class VisitorDetailsViewController: AllPageViewController, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var vahicleText: DesignableUITextField!
@@ -21,8 +21,10 @@ class VisitorDetailsViewController: UIViewController {
     var oldVisitorData : NewVisitorData?
     var gateKeeperData : VisitorUsers?
     
-    var isImage : Bool = false
+    var newId : String?
     
+    var isImage : Bool = false
+    let imagePickerView = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,8 @@ class VisitorDetailsViewController: UIViewController {
 
     func initilize(){
         
+        setBackBarButton(buttonType: .Home)
+        imagePickerView.delegate = self
         if oldVisitorData?.msg == "Old Visitor"{
             userImage.set_sdWebImage(With: (oldVisitorData?.photo)!, placeHolderImage: "CameraImage")
             mobileText.isHidden = false
@@ -94,13 +98,14 @@ class VisitorDetailsViewController: UIViewController {
         var param : [String : Any]
         
         param = [
-            "cid": oldVisitorData?.id,
-            "name": nameText.text,
-            "mobile": oldVisitorData?.photo,
-            "email": emailText.text,
-            "vehicle" : vahicleText.text,
-            "address" : addressText.text,
-            "empid" : gateKeeperData?.id
+            "cid": (gateKeeperData?.cid)!,
+            "name": (nameText.text)!,
+            "mobile": (oldVisitorData?.mobile)!,
+            "email": (emailText.text)!,
+            "vehicle" : (vahicleText.text)!,
+            "address" : (addressText.text)!,
+            "empid" : (gateKeeperData?.id)!,
+            "company" : (companytext.text)!
         ]
         
         PSServiceManager.newVisitor(param: param, imageData: UIImagePNGRepresentation(userImage.image!)!) { (response, status, error) -> (Void) in
@@ -111,7 +116,8 @@ class VisitorDetailsViewController: UIViewController {
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
 //                self.userData = try? jsonDecoder.decode(VisitorUsers.self, from: jsonData!)
-
+                self.newId = (response?["id"])! as? String
+                self.MoveToTowerAndPurposeScreen()
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
@@ -120,6 +126,52 @@ class VisitorDetailsViewController: UIViewController {
         }
         
     }
+    
+    func MoveToTowerAndPurposeScreen(){
+        
+        let TowerAndPurposeVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectTowerAndPusposeViewController") as! SelectTowerAndPusposeViewController
+        TowerAndPurposeVC.newVisitorData = oldVisitorData
+        TowerAndPurposeVC.newId = newId
+        TowerAndPurposeVC.gateKeeperData = gateKeeperData
+        Push(controller: TowerAndPurposeVC)
+        
+    }
+    
+    
+    @IBAction func imageButton_press(_ sender: Any) {
+        
+        imagePickerView.allowsEditing = false
+        let actionsheet = UIAlertController(title: "Photo Source", message: "Choose A Sourece", preferredStyle: .actionSheet)
+        actionsheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction)in
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                self.imagePickerView.sourceType = .camera
+                self.present(self.imagePickerView, animated: true, completion: nil)
+            }else
+            {
+                print("Camera is Not Available")
+            }
+        }))
+        actionsheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction)in
+            self.imagePickerView.sourceType = .photoLibrary
+            self.present(self.imagePickerView, animated: true, completion: nil)
+        }))
+        actionsheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionsheet,animated: true, completion: nil)
+        
+//        present(imagePickerView, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        userImage.image = image.resized(toWidth: 200)
+        isImage = true
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated:  true, completion: nil)
+    }
+
     
     /*
     // MARK: - Navigation
@@ -131,4 +183,22 @@ class VisitorDetailsViewController: UIViewController {
     }
     */
 
+}
+
+extension UIImage {
+    
+    func resized(withPercentage percentage: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    func resized(toWidth width: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }

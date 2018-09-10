@@ -22,14 +22,15 @@ class CommanFunction: NSObject {
         
         let value : Any = data
         
+        
         UserDefaults.standard.set(value, forKey: AppConstants.k_gateKeeperUser)
         UserDefaults.standard.synchronize()
         
     }
     
     func getUserDataGateKeeper()-> VisitorUsers?{
-        
-        let value = UserDefaults.standard.array(forKey: AppConstants.k_gateKeeperUser)
+        let value = UserDefaults.standard.object(forKey: AppConstants.k_gateKeeperUser)
+//        let value = UserDefaults.standard.array(forKey: AppConstants.k_gateKeeperUser)
         
         if value != nil{
             let jsonData = try? JSONSerialization.data(withJSONObject: value!)

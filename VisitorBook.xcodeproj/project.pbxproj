@@ -10,6 +10,8 @@
 		6DC17AAD6958D0958BB14C71 /* Pods_VisitorBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C232C6E640FBD6DCE8A93376 /* Pods_VisitorBook.framework */; };
 		79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A8B213F11090010952B /* AllPageViewController.swift */; };
 		79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A8F213F12610010952B /* UIViewController+PS.swift */; };
+		79B49A922143B9760010952B /* SelectTowerAndPusposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */; };
+		79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A93214411CB0010952B /* TowerPurposeData.swift */; };
 		79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */; };
 		79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29BF213DAD9500CE95CE /* VisitorBook.xcdatamodeld */; };
 		79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C2213DAD9500CE95CE /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		40360B1922E8AAD2C2BA88F6 /* Pods-VisitorBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitorBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook.debug.xcconfig"; sourceTree = "<group>"; };
 		79B49A8B213F11090010952B /* AllPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPageViewController.swift; sourceTree = "<group>"; };
 		79B49A8F213F12610010952B /* UIViewController+PS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PS.swift"; sourceTree = "<group>"; };
+		79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTowerAndPusposeViewController.swift; sourceTree = "<group>"; };
+		79B49A93214411CB0010952B /* TowerPurposeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerPurposeData.swift; sourceTree = "<group>"; };
 		79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		79FE29A4213DABAB00CE95CE /* VisitorBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitorBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FE29C0213DAD9500CE95CE /* VisitorBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VisitorBook.xcdatamodel; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 			children = (
 				E98C4A7121402982006202FA /* VisitorUsers.swift */,
 				E9D652342141A04400B61425 /* NewVisitorData.swift */,
+				79B49A93214411CB0010952B /* TowerPurposeData.swift */,
 			);
 			path = VisitorUsers;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				E9D652362141A74600B61425 /* VerifyOTPViewController.swift */,
 				E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */,
 				E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */,
+				79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */,
 			);
 			path = GateKeeper;
 			sourceTree = "<group>";
@@ -450,11 +456,13 @@
 				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
 				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
 				E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */,
+				79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */,
 				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
 				E98C4A60213FF084006202FA /* PSValidator.swift in Sources */,
 				E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */,
 				E98C4A5A213FEF92006202FA /* NSString+PS.swift in Sources */,
 				E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */,
+				79B49A922143B9760010952B /* SelectTowerAndPusposeViewController.swift in Sources */,
 				79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */,
 				E98C4A5B213FEF92006202FA /* UIButton+PS.swift in Sources */,
 				E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */,

@@ -13,6 +13,13 @@ enum BarButtonPosition : Int {
     case BarButtonPositionRight
 }
 
+public enum  BackButtonType : Int {
+    
+    case Defauld,
+    Home
+    
+}
+
 enum BarButtonType : Int {
     case RightDot = 0
     
@@ -40,19 +47,36 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         // Dispose of any resources that can be recreated.
     }
     
-    func setBackBarButton() {
+    func setBackBarButton(buttonType : BackButtonType) {
         
         let btn = UIButton(type: .custom)
         btn.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
-        btn.addTarget(self, action: #selector(BackButtonClicked), for: .touchUpInside)
-       
-        btn.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
+        
+        switch buttonType {
+        case .Defauld:
+            
+            btn.addTarget(self, action: #selector(BackButtonClicked), for: .touchUpInside)
+            btn.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
+            
+        case .Home:
+            
+            btn.addTarget(self, action: #selector(HomeButtonClicked), for: .touchUpInside)
+            btn.setImage(#imageLiteral(resourceName: "homeIcon"), for: .normal)
+            
+        default:
+            break
+        }
+        
         
         self.navigationItem.setLeftBarButton(UIBarButtonItem(customView: btn), animated: true)
     }
     
     @objc func BackButtonClicked() {
         PopBack()
+    }
+    
+    @objc func HomeButtonClicked() {
+        PopToRoot()
     }
 
     // MARK:- Set BarButton Item Button With Image

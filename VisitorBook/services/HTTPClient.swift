@@ -245,7 +245,11 @@ class HTTPClient : NSObject{
             // Adding ImageData
             if imageData != nil
             {
-                multipartFormData.append(imageData!, withName: imageName ?? "image", fileName: "image.jpg", mimeType: "image/jpeg")
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "ddMMyyyyhhmmss"
+                
+                multipartFormData.append(imageData!, withName: imageName ?? "image", fileName: formatter.string(from: date), mimeType: "image/jpeg")
             }
             
             // Adding Param Dictionary
