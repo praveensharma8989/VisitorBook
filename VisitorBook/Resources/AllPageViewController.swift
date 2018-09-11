@@ -21,7 +21,8 @@ public enum  BackButtonType : Int {
 }
 
 enum BarButtonType : Int {
-    case RightDot = 0
+    case RightDot = 0,
+    TabbarBack
     
 }
 
@@ -78,6 +79,10 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
     @objc func HomeButtonClicked() {
         PopToRoot()
     }
+    
+    @objc func BackToSelectedIndex() {
+        self.tabBarController?.selectedIndex = AppDelegate.sharedInstance.gateKeeperSelectedIndex
+    }
 
     // MARK:- Set BarButton Item Button With Image
     func setBarButtonItem(withButtonImage: UIImage, withPosition: BarButtonType, needAdjustMent: Bool)
@@ -110,6 +115,34 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
             btn1.addTarget(self, action: #selector(rightNavigationButton), for: .touchUpInside)
             self.navigationItem.setRightBarButton(UIBarButtonItem(customView: view), animated: true)
             
+            break
+            
+        case .TabbarBack:
+            
+            var imageView = UIImageView.init(frame: CGRect.init(x: 8, y: 1, width: 25, height: 30))
+            
+            if #available(iOS 11.0, *) {
+                imageView = UIImageView.init(frame: CGRect.init(x: 8, y: -1, width: 25, height: 30))
+            }
+            
+            imageView.image = withButtonImage
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = true
+            let view = UIView.init(frame: CGRect.init(x: 0, y: 5, width: 35, height: 36))
+            
+            let btn1 = UIButton(type: .custom)
+            btn1.frame = view.frame
+            
+            view.addSubview(imageView)
+            view.addSubview(btn1)
+            
+            self.navigationItem.leftBarButtonItem = nil
+            btn1.addTarget(self, action: #selector(BackToSelectedIndex), for: .touchUpInside)
+            let barItem = UIBarButtonItem(customView: view)
+            self.navigationController?.navigationBar.topItem?.leftBarButtonItem = barItem
+//            self.navigationController?.navigationBar.addSubview(view)
+//            self.navigationController?.navigationItem.setLeftBarButton(UIBarButtonItem(customView: view), animated: true)
+//            self.navigationController?.navigationBar.setItems([self.navigationItem], animated: false)
             break
             
         default:

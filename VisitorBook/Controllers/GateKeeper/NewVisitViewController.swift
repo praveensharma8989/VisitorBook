@@ -57,7 +57,7 @@ class NewVisitViewController: AllPageViewController {
         
         var param : [String : Any] = [
                 "mobile": visitorPhoneNumer.text!,
-                "empid": gateKeeperData?.id
+                "empid": (gateKeeperData?.id)!
             ]
         
         

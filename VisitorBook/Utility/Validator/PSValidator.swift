@@ -135,7 +135,11 @@ class PSValidator: NSObject {
             break;
             
         case 1000:
-            result = "pin mismatch. Please check.";
+            result = "Enter Vehicle Number.";
+            break;
+            
+        case 1001:
+            result = "Vehicle Number should be 8-10 alphanumeric characters.";
             break;
             
         case 1020:
@@ -536,6 +540,21 @@ class PSValidator: NSObject {
 
         if password1 != password2 {
             return 1000
+        }
+        return 0
+    }
+    
+    class func validateVehicleNumber(_ Key: String?) -> Int {
+        guard let key = Key else {
+            return 1000
+        }
+        
+        if key.count == 0{
+            return 1000
+        }
+        
+        if key.count < 8 ||  key.count > 10 {
+            return 1001
         }
         return 0
     }

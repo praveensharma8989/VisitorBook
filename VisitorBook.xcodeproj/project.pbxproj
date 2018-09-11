@@ -23,6 +23,15 @@
 		79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */; };
 		79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */; };
 		E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */; };
+		E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */; };
+		E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E21222146D69800135CDA /* PendingVisitData.swift */; };
+		E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212421479A5300135CDA /* ExitCodeViewController.swift */; };
+		E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */; };
+		E97E212A21479CB300135CDA /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212921479CB300135CDA /* UserDetailView.swift */; };
+		E97E212C21479CD600135CDA /* UserDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E212B21479CD600135CDA /* UserDetailView.xib */; };
+		E97E212E2147A2AD00135CDA /* VehicleDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */; };
+		E97E21302147A2BE00135CDA /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */; };
+		E97E2137214803FD00135CDA /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E2136214803FD00135CDA /* VehicleData.swift */; };
 		E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4B213FEE90006202FA /* HTTPClient.swift */; };
 		E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4F213FEF92006202FA /* UIImage+PS.swift */; };
 		E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A50213FEF92006202FA /* UIView+PS.swift */; };
@@ -68,6 +77,15 @@
 		79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		C232C6E640FBD6DCE8A93376 /* Pods_VisitorBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitorBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldVisitorConfirmScreenViewController.swift; sourceTree = "<group>"; };
+		E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitViewController.swift; sourceTree = "<group>"; };
+		E97E21222146D69800135CDA /* PendingVisitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitData.swift; sourceTree = "<group>"; };
+		E97E212421479A5300135CDA /* ExitCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCodeViewController.swift; sourceTree = "<group>"; };
+		E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVehicleViewController.swift; sourceTree = "<group>"; };
+		E97E212921479CB300135CDA /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		E97E212B21479CD600135CDA /* UserDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailView.xib; sourceTree = "<group>"; };
+		E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleDetailView.xib; sourceTree = "<group>"; };
+		E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
+		E97E2136214803FD00135CDA /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
 		E98C4A4B213FEE90006202FA /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		E98C4A4F213FEF92006202FA /* UIImage+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PS.swift"; sourceTree = "<group>"; };
 		E98C4A50213FEF92006202FA /* UIView+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PS.swift"; sourceTree = "<group>"; };
@@ -224,6 +242,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E97E212821479C6200135CDA /* UserDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				E97E212921479CB300135CDA /* UserDetailView.swift */,
+				E97E212B21479CD600135CDA /* UserDetailView.xib */,
+				E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */,
+				E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */,
+			);
+			path = UserDetailView;
+			sourceTree = "<group>";
+		};
 		E98C4A4A213FEE90006202FA /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +300,8 @@
 				E98C4A7121402982006202FA /* VisitorUsers.swift */,
 				E9D652342141A04400B61425 /* NewVisitorData.swift */,
 				79B49A93214411CB0010952B /* TowerPurposeData.swift */,
+				E97E21222146D69800135CDA /* PendingVisitData.swift */,
+				E97E2136214803FD00135CDA /* VehicleData.swift */,
 			);
 			path = VisitorUsers;
 			sourceTree = "<group>";
@@ -284,6 +315,9 @@
 				E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */,
 				E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */,
 				79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */,
+				E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */,
+				E97E212421479A5300135CDA /* ExitCodeViewController.swift */,
+				E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */,
 			);
 			path = GateKeeper;
 			sourceTree = "<group>";
@@ -291,6 +325,7 @@
 		E9FEF7022146A4CC006F72C8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E97E212821479C6200135CDA /* UserDetailView */,
 				E9FEF7032146A4CC006F72C8 /* PendingVisitCell */,
 			);
 			path = Screens;
@@ -369,6 +404,8 @@
 				79FE29D4213DAD9500CE95CE /* Info.plist in Resources */,
 				79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */,
 				E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */,
+				E97E212C21479CD600135CDA /* UserDetailView.xib in Resources */,
+				E97E212E2147A2AD00135CDA /* VehicleDetailView.xib in Resources */,
 				79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */,
 				79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */,
 				E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */,
@@ -453,11 +490,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */,
 				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
+				E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */,
 				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
 				E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */,
 				79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */,
+				E97E21302147A2BE00135CDA /* VehicleDetailView.swift in Sources */,
 				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
+				E97E2137214803FD00135CDA /* VehicleData.swift in Sources */,
 				E98C4A60213FF084006202FA /* PSValidator.swift in Sources */,
 				E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */,
 				E98C4A5A213FEF92006202FA /* NSString+PS.swift in Sources */,
@@ -467,15 +508,18 @@
 				E98C4A5B213FEF92006202FA /* UIButton+PS.swift in Sources */,
 				E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
+				E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
+				E97E212A21479CB300135CDA /* UserDetailView.swift in Sources */,
 				E9FEF7062146A503006F72C8 /* PendingVisitTableViewCell.swift in Sources */,
 				E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */,
 				E98C4A59213FEF92006202FA /* UIFont+PS.swift in Sources */,
 				E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */,
 				E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */,
 				E98C4A58213FEF92006202FA /* UIColor+PS.swift in Sources */,
+				E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
 				E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */,
