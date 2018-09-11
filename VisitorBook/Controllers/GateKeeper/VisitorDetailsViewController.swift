@@ -67,6 +67,12 @@ class VisitorDetailsViewController: AllPageViewController, UIImagePickerControll
         {
             return PSValidator.validateEmail(Email : emailText.text)
         }
+        
+        if (PSValidator.validateVehicleNumber(emailText.text) != 0 || PSValidator.validateVehicleNumber(emailText.text) != 1000)
+        {
+            return PSValidator.validateEmail(Email : emailText.text)
+        }
+        
         return 0
     }
     

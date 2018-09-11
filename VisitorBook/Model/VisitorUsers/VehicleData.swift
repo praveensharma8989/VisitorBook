@@ -21,11 +21,11 @@ struct VehicleData: Codable {
 }
 
 struct Complain: Codable {
-    let id, name, email, mobile: String
-    let company, address, meetPurpose, vehicle: String
-    let visitDate, inTime, status, tower: String
-    let floor, flats: String
-    let photo: String
+    let id, name, email, mobile: String?
+    let company, address, meetPurpose, vehicle: String?
+    let visitDate, inTime, status, tower: String?
+    let floor, flats: String?
+    let photo: String?
 
     
     enum CodingKeys: String, CodingKey {

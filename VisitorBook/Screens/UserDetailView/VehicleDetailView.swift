@@ -9,11 +9,13 @@
 import UIKit
 
 typealias VehicleCancel =  () -> (Void)
+typealias CallButton =  () -> (Void)
 
 class VehicleDetailView: UIView {
 
     @IBOutlet var contentView: UIView!
     var vehicleCancel : VehicleCancel? = nil
+    var callButton : CallButton? = nil
     var vehicleData : Complain?
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -23,7 +25,13 @@ class VehicleDetailView: UIView {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var purposeLabel: UILabel!
     @IBOutlet weak var mobileLabel: UILabel!
+    
+    
     @IBAction func mobileButton_press(_ sender: Any) {
+        
+        if callButton != nil{
+            callButton!()
+        }
     }
     @IBAction func cencelButton_press(_ sender: Any) {
         if vehicleCancel != nil{

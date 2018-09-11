@@ -32,6 +32,19 @@ class EnterVehicleViewController: AllPageViewController {
             self.vehicleDetailView.isHidden = true
             
         }
+        
+        vehicleDetailView.callButton = {() in
+            
+            if let phoneCallURL = URL(string: "tel://\((self.vehicleData?.complain[0].mobile)!)") {
+                
+                let application:UIApplication = UIApplication.shared
+                if (application.canOpenURL(phoneCallURL)) {
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                }
+            }
+            
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,8 +95,6 @@ class EnterVehicleViewController: AllPageViewController {
         let param : [String : Any]  = [
                 "data": enterVehicleText.text!
             ]
-        
-        
         
         PSServiceManager.CallSearchVisitor(param: param) { (response, status, error) -> (Void) in
             
