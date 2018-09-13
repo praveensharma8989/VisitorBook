@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DotViewMenu" customModule="VisitorBook" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="adc-Fz-xvf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="AnA-FN-WQz">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X5-Uc-Dgt">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                            <state key="normal" title="Daily SOS">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="dailySOSButton_press:" destination="-1" eventType="touchUpInside" id="keq-7b-gQT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-o4-VTl">
+                            <rect key="frame" x="0.0" y="50" width="150" height="50"/>
+                            <state key="normal" title="Change Password">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="changePasswordButton_press:" destination="-1" eventType="touchUpInside" id="RR0-5r-7Zv"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIb-NP-TnR">
+                            <rect key="frame" x="0.0" y="100" width="150" height="50"/>
+                            <state key="normal" title="Logout">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="logoutButton_press:" destination="-1" eventType="touchUpInside" id="wkw-lz-xIW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="0X5-Uc-Dgt" secondAttribute="trailing" id="3Dg-vY-xVt"/>
+                        <constraint firstItem="aIb-NP-TnR" firstAttribute="width" secondItem="0X5-Uc-Dgt" secondAttribute="width" id="SuE-Im-Duw"/>
+                        <constraint firstItem="RMc-o4-VTl" firstAttribute="width" secondItem="0X5-Uc-Dgt" secondAttribute="width" id="c9N-gK-0kg"/>
+                        <constraint firstItem="0X5-Uc-Dgt" firstAttribute="leading" secondItem="AnA-FN-WQz" secondAttribute="leading" id="iLY-KT-CrF"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AnA-FN-WQz" secondAttribute="trailing" id="0w2-lR-iQ3"/>
+                <constraint firstItem="AnA-FN-WQz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="beU-W2-9aa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="AnA-FN-WQz" secondAttribute="bottom" id="gbv-Bd-lyq"/>
+                <constraint firstItem="AnA-FN-WQz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="yvu-Eq-ZgR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

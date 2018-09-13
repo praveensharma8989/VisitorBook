@@ -101,7 +101,21 @@ class GateKeeperTabBatController: UITabBarController, UITabBarControllerDelegate
             AppDelegate.sharedInstance.gateKeeperSelectedIndex = tabBarController.selectedIndex
         }
         
+        if tabBarController.selectedIndex == 1{
+            
+            let item : UITabBarItem = tabBarController.tabBar.items![2]
+            item.image = #imageLiteral(resourceName: "CenterRedIcon")
+            
+        }else{
+            
+            let item : UITabBarItem = tabBarController.tabBar.items![2]
+            item.image = #imageLiteral(resourceName: "CenterTabIcon")
+            
+        }
+        
     }
+    
+    
     
     /*
     // MARK: - Navigation

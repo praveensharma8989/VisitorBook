@@ -37,6 +37,8 @@ public enum  navigationType : Int {
 
 public class AllPageViewController: UIViewController, UINavigationControllerDelegate {
 
+    var viewDot : DotViewMenu?
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +49,42 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func createDotView(){
+        viewDot = DotViewMenu.init(frame: CGRect(x: (self.view.frame.width - 170), y: 50, width: 150, height: 150))
+        
+        viewDot?.dailySOS = {() in
+            self.sosButtonPress()
+        }
+        viewDot?.passwordChange = {() in
+            self.changePasswordButtonPress()
+        }
+        viewDot?.logout = {() in
+            self.logoutButtonPress()
+        }
+        
+    }
+    
+    @objc func sosButtonPress() {
+        viewDot?.isHidden = true
+        let dailySOSVC = self.storyboard?.instantiateViewController(withIdentifier: "DailySOSViewController") as! DailySOSViewController
+        
+        Push(controller: dailySOSVC)
+    }
+    
+    @objc func changePasswordButtonPress() {
+        viewDot?.isHidden = true
+        let changePassword = self.storyboard?.instantiateViewController(withIdentifier: "PasswordChangeViewController") as! PasswordChangeViewController
+        
+        Push(controller: changePassword)
+    }
+    
+    @objc func logoutButtonPress() {
+        
+        viewDot?.isHidden = true
+        
+    }
+    
     
     func setBackBarButton(buttonType : BackButtonType) {
         
@@ -62,7 +100,7 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         case .Home:
             
             btn.addTarget(self, action: #selector(HomeButtonClicked), for: .touchUpInside)
-            btn.setImage(#imageLiteral(resourceName: "homeIcon"), for: .normal)
+            btn.setImage(#imageLiteral(resourceName: "homeIcon"), for: .normal) 
             
         default:
             break
@@ -81,7 +119,14 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
     }
     
     @objc func BackToSelectedIndex() {
+        
+        
+        if AppDelegate.sharedInstance.gateKeeperSelectedIndex == 1{
+            let item : UITabBarItem = tabBarController!.tabBar.items![2]
+            item.image = #imageLiteral(resourceName: "CenterRedIcon")
+        }
         self.tabBarController?.selectedIndex = AppDelegate.sharedInstance.gateKeeperSelectedIndex
+        
     }
 
     // MARK:- Set BarButton Item Button With Image
@@ -94,7 +139,7 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         switch withPosition {
         case .RightDot:
             
-            var imageView = UIImageView.init(frame: CGRect.init(x: 8, y: 1, width: 25, height: 30))
+            var imageView = UIImageView.init(frame: CGRect.init(x: 8, y: 0, width: 25, height: 30))
             
             if #available(iOS 11.0, *) {
                 imageView = UIImageView.init(frame: CGRect.init(x: 8, y: -1, width: 25, height: 30))
@@ -110,11 +155,15 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
             
             view.addSubview(imageView)
             view.addSubview(btn1)
+            createDotView()
+            UIApplication.shared.keyWindow?.addSubview(viewDot!)
+
+            viewDot?.isHidden = true
             
             self.navigationItem.rightBarButtonItem = nil
             btn1.addTarget(self, action: #selector(rightNavigationButton), for: .touchUpInside)
-            self.navigationItem.setRightBarButton(UIBarButtonItem(customView: view), animated: true)
-            
+            let barItem = UIBarButtonItem(customView: view)
+            self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barItem
             break
             
         case .TabbarBack:
@@ -137,6 +186,7 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
             view.addSubview(btn1)
             
             self.navigationItem.leftBarButtonItem = nil
+            self.navigationController?.navigationBar.topItem?.rightBarButtonItem = nil
             btn1.addTarget(self, action: #selector(BackToSelectedIndex), for: .touchUpInside)
             let barItem = UIBarButtonItem(customView: view)
             self.navigationController?.navigationBar.topItem?.leftBarButtonItem = barItem
@@ -154,7 +204,11 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
     
     @objc func rightNavigationButton() {
         
-        
+        if (viewDot?.isHidden)!{
+            viewDot?.isHidden = false
+        }else{
+            viewDot?.isHidden = true
+        }
         
     }
     

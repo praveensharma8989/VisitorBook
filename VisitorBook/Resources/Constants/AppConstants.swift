@@ -29,7 +29,8 @@ enum CARequestApiName:String {
     UpdateVisitor           = "updatevisitor.php",
     PendingVisit            = "PendingVisit.php",
     ResentVisitReq          = "ResentVisitReq.php",
-    SearchVisitor           = "SearchVisitor.php"
+    SearchVisitor           = "SearchVisitor.php",
+    ChangePassword          = "ChangePassword.php"
     
 }
 

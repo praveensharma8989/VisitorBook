@@ -15,6 +15,7 @@ enum PendingType : Int {
 
 class PendingVisitViewController: AllPageViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var noRecordFoundView: UIView!
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var userView: UserDetailView!
     @IBOutlet weak var allButton: UIButton!
@@ -172,7 +173,7 @@ class PendingVisitViewController: AllPageViewController, UITableViewDelegate, UI
             self.dismissLoader()
             
             if(status){
-                
+                self.noRecordFoundView.isHidden = true
                 do{
                     let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                     let jsonDecoder = JSONDecoder()
@@ -189,6 +190,7 @@ class PendingVisitViewController: AllPageViewController, UITableViewDelegate, UI
                 
                 
             }else{
+                self.noRecordFoundView.isHidden = false
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
             }
         }

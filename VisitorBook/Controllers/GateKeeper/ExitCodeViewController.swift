@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExitCodeViewController: UIViewController {
+class ExitCodeViewController: AllPageViewController {
 
     @IBOutlet weak var exitCodeText: DesignableUITextField!
     override func viewDidLoad() {
@@ -21,8 +21,35 @@ class ExitCodeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setBarButtonItem(withButtonImage: #imageLiteral(resourceName: "ThreeDotIcon"), withPosition: .RightDot, needAdjustMent: true)
+    }
 
     @IBAction func SubmitButton_press(_ sender: Any) {
+    }
+    
+    func ExitCodeApi(){
+        showLoader()
+        
+        let param : [String : Any] = [
+        "" : exitCodeText.text!
+        ]
+        
+        PSServiceManager.CallResentVisitReq(param: param) { (response, status, error) -> (Void) in
+            self.dismissLoader()
+            
+            if status{
+                self.showAlertMessage(titleStr: "Success", messageStr: response!["msg"] as! String)
+                self.exitCodeText.text = ""
+                self.tabBarController?.selectedIndex = 0
+            }else{
+                self.showAlertMessage(titleStr: "Error", messageStr: error!)
+            }
+            
+        }
+        
     }
     
     /*

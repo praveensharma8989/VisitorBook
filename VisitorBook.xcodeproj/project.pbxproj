@@ -47,6 +47,14 @@
 		E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7121402982006202FA /* VisitorUsers.swift */; };
 		E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7321403ADC006202FA /* RegisterViewController.swift */; };
 		E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */; };
+		E9929C83214AD4570034550F /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9929C82214AD4570034550F /* PasswordChangeViewController.swift */; };
+		E9929C85214ADA7E0034550F /* DailySOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9929C84214ADA7E0034550F /* DailySOSViewController.swift */; };
+		E9929C8A214ADC510034550F /* DotViewMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9929C88214ADC510034550F /* DotViewMenu.xib */; };
+		E9929C8B214ADC510034550F /* DotViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9929C89214ADC510034550F /* DotViewMenu.swift */; };
+		E9929C8F214ADCB40034550F /* DailySOSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9929C8D214ADCB40034550F /* DailySOSTableViewCell.swift */; };
+		E9929C90214ADCB40034550F /* DailySOSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9929C8E214ADCB40034550F /* DailySOSTableViewCell.xib */; };
+		E9929C92214AE6740034550F /* DailySOSImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9929C91214AE6740034550F /* DailySOSImageView.xib */; };
+		E9929C94214AE6C50034550F /* DailySOSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9929C93214AE6C50034550F /* DailySOSImageView.swift */; };
 		E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D6522121413A5700B61425 /* GateKeeper.storyboard */; };
 		E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */; };
 		E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D6523221416D6700B61425 /* NewVisitViewController.swift */; };
@@ -101,6 +109,14 @@
 		E98C4A7121402982006202FA /* VisitorUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorUsers.swift; sourceTree = "<group>"; };
 		E98C4A7321403ADC006202FA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		E9929C82214AD4570034550F /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
+		E9929C84214ADA7E0034550F /* DailySOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySOSViewController.swift; sourceTree = "<group>"; };
+		E9929C88214ADC510034550F /* DotViewMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DotViewMenu.xib; sourceTree = "<group>"; };
+		E9929C89214ADC510034550F /* DotViewMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotViewMenu.swift; sourceTree = "<group>"; };
+		E9929C8D214ADCB40034550F /* DailySOSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySOSTableViewCell.swift; sourceTree = "<group>"; };
+		E9929C8E214ADCB40034550F /* DailySOSTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailySOSTableViewCell.xib; sourceTree = "<group>"; };
+		E9929C91214AE6740034550F /* DailySOSImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailySOSImageView.xib; sourceTree = "<group>"; };
+		E9929C93214AE6C50034550F /* DailySOSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySOSImageView.swift; sourceTree = "<group>"; };
 		E9D6522121413A5700B61425 /* GateKeeper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GateKeeper.storyboard; sourceTree = "<group>"; };
 		E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateKeeperTabBatController.swift; sourceTree = "<group>"; };
 		E9D6523221416D6700B61425 /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +265,8 @@
 				E97E212B21479CD600135CDA /* UserDetailView.xib */,
 				E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */,
 				E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */,
+				E9929C93214AE6C50034550F /* DailySOSImageView.swift */,
+				E9929C91214AE6740034550F /* DailySOSImageView.xib */,
 			);
 			path = UserDetailView;
 			sourceTree = "<group>";
@@ -306,6 +324,24 @@
 			path = VisitorUsers;
 			sourceTree = "<group>";
 		};
+		E9929C87214ADC510034550F /* DotViewMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E9929C88214ADC510034550F /* DotViewMenu.xib */,
+				E9929C89214ADC510034550F /* DotViewMenu.swift */,
+			);
+			path = DotViewMenu;
+			sourceTree = "<group>";
+		};
+		E9929C8C214ADCA30034550F /* DailySOSCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9929C8D214ADCB40034550F /* DailySOSTableViewCell.swift */,
+				E9929C8E214ADCB40034550F /* DailySOSTableViewCell.xib */,
+			);
+			path = DailySOSCell;
+			sourceTree = "<group>";
+		};
 		E9D652232141440D00B61425 /* GateKeeper */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +354,8 @@
 				E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */,
 				E97E212421479A5300135CDA /* ExitCodeViewController.swift */,
 				E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */,
+				E9929C82214AD4570034550F /* PasswordChangeViewController.swift */,
+				E9929C84214ADA7E0034550F /* DailySOSViewController.swift */,
 			);
 			path = GateKeeper;
 			sourceTree = "<group>";
@@ -325,6 +363,8 @@
 		E9FEF7022146A4CC006F72C8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E9929C8C214ADCA30034550F /* DailySOSCell */,
+				E9929C87214ADC510034550F /* DotViewMenu */,
 				E97E212821479C6200135CDA /* UserDetailView */,
 				E9FEF7032146A4CC006F72C8 /* PendingVisitCell */,
 			);
@@ -402,10 +442,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				79FE29D4213DAD9500CE95CE /* Info.plist in Resources */,
+				E9929C90214ADCB40034550F /* DailySOSTableViewCell.xib in Resources */,
 				79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */,
 				E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */,
 				E97E212C21479CD600135CDA /* UserDetailView.xib in Resources */,
 				E97E212E2147A2AD00135CDA /* VehicleDetailView.xib in Resources */,
+				E9929C92214AE6740034550F /* DailySOSImageView.xib in Resources */,
+				E9929C8A214ADC510034550F /* DotViewMenu.xib in Resources */,
 				79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */,
 				79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */,
 				E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */,
@@ -493,11 +536,13 @@
 				E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */,
 				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
 				E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */,
+				E9929C85214ADA7E0034550F /* DailySOSViewController.swift in Sources */,
 				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
 				E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */,
 				79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */,
 				E97E21302147A2BE00135CDA /* VehicleDetailView.swift in Sources */,
 				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
+				E9929C8B214ADC510034550F /* DotViewMenu.swift in Sources */,
 				E97E2137214803FD00135CDA /* VehicleData.swift in Sources */,
 				E98C4A60213FF084006202FA /* PSValidator.swift in Sources */,
 				E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */,
@@ -509,6 +554,7 @@
 				E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
 				E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */,
+				E9929C8F214ADCB40034550F /* DailySOSTableViewCell.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
@@ -527,7 +573,9 @@
 				E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */,
 				E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */,
 				E98C4A5C213FEF92006202FA /* NSDate+PS.swift in Sources */,
+				E9929C94214AE6C50034550F /* DailySOSImageView.swift in Sources */,
 				E9D9BF00214282FE0004FB6E /* VisitorDetailsViewController.swift in Sources */,
+				E9929C83214AD4570034550F /* PasswordChangeViewController.swift in Sources */,
 				79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

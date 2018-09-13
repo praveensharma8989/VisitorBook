@@ -44,7 +44,10 @@ class PSValidator: NSObject {
             result = "Password Required";
             break;
         case 201:
-            result = "pin should be minimum 4 characters.";
+            result = "Old Password Required";
+            break;
+        case 202:
+            result = "New Password Required";
             break;
         case 203:
             result = "Confirm pin is blank.";
@@ -234,9 +237,35 @@ class PSValidator: NSObject {
         if (pass.count == 0){
             return 200
         }
-//        if pass.count < 4 {
-//            return 201
-//        }
+
+        return 0
+    }
+    
+    class func validateOldPassword(_ password: String?) -> Int {
+        
+        guard let pass = password else {
+            return 201
+        }
+        
+        
+        if (pass.count == 0){
+            return 201
+        }
+        
+        return 0
+    }
+    
+    class func validateNewPassword(_ password: String?) -> Int {
+        
+        guard let pass = password else {
+            return 202
+        }
+        
+        
+        if (pass.count == 0){
+            return 202
+        }
+        
         return 0
     }
     

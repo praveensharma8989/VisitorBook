@@ -25,6 +25,7 @@ class NewVisitViewController: AllPageViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         visitorPhoneNumer.text = ""
+        setBarButtonItem(withButtonImage: #imageLiteral(resourceName: "ThreeDotIcon"), withPosition: .RightDot, needAdjustMent: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +37,10 @@ class NewVisitViewController: AllPageViewController {
     func initilize(){
         
         setNavigationBar(Navigationtype: .defaultColor)
+        
         gateKeeperData = CommanFunction.instance.getUserDataGateKeeper()
     }
+    
     
     
     func validateFields()->Int {
