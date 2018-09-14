@@ -20,7 +20,7 @@ class OldVisitorConfirmScreenViewController: AllPageViewController {
     @IBOutlet weak var pusposeLabel: UILabel!
     
     var oldVisitorData : NewVisitorData?
-    var gateKeeperData : VisitorUsers?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +88,7 @@ class OldVisitorConfirmScreenViewController: AllPageViewController {
         
         let VisitorDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "VisitorDetailsViewController") as! VisitorDetailsViewController
         VisitorDetailVC.oldVisitorData = oldVisitorData
-        VisitorDetailVC.gateKeeperData = gateKeeperData
+        
         Push(controller: VisitorDetailVC)
         
     }

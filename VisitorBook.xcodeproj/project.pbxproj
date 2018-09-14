@@ -55,6 +55,7 @@
 		E9929C90214ADCB40034550F /* DailySOSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9929C8E214ADCB40034550F /* DailySOSTableViewCell.xib */; };
 		E9929C92214AE6740034550F /* DailySOSImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9929C91214AE6740034550F /* DailySOSImageView.xib */; };
 		E9929C94214AE6C50034550F /* DailySOSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9929C93214AE6C50034550F /* DailySOSImageView.swift */; };
+		E9A8F403214B99FA0015EED5 /* DailySOSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F402214B99FA0015EED5 /* DailySOSData.swift */; };
 		E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D6522121413A5700B61425 /* GateKeeper.storyboard */; };
 		E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */; };
 		E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D6523221416D6700B61425 /* NewVisitViewController.swift */; };
@@ -117,6 +118,7 @@
 		E9929C8E214ADCB40034550F /* DailySOSTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailySOSTableViewCell.xib; sourceTree = "<group>"; };
 		E9929C91214AE6740034550F /* DailySOSImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailySOSImageView.xib; sourceTree = "<group>"; };
 		E9929C93214AE6C50034550F /* DailySOSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySOSImageView.swift; sourceTree = "<group>"; };
+		E9A8F402214B99FA0015EED5 /* DailySOSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySOSData.swift; sourceTree = "<group>"; };
 		E9D6522121413A5700B61425 /* GateKeeper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GateKeeper.storyboard; sourceTree = "<group>"; };
 		E9D652242141443C00B61425 /* GateKeeperTabBatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateKeeperTabBatController.swift; sourceTree = "<group>"; };
 		E9D6523221416D6700B61425 /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				79B49A93214411CB0010952B /* TowerPurposeData.swift */,
 				E97E21222146D69800135CDA /* PendingVisitData.swift */,
 				E97E2136214803FD00135CDA /* VehicleData.swift */,
+				E9A8F402214B99FA0015EED5 /* DailySOSData.swift */,
 			);
 			path = VisitorUsers;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */,
 				E9929C8F214ADCB40034550F /* DailySOSTableViewCell.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
+				E9A8F403214B99FA0015EED5 /* DailySOSData.swift in Sources */,
 				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
 				E97E212A21479CB300135CDA /* UserDetailView.swift in Sources */,

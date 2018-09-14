@@ -50,7 +50,7 @@ class PSValidator: NSObject {
             result = "New Password Required";
             break;
         case 203:
-            result = "Confirm pin is blank.";
+            result = "Old Password does not match";
             break;
         case 204:
             result = "pin mismatch. Please check.";

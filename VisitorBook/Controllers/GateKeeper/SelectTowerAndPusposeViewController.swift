@@ -40,7 +40,6 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
     
     @IBOutlet weak var toolbarView: UIToolbar!
     
-    var gateKeeperData : VisitorUsers?
     var newVisitorData : NewVisitorData?
     var newId : String?
     

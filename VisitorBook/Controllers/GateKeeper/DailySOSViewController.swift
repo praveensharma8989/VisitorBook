@@ -14,6 +14,10 @@ class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var DailySOSView: DailySOSImageView!
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var tableVIew: UITableView!
+    
+    
+    var dailySOSData : DailySOSData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +28,7 @@ class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITabl
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
+        
         registerCells()
         blackView.isHidden = true
         DailySOSView.isHidden = true
@@ -47,20 +52,30 @@ class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return dailySOSData != nil ? (dailySOSData?.sosData.count)! : 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableVIew.dequeueReusableCell(withIdentifier: "DailySOSTableViewCell") as! DailySOSTableViewCell
         
+        cell.setData(data: (dailySOSData?.sosData[indexPath.row])!)
         
         cell.dailySOSImage = {() in
             
-            
+            self.DailySOSView.sosData = (self.dailySOSData?.sosData[indexPath.row])!
+            self.DailySOSView.reloadData()
+            self.blackView.isHidden = false
+            self.DailySOSView.isHidden = false
         }
         
-        cell.dailySOSImage = {() in
-            
+        cell.dailySOSCall = {() in
+            if let phoneCallURL = URL(string: "tel://\((self.dailySOSData?.sosData[indexPath.row].mobile)!)") {
+                
+                let application:UIApplication = UIApplication.shared
+                if (application.canOpenURL(phoneCallURL)) {
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                }
+            }
             
         }
         
@@ -69,21 +84,23 @@ class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITabl
     
     func CallGetDailySOS(){
         
-//        showLoader()
-//        let param : [String : Any] = ["old_password" : (oldPasswordText.text)!,
-//                                      "new_passwoed" : (newPasswordText.text)!
-//        ]
-//        
-//        PSServiceManager.CallChangePassword(param: param) { (response, status, error) -> (Void) in
-//            self.dismissLoader()
-//            if(status){
-//                
-//                
-//            }else{
-//                self.showAlertMessage(titleStr: "Error", messageStr: error!)
-//            }
-//            
-//        }
+        showLoader()
+        let param : [String : Any] = ["id" : (gateKeeperData?.id)!
+        ]
+        
+        PSServiceManager.CallSOSDetail(param: param) { (response, status, error) -> (Void) in
+            self.dismissLoader()
+            if(status){
+                
+                let jsonData = try? JSONSerialization.data(withJSONObject: response!)
+                let jsonDecoder = JSONDecoder()
+                self.dailySOSData = try? jsonDecoder.decode(DailySOSData.self, from: jsonData!)
+                self.tableVIew.reloadData()
+            }else{
+                self.showAlertMessage(titleStr: "Error", messageStr: error!)
+            }
+            
+        }
         
     }
     

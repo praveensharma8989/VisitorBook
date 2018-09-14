@@ -19,7 +19,6 @@ class VisitorDetailsViewController: AllPageViewController, UIImagePickerControll
     @IBOutlet weak var mobileText: DesignableUITextField!
     
     var oldVisitorData : NewVisitorData?
-    var gateKeeperData : VisitorUsers?
     
     var newId : String?
     

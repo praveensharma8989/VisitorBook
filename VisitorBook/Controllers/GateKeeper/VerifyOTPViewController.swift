@@ -12,7 +12,7 @@ import SRCountdownTimer
 class VerifyOTPViewController: AllPageViewController {
 
     var newVisitorData : NewVisitorData?
-    var gateKeeperData : VisitorUsers?
+
     
     
     @IBOutlet weak var countDownView: SRCountdownTimer!
@@ -61,12 +61,10 @@ class VerifyOTPViewController: AllPageViewController {
             if newVisitorData?.msg == "Old Visitor"{
                 let OldVisitorVC = self.storyboard?.instantiateViewController(withIdentifier: "OldVisitorConfirmScreenViewController") as! OldVisitorConfirmScreenViewController
                 OldVisitorVC.oldVisitorData = newVisitorData
-                OldVisitorVC.gateKeeperData = gateKeeperData
                 Push(controller: OldVisitorVC)
             }else{
                 let VisitorDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "VisitorDetailsViewController") as! VisitorDetailsViewController
                 VisitorDetailVC.oldVisitorData = newVisitorData
-                VisitorDetailVC.gateKeeperData = gateKeeperData
                 Push(controller: VisitorDetailVC)
             }
             

@@ -12,7 +12,7 @@ class NewVisitViewController: AllPageViewController {
 
     @IBOutlet weak var visitorPhoneNumer: DesignableUITextField!
     
-    var gateKeeperData : VisitorUsers?
+    
     var newVisitorData : NewVisitorData?
     
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class NewVisitViewController: AllPageViewController {
         
         setNavigationBar(Navigationtype: .defaultColor)
         
-        gateKeeperData = CommanFunction.instance.getUserDataGateKeeper()
+
     }
     
     
@@ -58,7 +58,7 @@ class NewVisitViewController: AllPageViewController {
         view.endEditing(true)
         showLoader()
         
-        var param : [String : Any] = [
+        let param : [String : Any] = [
                 "mobile": visitorPhoneNumer.text!,
                 "empid": (gateKeeperData?.id)!
             ]
@@ -89,7 +89,6 @@ class NewVisitViewController: AllPageViewController {
         
         let VerifyOtpVC = self.storyboard?.instantiateViewController(withIdentifier: "VerifyOTPViewController") as! VerifyOTPViewController
         VerifyOtpVC.newVisitorData = newVisitorData
-        VerifyOtpVC.gateKeeperData = gateKeeperData
         Push(controller: VerifyOtpVC)
         
     }

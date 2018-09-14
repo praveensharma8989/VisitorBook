@@ -22,7 +22,6 @@ class PendingVisitViewController: AllPageViewController, UITableViewDelegate, UI
     @IBOutlet weak var pendingButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var backView : UIView!
-    var gateKeeperData : VisitorUsers?
     var pendingVisitData : PendingVisitData?
     var allPendingVisitData : PendingVisitData?
     
@@ -40,7 +39,6 @@ class PendingVisitViewController: AllPageViewController, UITableViewDelegate, UI
         registerCell()
         tableView.dataSource = self
         tableView.delegate = self
-        gateKeeperData = CommanFunction.instance.getUserDataGateKeeper()
         pendingButton.isSelected = true
         allButton.isSelected = false
         isAllData = false

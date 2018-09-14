@@ -30,7 +30,9 @@ enum CARequestApiName:String {
     PendingVisit            = "PendingVisit.php",
     ResentVisitReq          = "ResentVisitReq.php",
     SearchVisitor           = "SearchVisitor.php",
-    ChangePassword          = "ChangePassword.php"
+    ChangePassword          = "reset_pwd.php",
+    SOSDetail               = "SOS_Detail",
+    GuardLogout             = "GuardLogout"
     
 }
 
@@ -63,6 +65,7 @@ struct AppConstants {
     
     static var k_userType : String = "userType"
     static var k_gateKeeperUser : String = "gateKeeperUser"
+    static var k_gateKeeperUserPassword : String = "gateKeeperUserPassword"
     
     // Date Format
     static var K_DATE_MMDDYY: String = "yy-MM-dd"

@@ -61,12 +61,6 @@ class AppIntializer: NSObject {
         
         let storyboard = UIStoryboard.init(name: "GateKeeper", bundle: nil)
         
-        
-//        let NewVisitorController = storyboard.instantiateViewController(withIdentifier: "SelectTowerAndPusposeViewController") as! SelectTowerAndPusposeViewController
-////        TowerAndPurposeVC.newVisitorData = oldVisitorData
-////        TowerAndPurposeVC.gateKeeperData = gateKeeperData
-////        Push(controller: TowerAndPurposeVC)
-        
         let NewVisitorController = storyboard.instantiateViewController(withIdentifier:"GateKeeperTabBatController") as! GateKeeperTabBatController
         
         let navigationcontroller = UINavigationController.init(rootViewController: NewVisitorController)
@@ -78,6 +72,7 @@ class AppIntializer: NSObject {
         AppDelegate.sharedInstance.window?.makeKeyAndVisible()
         
     }
+    
     
     func showPopUp(message : String){
         AppIntializer.shared.messagePopUp.configureContent(body: message)

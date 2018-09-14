@@ -49,6 +49,37 @@ class CommanFunction: NSObject {
         UserDefaults.standard.synchronize()
     }
     
+    func saveUserDataGateKeeperPassword(data: String){
+        
+        let value : Any = data
+        
+        
+        UserDefaults.standard.set(value, forKey: AppConstants.k_gateKeeperUserPassword)
+        UserDefaults.standard.synchronize()
+        
+    }
+    
+    func getUserDataGateKeeperPassword()-> String?{
+        let value = UserDefaults.standard.string(forKey: AppConstants.k_gateKeeperUserPassword)
+        
+        
+        
+        return value
+        
+    }
+    
+    func removeGateKeeperPassword(){
+        UserDefaults.standard.removeObject(forKey: AppConstants.k_gateKeeperUserPassword)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func clearGateKeeperData(){
+        removeGateKeeperPassword()
+        RemoveUserType()
+        setUserType(user: .NoUser)
+        removeGateKeeper()
+    }
+    
     func checkUserType()->UserType{
         
         let userType = UserDefaults.standard.integer(forKey: AppConstants.k_userType)

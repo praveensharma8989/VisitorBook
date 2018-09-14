@@ -33,9 +33,13 @@ class DailySOSTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(){
+    func setData(data : SosData){
         
-        
+        sosImageView.set_sdWebImage(With: data.photo!, placeHolderImage: "CameraImage")
+        nameLabel.text = data.name
+        mobileLabel.text = data.mobile
+        towerFloorLabel.text = data.flat
+        dateLabel.text = data.sendTime
         
     }
     

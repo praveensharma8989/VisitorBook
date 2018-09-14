@@ -16,6 +16,7 @@ class DailySOSImageView: UIView {
     @IBOutlet weak var userImageView: UIImageView!
     
     var dailySOSCancel : DailySOSCancel? = nil
+    var sosData : SosData?
     
     @IBAction func CancelButton_press(_ sender: Any) {
         if dailySOSCancel != nil{
@@ -35,7 +36,12 @@ class DailySOSImageView: UIView {
     
     func reloadData() {
         
-        
+        if sosData != nil{
+            
+            nameLable.text = sosData?.name
+            userImageView.set_sdWebImage(With: (sosData?.photo)!, placeHolderImage: "CameraImage")
+            
+        }
         
     }
     
@@ -46,6 +52,8 @@ class DailySOSImageView: UIView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
     }
+    
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

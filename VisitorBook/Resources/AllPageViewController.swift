@@ -39,9 +39,12 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
 
     var viewDot : DotViewMenu?
     
+    var gateKeeperData : VisitorUsers?
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        gateKeeperData = CommanFunction.instance.getUserDataGateKeeper()
         // Do any additional setup after loading the view.
     }
 
@@ -84,6 +87,29 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         viewDot?.isHidden = true
         
     }
+    
+    func logoutGateKeeper(){
+        
+        showLoader()
+        
+        let param : [String : Any] = [
+            "id" : (gateKeeperData?.id)!
+        ]
+        
+        PSServiceManager.CallGuardLogout(param: param) { (response, status, error) -> (Void) in
+            self.dismissLoader()
+            if(status){
+                
+                CommanFunction.instance.clearGateKeeperData()
+                self.showAlertMessage(titleStr: "Success", messageStr: response!["msg"] as! String)
+                AppIntializer.shared.moveToLoginScreen()
+            }else{
+                self.showAlertMessage(titleStr: "Error", messageStr: error!)
+            }
+            
+        }
+    }
+    
     
     
     func setBackBarButton(buttonType : BackButtonType) {

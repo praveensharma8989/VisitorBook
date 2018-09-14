@@ -12,6 +12,10 @@ class PasswordChangeViewController: AllPageViewController {
 
     @IBOutlet weak var newPasswordText: DesignableUITextField!
     @IBOutlet weak var oldPasswordText: DesignableUITextField!
+    
+    
+    var oldPassword : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +26,7 @@ class PasswordChangeViewController: AllPageViewController {
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
-        
+        oldPassword = CommanFunction.instance.getUserDataGateKeeperPassword()
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,6 +55,10 @@ class PasswordChangeViewController: AllPageViewController {
             return PSValidator.validateNewPassword(newPasswordText.text)
         }
         
+        if oldPassword != oldPasswordText.text{
+            return 203
+        }
+        
         return 0
     }
     
@@ -58,13 +66,14 @@ class PasswordChangeViewController: AllPageViewController {
         
         showLoader()
         
-        let param : [String : Any] = ["old_password" : (oldPasswordText.text)!,
-                                      "new_passwoed" : (newPasswordText.text)!
+        let param : [String : Any] = ["id" : (gateKeeperData?.id)!,
+                                      "pwd" : (newPasswordText.text)!
         ]
         
         PSServiceManager.CallChangePassword(param: param) { (response, status, error) -> (Void) in
             self.dismissLoader()
             if(status){
+                CommanFunction.instance.saveUserDataGateKeeperPassword(data: (self.newPasswordText.text)!)
                 self.showAlertMessage(titleStr: "Success", messageStr: response!["msg"] as! String)
                 self.BackButtonClicked()
             }else{
