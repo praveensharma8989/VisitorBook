@@ -383,3 +383,18 @@ Pods/Target Support Files/SideMenu/SideMenu-umbrella.h
 Pods/Target Support Files/SideMenu/SideMenu.modulemap
 Pods/Target Support Files/SideMenu/SideMenu.xcconfig
 VisitorBook/Resources/Constants/AppConstants.swift.orig
+Pods/SJSegmentedScrollView/LICENSE
+Pods/SJSegmentedScrollView/README.md
+Pods/SJSegmentedScrollView/SJSegmentedScrollView/Classes/SJContentView.swift
+Pods/SJSegmentedScrollView/SJSegmentedScrollView/Classes/SJSegmentedScrollView.swift
+Pods/SJSegmentedScrollView/SJSegmentedScrollView/Classes/SJSegmentedViewController.swift
+Pods/SJSegmentedScrollView/SJSegmentedScrollView/Classes/SJSegmentTab.swift
+Pods/SJSegmentedScrollView/SJSegmentedScrollView/Classes/SJSegmentView.swift
+Pods/SJSegmentedScrollView/SJSegmentedScrollView/Classes/SJShadow.swift
+Pods/SJSegmentedScrollView/SJSegmentedScrollView/Classes/SJUtil.swift
+Pods/Target Support Files/SJSegmentedScrollView/Info.plist
+Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-dummy.m
+Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch
+Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-umbrella.h
+Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap
+Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.xcconfig
