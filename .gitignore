@@ -370,3 +370,16 @@ Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer-prefix.pch
 Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer-umbrella.h
 Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer.modulemap
 Pods/Target Support Files/SRCountdownTimer/SRCountdownTimer.xcconfig
+Pods/SideMenu/LICENSE
+Pods/SideMenu/README.md
+Pods/SideMenu/Pod/Classes/SideMenuManager.swift
+Pods/SideMenu/Pod/Classes/SideMenuTransition.swift
+Pods/SideMenu/Pod/Classes/UISideMenuNavigationController.swift
+Pods/SideMenu/Pod/Classes/UITableViewVibrantCell.swift
+Pods/Target Support Files/SideMenu/Info.plist
+Pods/Target Support Files/SideMenu/SideMenu-dummy.m
+Pods/Target Support Files/SideMenu/SideMenu-prefix.pch
+Pods/Target Support Files/SideMenu/SideMenu-umbrella.h
+Pods/Target Support Files/SideMenu/SideMenu.modulemap
+Pods/Target Support Files/SideMenu/SideMenu.xcconfig
+VisitorBook/Resources/Constants/AppConstants.swift.orig
