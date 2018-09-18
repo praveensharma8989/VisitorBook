@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBT-G7-oKE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Page Segment View Controller-->
         <scene sceneID="OlD-sa-asU">
             <objects>
-                <viewController id="fBT-G7-oKE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageSegmentViewController" id="fBT-G7-oKE" customClass="PageSegmentViewController" customModule="VisitorBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XMd-ZI-Owp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,6 +24,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLK-Xa-anq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1169" y="-654"/>
+        </scene>
+        <!--Dash Board View Controller-->
+        <scene sceneID="jsx-1g-POK">
+            <objects>
+                <viewController storyboardIdentifier="DashBoardViewController" id="izJ-Ef-lYp" customClass="DashBoardViewController" customModule="VisitorBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qki-KZ-YVQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zZ9-nG-0Cs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="08c-o3-T5U">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aAY-gi-NdM" firstAttribute="trailing" secondItem="zZ9-nG-0Cs" secondAttribute="trailing" id="8Xy-4D-FO7"/>
+                            <constraint firstItem="zZ9-nG-0Cs" firstAttribute="top" secondItem="aAY-gi-NdM" secondAttribute="top" id="S2d-ab-t3Q"/>
+                            <constraint firstItem="zZ9-nG-0Cs" firstAttribute="leading" secondItem="aAY-gi-NdM" secondAttribute="leading" id="gsG-M7-Jzs"/>
+                            <constraint firstItem="aAY-gi-NdM" firstAttribute="bottom" secondItem="zZ9-nG-0Cs" secondAttribute="bottom" id="nvm-bP-NyG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aAY-gi-NdM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVY-R6-F3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-468" y="-654"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="a8F-GV-iMr">
+            <objects>
+                <viewController storyboardIdentifier="EventViewController" id="BXg-tE-nKd" customClass="EventViewController" customModule="VisitorBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a2R-5Z-D9l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="P81-pN-IET"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Hy-Ii-KhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211" y="-655"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="8U3-Bb-nSp">
+            <objects>
+                <viewController storyboardIdentifier="PostViewController" id="zBU-aA-QCY" customClass="PostViewController" customModule="VisitorBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CD2-kV-HlL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="09s-6H-7DK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8un-Nt-d5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="-657"/>
         </scene>
     </scenes>
 </document>

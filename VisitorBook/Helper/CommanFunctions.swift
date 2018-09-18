@@ -10,7 +10,7 @@ import Foundation
 
 enum UserType : Int{
     case NoUser = 0
-    case Residant
+    case Resident
     case GateKeeper
 }
 
@@ -21,7 +21,6 @@ class CommanFunction: NSObject {
     func saveUserDataGateKeeper(data: [String : Any]){
         
         let value : Any = data
-        
         
         UserDefaults.standard.set(value, forKey: AppConstants.k_gateKeeperUser)
         UserDefaults.standard.synchronize()
@@ -80,6 +79,37 @@ class CommanFunction: NSObject {
         removeGateKeeper()
     }
     
+    
+    func saveUserDataResident(data: [String : Any]){
+        
+        let value : Any = data
+        
+        UserDefaults.standard.set(value, forKey: AppConstants.k_residentUser)
+        UserDefaults.standard.synchronize()
+        
+    }
+    
+    func getUserDataResident()-> ResidentData?{
+        let value = UserDefaults.standard.object(forKey: AppConstants.k_residentUser)
+        //        let value = UserDefaults.standard.array(forKey: AppConstants.k_gateKeeperUser)
+        
+        if value != nil{
+            let jsonData = try? JSONSerialization.data(withJSONObject: value!)
+            let jsonDecoder = JSONDecoder()
+            let userData = try? jsonDecoder.decode(ResidentData.self, from: jsonData!)
+            
+            return userData
+        }
+        
+        return nil
+        
+    }
+    
+    func removeResident(){
+        UserDefaults.standard.removeObject(forKey: AppConstants.k_residentUser)
+        UserDefaults.standard.synchronize()
+    }
+    
     func checkUserType()->UserType{
         
         let userType = UserDefaults.standard.integer(forKey: AppConstants.k_userType)
@@ -88,7 +118,7 @@ class CommanFunction: NSObject {
         if userType == 2{
             return .GateKeeper
         }else if userType == 1{
-            return .Residant
+            return .Resident
         }else{
             return .NoUser
         }
@@ -101,7 +131,7 @@ class CommanFunction: NSObject {
         
         if user == .GateKeeper{
             value = 2
-        }else if user == .Residant{
+        }else if user == .Resident{
             value = 1
         }else{
             value = 0

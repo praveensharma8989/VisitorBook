@@ -32,8 +32,8 @@ class AppIntializer: NSObject {
         
         if userType == .GateKeeper{
             moveToGateKeeperScreen()
-        }else if userType == .Residant{
-            
+        }else if userType == .Resident{
+            moveToResidentScreen()
         }else{
             moveToLoginScreen()
         }
@@ -62,6 +62,22 @@ class AppIntializer: NSObject {
         let storyboard = UIStoryboard.init(name: "GateKeeper", bundle: nil)
         
         let NewVisitorController = storyboard.instantiateViewController(withIdentifier:"GateKeeperTabBatController") as! GateKeeperTabBatController
+        
+        let navigationcontroller = UINavigationController.init(rootViewController: NewVisitorController)
+        
+        navigationcontroller.setNavigationBarHidden(false, animated: false)
+        
+        AppDelegate.sharedInstance.window?.rootViewController = navigationcontroller
+        
+        AppDelegate.sharedInstance.window?.makeKeyAndVisible()
+        
+    }
+    
+    func moveToResidentScreen(){
+        
+        let storyboard = UIStoryboard.init(name: "Resident", bundle: nil)
+        
+        let NewVisitorController = storyboard.instantiateViewController(withIdentifier:"PageSegmentViewController") as! PageSegmentViewController
         
         let navigationcontroller = UINavigationController.init(rootViewController: NewVisitorController)
         

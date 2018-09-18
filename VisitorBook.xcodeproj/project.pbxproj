@@ -13,6 +13,11 @@
 		79B49A922143B9760010952B /* SelectTowerAndPusposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */; };
 		79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A93214411CB0010952B /* TowerPurposeData.swift */; };
 		79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */; };
+		79F4CAFD2151739B00D0D02B /* PageSegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4CAFC2151739B00D0D02B /* PageSegmentViewController.swift */; };
+		79F4CAFF2151745500D0D02B /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4CAFE2151745500D0D02B /* DashBoardViewController.swift */; };
+		79F4CB012151746300D0D02B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4CB002151746300D0D02B /* EventViewController.swift */; };
+		79F4CB032151746F00D0D02B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4CB022151746F00D0D02B /* PostViewController.swift */; };
+		79F4CB052151777700D0D02B /* ResidentOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4CB042151777700D0D02B /* ResidentOTPViewController.swift */; };
 		79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29BF213DAD9500CE95CE /* VisitorBook.xcdatamodeld */; };
 		79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C2213DAD9500CE95CE /* Assets.xcassets */; };
 		79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C3213DAD9500CE95CE /* LaunchScreen.storyboard */; };
@@ -77,6 +82,11 @@
 		79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTowerAndPusposeViewController.swift; sourceTree = "<group>"; };
 		79B49A93214411CB0010952B /* TowerPurposeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerPurposeData.swift; sourceTree = "<group>"; };
 		79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		79F4CAFC2151739B00D0D02B /* PageSegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSegmentViewController.swift; sourceTree = "<group>"; };
+		79F4CAFE2151745500D0D02B /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		79F4CB002151746300D0D02B /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		79F4CB022151746F00D0D02B /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		79F4CB042151777700D0D02B /* ResidentOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentOTPViewController.swift; sourceTree = "<group>"; };
 		79FE29A4213DABAB00CE95CE /* VisitorBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitorBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FE29C0213DAD9500CE95CE /* VisitorBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VisitorBook.xcdatamodel; sourceTree = "<group>"; };
 		79FE29C2213DAD9500CE95CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +180,17 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		79F4CAFB2151737700D0D02B /* Resident */ = {
+			isa = PBXGroup;
+			children = (
+				79F4CAFC2151739B00D0D02B /* PageSegmentViewController.swift */,
+				79F4CAFE2151745500D0D02B /* DashBoardViewController.swift */,
+				79F4CB002151746300D0D02B /* EventViewController.swift */,
+				79F4CB022151746F00D0D02B /* PostViewController.swift */,
+			);
+			path = Resident;
+			sourceTree = "<group>";
+		};
 		79FE299B213DABAB00CE95CE = {
 			isa = PBXGroup;
 			children = (
@@ -241,11 +262,13 @@
 		79FE29DC213DC70400CE95CE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				79F4CAFB2151737700D0D02B /* Resident */,
 				E9D652232141440D00B61425 /* GateKeeper */,
 				79FE29DD213DC70400CE95CE /* ViewController.swift */,
 				79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */,
 				E98C4A7321403ADC006202FA /* RegisterViewController.swift */,
 				E98C4A7521403B0D006202FA /* ForgotPasswordViewController.swift */,
+				79F4CB042151777700D0D02B /* ResidentOTPViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -525,6 +548,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
@@ -537,6 +561,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
@@ -559,6 +584,8 @@
 				E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */,
 				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
 				E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */,
+				79F4CB032151746F00D0D02B /* PostViewController.swift in Sources */,
+				79F4CAFF2151745500D0D02B /* DashBoardViewController.swift in Sources */,
 				E9929C85214ADA7E0034550F /* DailySOSViewController.swift in Sources */,
 				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
 				E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */,
@@ -588,8 +615,10 @@
 				E98C4A59213FEF92006202FA /* UIFont+PS.swift in Sources */,
 				E9D6523321416D6700B61425 /* NewVisitViewController.swift in Sources */,
 				E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */,
+				79F4CB052151777700D0D02B /* ResidentOTPViewController.swift in Sources */,
 				E98C4A58213FEF92006202FA /* UIColor+PS.swift in Sources */,
 				E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */,
+				79F4CB012151746300D0D02B /* EventViewController.swift in Sources */,
 				E92FDB392151637E003AEE58 /* ResidentData.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
@@ -597,6 +626,7 @@
 				E98C4A67213FFC5E006202FA /* AppIntializer.swift in Sources */,
 				E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */,
 				E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */,
+				79F4CAFD2151739B00D0D02B /* PageSegmentViewController.swift in Sources */,
 				E92FDB3721516006003AEE58 /* ResidentDashboardData.swift in Sources */,
 				E98C4A5C213FEF92006202FA /* NSDate+PS.swift in Sources */,
 				E9929C94214AE6C50034550F /* DailySOSImageView.swift in Sources */,
@@ -749,10 +779,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -767,10 +794,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

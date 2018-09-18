@@ -14,4 +14,5 @@ target 'VisitorBook' do
   pod 'SwiftMessages'
   pod 'SRCountdownTimer'
   pod 'SideMenu'
+  pod 'SJSegmentedScrollView', ‘1.3.8'
 end

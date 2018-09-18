@@ -26,6 +26,7 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
     @IBOutlet weak var residentSignInButton: UIButton!
     
     var userData : VisitorUsers?
+    var residentData : ResidentData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,7 +140,18 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
     
     @IBAction func residentSignInButton_press(_ sender: Any) {
         self.view.endEditing(true)
+        let code = validateFields()
         
+        if(code != 0){
+            
+            print(code)
+            let str:String = PSValidator.message(forCode: code)
+            self.showAlertMessage(titleStr: "Error", messageStr: str)
+        }
+        else{
+            gateKeeperLoginApi()
+            
+        }
     }
     
     func validateFields()->Int {
@@ -204,6 +216,14 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
                     
                     AppIntializer.shared.moveToGateKeeperScreen()
                 }else{
+                    
+                    self.residentData = try? jsonDecoder.decode(ResidentData.self, from: jsonData!)
+                    
+                    let ResidentVC = self.storyboard?.instantiateViewController(withIdentifier: "ResidentOTPViewController") as! ResidentOTPViewController
+                    ResidentVC.residentData = self.residentData
+                    ResidentVC.mobileNumber = self.phoneText.text
+                    ResidentVC.responseData = response!
+                    self.Push(controller: ResidentVC)
                     
                 }
                 
