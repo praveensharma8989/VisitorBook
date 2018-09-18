@@ -13,4 +13,5 @@ target 'VisitorBook' do
   pod 'pop', '~> 1.0'
   pod 'SwiftMessages'
   pod 'SRCountdownTimer'
+  pod 'SideMenu'
 end

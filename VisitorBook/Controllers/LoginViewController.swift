@@ -179,7 +179,7 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
             ]
         }else{
             param = [
-                "phone": phoneText.text!,
+                "mobile": phoneText.text!,
                 "usertype": "Flat",
                 "token": ""
             ]
@@ -194,13 +194,20 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
                 
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
-                self.userData = try? jsonDecoder.decode(VisitorUsers.self, from: jsonData!)
                 
-                CommanFunction.instance.saveUserDataGateKeeper(data : response!)
-                CommanFunction.instance.setUserType(user: .GateKeeper)
-                CommanFunction.instance.saveUserDataGateKeeperPassword(data: (self.passwordText.text)!)
+                if self.gateKeeperButton.isSelected{
+                    self.userData = try? jsonDecoder.decode(VisitorUsers.self, from: jsonData!)
+                    
+                    CommanFunction.instance.saveUserDataGateKeeper(data : response!)
+                    CommanFunction.instance.setUserType(user: .GateKeeper)
+                    CommanFunction.instance.saveUserDataGateKeeperPassword(data: (self.passwordText.text)!)
+                    
+                    AppIntializer.shared.moveToGateKeeperScreen()
+                }else{
+                    
+                }
                 
-                AppIntializer.shared.moveToGateKeeperScreen()
+                
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)

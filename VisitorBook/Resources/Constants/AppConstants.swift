@@ -33,7 +33,8 @@ enum CARequestApiName:String {
     ChangePassword          = "reset_pwd.php",
     SOSDetail               = "SOS_Detail",
     GuardLogout             = "GuardLogout",
-    VisitExit               = "VisitExit"
+    VisitExit               = "VisitExit",
+    DashBoard               = "dashboard"
     
 }
 
