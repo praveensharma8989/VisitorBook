@@ -28,16 +28,19 @@ class ExitCodeViewController: AllPageViewController {
     }
 
     @IBAction func SubmitButton_press(_ sender: Any) {
+        
+        
+        
     }
     
     func ExitCodeApi(){
         showLoader()
         
         let param : [String : Any] = [
-        "" : exitCodeText.text!
+        "exit_code" : exitCodeText.text!
         ]
         
-        PSServiceManager.CallResentVisitReq(param: param) { (response, status, error) -> (Void) in
+        PSServiceManager.CallVisitExit(param: param) { (response, status, error) -> (Void) in
             self.dismissLoader()
             
             if status{

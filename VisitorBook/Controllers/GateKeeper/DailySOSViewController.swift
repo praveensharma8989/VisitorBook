@@ -33,7 +33,7 @@ class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITabl
         blackView.isHidden = true
         DailySOSView.isHidden = true
         CallGetDailySOS()
-        DailySOSView.CancelButton_press{() in
+        DailySOSView.dailySOSCancel = {() in
         
             self.blackView.isHidden = true
             self.DailySOSView.isHidden = true
@@ -95,8 +95,10 @@ class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITabl
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
                 self.dailySOSData = try? jsonDecoder.decode(DailySOSData.self, from: jsonData!)
+                self.noRecordFoundView.isHidden = true
                 self.tableVIew.reloadData()
             }else{
+                self.noRecordFoundView.isHidden = false
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
             }
             

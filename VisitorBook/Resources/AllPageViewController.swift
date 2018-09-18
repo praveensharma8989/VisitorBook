@@ -85,7 +85,7 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
     @objc func logoutButtonPress() {
         
         viewDot?.isHidden = true
-        
+        logoutGateKeeper()
     }
     
     func logoutGateKeeper(){

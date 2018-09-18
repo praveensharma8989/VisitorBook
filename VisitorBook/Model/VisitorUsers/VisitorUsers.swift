@@ -11,6 +11,6 @@ import Foundation
 struct VisitorUsers: Codable {
     let code: Int
     let error: Bool
-    let msg, id, cid, name: String
-    let email, mobile, status, password: String
+    let msg, id, cid, name: String?
+    let email, mobile, status: String?
 }
