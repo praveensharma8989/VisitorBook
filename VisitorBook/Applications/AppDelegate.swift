@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import PGSideMenu
 
 
 @UIApplicationMain
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        loadExampleAppStructure()
         appInilize()
         
         // Override point for customization after application launch.
@@ -32,8 +34,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppIntializer.shared.setupIntial()
         IQKeyboardManager.shared.enable = true
         
+        
+        
     }
 
+//    fileprivate func loadExampleAppStructure() {
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.makeKeyAndVisible()
+//
+//        let storyboard = UIStoryboard.init(name: "Resident", bundle: nil)
+//
+//        let ContentController = storyboard.instantiateViewController(withIdentifier:"HeaderViewViewController") as! HeaderViewViewController
+//
+//        let LeftMenuController = storyboard.instantiateViewController(withIdentifier:"LeftMenuViewController") as! LeftMenuViewController
+//
+//        let sideMenuController = PGSideMenu(animationType: .slideIn)
+//        let contentController = ContentController
+//        let leftMenuController = LeftMenuController
+//        sideMenuController.addContentController(contentController)
+//        sideMenuController.addLeftMenuController(leftMenuController)
+//        self.window?.rootViewController = sideMenuController
+//    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

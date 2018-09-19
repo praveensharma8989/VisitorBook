@@ -30,7 +30,11 @@
 		E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */; };
 		E92FDB3721516006003AEE58 /* ResidentDashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB3621516006003AEE58 /* ResidentDashboardData.swift */; };
 		E92FDB392151637E003AEE58 /* ResidentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB382151637E003AEE58 /* ResidentData.swift */; };
+		E92FDB4521522CCA003AEE58 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */; };
+		E92FDB47215233A2003AEE58 /* HeaderViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB46215233A2003AEE58 /* HeaderViewViewController.swift */; };
 		E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */; };
+		E96E5EFD2152B64D008415D8 /* QuickActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */; };
+		E96E5EFE2152B64D008415D8 /* QuickActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */; };
 		E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E21222146D69800135CDA /* PendingVisitData.swift */; };
 		E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212421479A5300135CDA /* ExitCodeViewController.swift */; };
 		E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */; };
@@ -101,7 +105,11 @@
 		E909C60321426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldVisitorConfirmScreenViewController.swift; sourceTree = "<group>"; };
 		E92FDB3621516006003AEE58 /* ResidentDashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentDashboardData.swift; sourceTree = "<group>"; };
 		E92FDB382151637E003AEE58 /* ResidentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentData.swift; sourceTree = "<group>"; };
+		E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		E92FDB46215233A2003AEE58 /* HeaderViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewViewController.swift; sourceTree = "<group>"; };
 		E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitViewController.swift; sourceTree = "<group>"; };
+		E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionTableViewCell.swift; sourceTree = "<group>"; };
+		E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionTableViewCell.xib; sourceTree = "<group>"; };
 		E97E21222146D69800135CDA /* PendingVisitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitData.swift; sourceTree = "<group>"; };
 		E97E212421479A5300135CDA /* ExitCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCodeViewController.swift; sourceTree = "<group>"; };
 		E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVehicleViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +195,8 @@
 				79F4CAFE2151745500D0D02B /* DashBoardViewController.swift */,
 				79F4CB002151746300D0D02B /* EventViewController.swift */,
 				79F4CB022151746F00D0D02B /* PostViewController.swift */,
+				E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */,
+				E92FDB46215233A2003AEE58 /* HeaderViewViewController.swift */,
 			);
 			path = Resident;
 			sourceTree = "<group>";
@@ -252,6 +262,7 @@
 		79FE29DA213DC70400CE95CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E92FDB3A21522598003AEE58 /* SideMenu */,
 				E98C4A61213FF456006202FA /* Constants */,
 				79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */,
 				79B49A8B213F11090010952B /* AllPageViewController.swift */,
@@ -297,6 +308,30 @@
 				E92FDB382151637E003AEE58 /* ResidentData.swift */,
 			);
 			path = ResidentUsers;
+			sourceTree = "<group>";
+		};
+		E92FDB3A21522598003AEE58 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		E96E5EF92152B5F8008415D8 /* Resident */ = {
+			isa = PBXGroup;
+			children = (
+				E96E5EFA2152B610008415D8 /* QuickActionCell */,
+			);
+			path = Resident;
+			sourceTree = "<group>";
+		};
+		E96E5EFA2152B610008415D8 /* QuickActionCell */ = {
+			isa = PBXGroup;
+			children = (
+				E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */,
+				E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */,
+			);
+			path = QuickActionCell;
 			sourceTree = "<group>";
 		};
 		E97E212821479C6200135CDA /* UserDetailView */ = {
@@ -406,6 +441,7 @@
 		E9FEF7022146A4CC006F72C8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E96E5EF92152B5F8008415D8 /* Resident */,
 				E9929C8C214ADCA30034550F /* DailySOSCell */,
 				E9929C87214ADC510034550F /* DotViewMenu */,
 				E97E212821479C6200135CDA /* UserDetailView */,
@@ -495,6 +531,7 @@
 				E9B2B09F21515AAE00C7737D /* Resident.storyboard in Resources */,
 				79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */,
 				79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */,
+				E96E5EFE2152B64D008415D8 /* QuickActionTableViewCell.xib in Resources */,
 				E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,11 +584,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PGSideMenu/PGSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
@@ -560,11 +597,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
@@ -583,6 +620,7 @@
 			files = (
 				E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */,
 				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
+				E96E5EFD2152B64D008415D8 /* QuickActionTableViewCell.swift in Sources */,
 				E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */,
 				79F4CB032151746F00D0D02B /* PostViewController.swift in Sources */,
 				79F4CAFF2151745500D0D02B /* DashBoardViewController.swift in Sources */,
@@ -593,6 +631,7 @@
 				E97E21302147A2BE00135CDA /* VehicleDetailView.swift in Sources */,
 				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
 				E9929C8B214ADC510034550F /* DotViewMenu.swift in Sources */,
+				E92FDB4521522CCA003AEE58 /* LeftMenuViewController.swift in Sources */,
 				E97E2137214803FD00135CDA /* VehicleData.swift in Sources */,
 				E98C4A60213FF084006202FA /* PSValidator.swift in Sources */,
 				E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */,
@@ -608,6 +647,7 @@
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				E9A8F403214B99FA0015EED5 /* DailySOSData.swift in Sources */,
 				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
+				E92FDB47215233A2003AEE58 /* HeaderViewViewController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
 				E97E212A21479CB300135CDA /* UserDetailView.swift in Sources */,
 				E9FEF7062146A503006F72C8 /* PendingVisitTableViewCell.swift in Sources */,
@@ -779,7 +819,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -794,7 +837,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

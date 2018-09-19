@@ -398,3 +398,21 @@ Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch
 Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-umbrella.h
 Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap
 Pods/Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.xcconfig
+Pods/PGSideMenu/LICENSE
+Pods/PGSideMenu/README.md
+Pods/PGSideMenu/PGSideMenu/Assets/PGSideMenu.xib
+Pods/PGSideMenu/PGSideMenu/Classes/Angle.swift
+Pods/PGSideMenu/PGSideMenu/Classes/PGSideMenu.swift
+Pods/PGSideMenu/PGSideMenu/Classes/PGSideMenuAnimationDelegate.swift
+Pods/PGSideMenu/PGSideMenu/Classes/PGSideMenuAnimationType.swift
+Pods/PGSideMenu/PGSideMenu/Classes/PGSideMenuSlideInAnimator.swift
+Pods/PGSideMenu/PGSideMenu/Classes/PGSideMenuSlideInRotateAnimator.swift
+Pods/PGSideMenu/PGSideMenu/Classes/PGSideMenuSlideOverAnimator.swift
+Pods/PGSideMenu/PGSideMenu/Classes/UIView+PGSideMenu.swift
+Pods/Target Support Files/PGSideMenu/Info.plist
+Pods/Target Support Files/PGSideMenu/PGSideMenu-dummy.m
+Pods/Target Support Files/PGSideMenu/PGSideMenu-prefix.pch
+Pods/Target Support Files/PGSideMenu/PGSideMenu-umbrella.h
+Pods/Target Support Files/PGSideMenu/PGSideMenu.modulemap
+Pods/Target Support Files/PGSideMenu/PGSideMenu.xcconfig
+Pods/Target Support Files/PGSideMenu/ResourceBundle-PGSideMenu-Info.plist
