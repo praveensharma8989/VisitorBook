@@ -9,6 +9,7 @@
 import UIKit
 import SwiftMessages
 import SVProgressHUD
+import PGSideMenu
 
 class AppIntializer: NSObject {
     
@@ -75,19 +76,49 @@ class AppIntializer: NSObject {
     
     func moveToResidentScreen(){
         
+//        let storyboard = UIStoryboard.init(name: "Resident", bundle: nil)
+//
+//        let NewVisitorController = storyboard.instantiateViewController(withIdentifier:"PageSegmentViewController") as! PageSegmentViewController
+//
+//        let navigationcontroller = UINavigationController.init(rootViewController: NewVisitorController)
+//
+//        navigationcontroller.setNavigationBarHidden(false, animated: false)
+
         let storyboard = UIStoryboard.init(name: "Resident", bundle: nil)
         
-        let NewVisitorController = storyboard.instantiateViewController(withIdentifier:"PageSegmentViewController") as! PageSegmentViewController
+        let ContentController = storyboard.instantiateViewController(withIdentifier:"PageSegmentViewController") as! PageSegmentViewController
         
-        let navigationcontroller = UINavigationController.init(rootViewController: NewVisitorController)
+        let LeftMenuController = storyboard.instantiateViewController(withIdentifier:"LeftMenuViewController") as! LeftMenuViewController
         
-        navigationcontroller.setNavigationBarHidden(false, animated: false)
+        let sideMenuController = PGSideMenu(animationType: .slideOver)
+        let contentController = ContentController
+        let leftMenuController = LeftMenuController
+        sideMenuController.addContentController(contentController)
+        sideMenuController.addLeftMenuController(leftMenuController)
         
-        AppDelegate.sharedInstance.window?.rootViewController = navigationcontroller
+        AppDelegate.sharedInstance.window?.rootViewController = sideMenuController
         
         AppDelegate.sharedInstance.window?.makeKeyAndVisible()
         
     }
+    
+//    fileprivate func loadExampleAppStructure() {
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.makeKeyAndVisible()
+//
+//        let storyboard = UIStoryboard.init(name: "Resident", bundle: nil)
+//
+//        let ContentController = storyboard.instantiateViewController(withIdentifier:"HeaderViewViewController") as! HeaderViewViewController
+//
+//        let LeftMenuController = storyboard.instantiateViewController(withIdentifier:"LeftMenuViewController") as! LeftMenuViewController
+//
+//        let sideMenuController = PGSideMenu(animationType: .slideIn)
+//        let contentController = ContentController
+//        let leftMenuController = LeftMenuController
+//        sideMenuController.addContentController(contentController)
+//        sideMenuController.addLeftMenuController(leftMenuController)
+//        self.window?.rootViewController = sideMenuController
+//    }
     
     
     func showPopUp(message : String){

@@ -10,6 +10,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Header View View Controller-->
+        <scene sceneID="Vyh-7g-On8">
+            <objects>
+                <viewController storyboardIdentifier="HeaderViewViewController" id="AgY-nD-qD9" customClass="HeaderViewViewController" customModule="VisitorBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ytz-KQ-poE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="au2-m8-0BZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sB-fs-Wqm">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="9hW-oq-TNK"/>
+                                        </constraints>
+                                        <state key="normal" image="menuIcon"/>
+                                        <connections>
+                                            <action selector="leftMenuButton_press:" destination="AgY-nD-qD9" eventType="touchUpInside" id="FRJ-oX-51Z"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="i91-Iv-cfh">
+                                        <rect key="frame" x="60" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="hcm-ws-3XU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayon Visitor Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-bI-w3Q">
+                                        <rect key="frame" x="120" y="0.0" width="134" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.68584526909999999" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="kSd-bI-w3Q" firstAttribute="centerY" secondItem="au2-m8-0BZ" secondAttribute="centerY" id="0lB-0z-4d4"/>
+                                    <constraint firstAttribute="bottom" secondItem="4sB-fs-Wqm" secondAttribute="bottom" id="5Tm-Tj-6IL"/>
+                                    <constraint firstItem="kSd-bI-w3Q" firstAttribute="leading" secondItem="i91-Iv-cfh" secondAttribute="trailing" id="Bqb-Wx-vih"/>
+                                    <constraint firstItem="4sB-fs-Wqm" firstAttribute="leading" secondItem="au2-m8-0BZ" secondAttribute="leading" id="DeM-ZB-ViR"/>
+                                    <constraint firstItem="4sB-fs-Wqm" firstAttribute="top" secondItem="au2-m8-0BZ" secondAttribute="top" id="HtG-Sc-T7J"/>
+                                    <constraint firstAttribute="bottom" secondItem="i91-Iv-cfh" secondAttribute="bottom" id="Lmo-qV-rem"/>
+                                    <constraint firstItem="i91-Iv-cfh" firstAttribute="top" secondItem="au2-m8-0BZ" secondAttribute="top" id="iAQ-Ay-W4V"/>
+                                    <constraint firstItem="kSd-bI-w3Q" firstAttribute="centerX" secondItem="au2-m8-0BZ" secondAttribute="centerX" id="mie-5f-uus"/>
+                                    <constraint firstItem="kSd-bI-w3Q" firstAttribute="height" secondItem="au2-m8-0BZ" secondAttribute="height" id="smd-y5-bzm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cwi-jA-z6Z" firstAttribute="bottom" secondItem="au2-m8-0BZ" secondAttribute="bottom" id="2Yb-h5-V0s"/>
+                            <constraint firstItem="au2-m8-0BZ" firstAttribute="leading" secondItem="cwi-jA-z6Z" secondAttribute="leading" id="Agi-bq-PwQ"/>
+                            <constraint firstItem="cwi-jA-z6Z" firstAttribute="trailing" secondItem="au2-m8-0BZ" secondAttribute="trailing" id="VxM-3K-DY0"/>
+                            <constraint firstItem="au2-m8-0BZ" firstAttribute="top" secondItem="cwi-jA-z6Z" secondAttribute="top" id="d7K-h2-3tv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cwi-jA-z6Z"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="60"/>
+                    <connections>
+                        <outlet property="leftMenuButton" destination="4sB-fs-Wqm" id="yR2-dc-ylY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="umP-iP-0he" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1170" y="-1088"/>
+        </scene>
         <!--Page Segment View Controller-->
         <scene sceneID="OlD-sa-asU">
             <objects>
@@ -24,6 +91,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLK-Xa-anq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1169" y="-654"/>
+        </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="O0X-yh-564">
+            <objects>
+                <viewController storyboardIdentifier="LeftMenuViewController" id="bxb-ce-d2P" customClass="LeftMenuViewController" customModule="VisitorBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ick-WD-Vkr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UaO-Zi-JHE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K5b-jG-6m5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1170" y="42"/>
         </scene>
         <!--Dash Board View Controller-->
         <scene sceneID="jsx-1g-POK">
@@ -88,4 +170,8 @@
             <point key="canvasLocation" x="887" y="-657"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logoIcon" width="32" height="32"/>
+        <image name="menuIcon" width="32" height="32"/>
+    </resources>
 </document>
