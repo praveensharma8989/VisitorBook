@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="HeaderView" id="iN0-l3-epB" customClass="HeaderView" customModule="VisitorBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g56-cm-Vny">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hm-zt-6Y6">
+                            <rect key="frame" x="15" y="15" width="345" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-11-APR">
+                                    <rect key="frame" x="15" y="0.0" width="315" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="3PO-0f-eng"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbL-a0-PLM">
+                                    <rect key="frame" x="0.0" y="44" width="345" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="gaX-UZ-w3q"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="sbL-a0-PLM" firstAttribute="top" secondItem="Dfa-11-APR" secondAttribute="bottom" id="Arf-CG-nzm"/>
+                                <constraint firstAttribute="trailing" secondItem="sbL-a0-PLM" secondAttribute="trailing" id="GeO-ha-ATS"/>
+                                <constraint firstAttribute="bottom" secondItem="sbL-a0-PLM" secondAttribute="bottom" id="Gxs-eG-Los"/>
+                                <constraint firstItem="Dfa-11-APR" firstAttribute="top" secondItem="4hm-zt-6Y6" secondAttribute="top" id="SXj-9y-R78"/>
+                                <constraint firstAttribute="trailing" secondItem="Dfa-11-APR" secondAttribute="trailing" constant="15" id="X0C-ww-flj"/>
+                                <constraint firstItem="Dfa-11-APR" firstAttribute="leading" secondItem="4hm-zt-6Y6" secondAttribute="leading" constant="15" id="qp8-lO-PSz"/>
+                                <constraint firstItem="sbL-a0-PLM" firstAttribute="leading" secondItem="4hm-zt-6Y6" secondAttribute="leading" id="vg0-tV-5JK"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="4hm-zt-6Y6" firstAttribute="top" secondItem="g56-cm-Vny" secondAttribute="top" constant="15" id="M1i-2x-IAh"/>
+                        <constraint firstItem="4hm-zt-6Y6" firstAttribute="leading" secondItem="g56-cm-Vny" secondAttribute="leading" constant="15" id="aHe-iQ-t8Q"/>
+                        <constraint firstAttribute="trailing" secondItem="4hm-zt-6Y6" secondAttribute="trailing" constant="15" id="xSE-yB-sSQ"/>
+                        <constraint firstAttribute="bottom" secondItem="4hm-zt-6Y6" secondAttribute="bottom" id="zmT-bL-xzB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="g56-cm-Vny" secondAttribute="bottom" id="jzT-iv-4Ly"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g56-cm-Vny" secondAttribute="trailing" id="mYe-Hk-1FG"/>
+                <constraint firstItem="g56-cm-Vny" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pEu-l9-9GP"/>
+                <constraint firstItem="g56-cm-Vny" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yr4-IG-0dH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="titelLabel" destination="Dfa-11-APR" id="tXP-06-eN8"/>
+            </connections>
+        </view>
+    </objects>
+</document>

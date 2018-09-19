@@ -10,6 +10,13 @@ import UIKit
 
 class QuickActionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var todayVisitorCountLabel: UILabel!
+    @IBOutlet weak var weeklyVisitorCountLabel: UILabel!
+    @IBOutlet weak var totalVisitorCountLabel: UILabel!
+    @IBOutlet weak var notificationCountLabel: UILabel!
+    @IBOutlet weak var allComplaintCountLabel: UILabel!
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +26,18 @@ class QuickActionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func todayVisitorButton_press(_ sender: Any) {
+    }
+    @IBAction func weeklyVisitorButton_press(_ sender: Any) {
+    }
+    @IBAction func totalVisitorButton_press(_ sender: Any) {
+    }
+    @IBAction func notificationButton_press(_ sender: Any) {
+    }
+    @IBAction func allComplaintButton_press(_ sender: Any) {
+    }
+    @IBAction func residentButton_press(_ sender: Any) {
     }
     
 }

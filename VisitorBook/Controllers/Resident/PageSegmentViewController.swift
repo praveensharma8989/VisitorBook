@@ -10,24 +10,39 @@ import UIKit
 import SJSegmentedScrollView
 import PGSideMenu
 
-class PageSegmentViewController: SJSegmentedViewController {
+class PageSegmentViewController: SJSegmentedViewController{
 
     var selectedSegment: SJSegmentTab?
     var currentAnimationType: PGSideMenuAnimationType = .slideOver
     
     override func viewDidLoad() {
+        segmentConfig()
+
+        super.viewDidLoad()
+        
+        initilize()
+        // Do any additional setup after loading the view.
+    }
+
+    func initilize(){
+        
         configureController()
+        
+    }
+    
+    func segmentConfig(){
+        
         if let storyboard = self.storyboard {
             
             let firstViewController = storyboard
                 .instantiateViewController(withIdentifier: "DashBoardViewController") as! DashBoardViewController
             firstViewController.title = "DashBoard"
-
+            
             
             let secondViewController = storyboard
                 .instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
             secondViewController.title = "Event"
-
+            
             
             let thirdViewController = storyboard
                 .instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
@@ -47,13 +62,13 @@ class PageSegmentViewController: SJSegmentedViewController {
             
             headerViewController = header
             
-            headerViewHeight = 100
+            headerViewHeight = 70
             segmentControllers = [firstViewController,
                                   secondViewController,
                                   thirdViewController]
             
             selectedSegmentViewHeight = 5.0
-            headerViewOffsetHeight = 60.0
+            headerViewOffsetHeight = 40.0
             segmentTitleColor = .gray
             selectedSegmentViewColor = .red
             segmentShadow = SJShadow.light()
@@ -64,21 +79,8 @@ class PageSegmentViewController: SJSegmentedViewController {
         }
         
         title = "Segment"
-//        let btn = UIButton(type: .custom)
-//        btn.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
-//        btn.addTarget(self, action: #selector(BackButtonClicked), for: .touchUpInside)
-//        btn.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
-//        self.navigationItem.setLeftBarButton(UIBarButtonItem(customView: btn), animated: true)
         
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-//    @objc func BackButtonClicked() {
-//        if let sideMenuController = self.parent as? PGSideMenu {
-//            sideMenuController.toggleRightMenu()
-//        }
-//    }
     
     func configureController() {
         if let sideMenu = self.parent as? PGSideMenu {
