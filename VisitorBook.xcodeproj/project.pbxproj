@@ -29,7 +29,6 @@
 		79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C3213DAD9500CE95CE /* LaunchScreen.storyboard */; };
 		79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C5213DAD9500CE95CE /* Main.storyboard */; };
 		79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29C7213DAD9500CE95CE /* AppDelegate.swift */; };
-		79FE29D4213DAD9500CE95CE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79FE29C8213DAD9500CE95CE /* Info.plist */; };
 		79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29DD213DC70400CE95CE /* ViewController.swift */; };
 		79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */; };
 		79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */; };
@@ -49,6 +48,7 @@
 		E97E212E2147A2AD00135CDA /* VehicleDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */; };
 		E97E21302147A2BE00135CDA /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */; };
 		E97E2137214803FD00135CDA /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E2136214803FD00135CDA /* VehicleData.swift */; };
+		E98550EF2153691900B8E285 /* ResidentAllPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98550EE2153691900B8E285 /* ResidentAllPageViewController.swift */; };
 		E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4B213FEE90006202FA /* HTTPClient.swift */; };
 		E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4F213FEF92006202FA /* UIImage+PS.swift */; };
 		E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A50213FEF92006202FA /* UIView+PS.swift */; };
@@ -130,6 +130,7 @@
 		E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleDetailView.xib; sourceTree = "<group>"; };
 		E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
 		E97E2136214803FD00135CDA /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
+		E98550EE2153691900B8E285 /* ResidentAllPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentAllPageViewController.swift; sourceTree = "<group>"; };
 		E98C4A4B213FEE90006202FA /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		E98C4A4F213FEF92006202FA /* UIImage+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PS.swift"; sourceTree = "<group>"; };
 		E98C4A50213FEF92006202FA /* UIView+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PS.swift"; sourceTree = "<group>"; };
@@ -305,6 +306,7 @@
 				E98C4A61213FF456006202FA /* Constants */,
 				79FE29E4213DCFCC00CE95CE /* DesignableUITextField.swift */,
 				79B49A8B213F11090010952B /* AllPageViewController.swift */,
+				E98550EE2153691900B8E285 /* ResidentAllPageViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -562,7 +564,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79FE29D4213DAD9500CE95CE /* Info.plist in Resources */,
 				E9929C90214ADCB40034550F /* DailySOSTableViewCell.xib in Resources */,
 				79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */,
 				79F406182152DAF200D2A5A3 /* RecentVisitorTableViewCell.xib in Resources */,
@@ -628,6 +629,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PGSideMenu/PGSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -641,6 +643,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -667,6 +670,7 @@
 				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
 				E96E5EFD2152B64D008415D8 /* QuickActionTableViewCell.swift in Sources */,
 				E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */,
+				E98550EF2153691900B8E285 /* ResidentAllPageViewController.swift in Sources */,
 				79F4CB032151746F00D0D02B /* PostViewController.swift in Sources */,
 				79F4CAFF2151745500D0D02B /* DashBoardViewController.swift in Sources */,
 				79F406132152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift in Sources */,
@@ -867,10 +871,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -885,10 +886,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

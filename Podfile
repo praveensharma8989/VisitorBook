@@ -15,4 +15,5 @@ target 'VisitorBook' do
   pod 'SRCountdownTimer'
   pod 'SJSegmentedScrollView', ‘1.3.8'
   pod 'PGSideMenu'
+  pod 'FSPagerView'
 end

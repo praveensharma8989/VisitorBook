@@ -48,7 +48,7 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
     var flateData : FlateData?
     var purposeData : PurposeData?
     
-    var PickerType : pickerType!
+    var PickerType : pickerType = .None
     
     override func viewDidLoad() {
         super.viewDidLoad()

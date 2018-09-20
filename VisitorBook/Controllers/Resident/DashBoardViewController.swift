@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import FSPagerView
 
-class DashBoardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource, FSPagerViewDataSource, FSPagerViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var pagerView: FSPagerView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initilize()
@@ -18,8 +26,31 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func initilize(){
-        
         registerCell()
+        
+        pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        pagerView.delegate = self
+        pagerView.dataSource = self
+        pagerView.itemSize = .zero
+        pagerView.automaticSlidingInterval = 3.0
+        
+        if residentDashboardData == nil{
+            callDashBoardData { (status) -> (Void) in
+                if status{
+                    self.tableView.reloadData()
+                    self.pagerView.reloadData()
+                }
+            }
+        }else{
+            tableView.reloadData()
+            pagerView.reloadData()
+        }
+        
+        
+        
+//        self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+//        self.pagerView.itemSize = .zero
+        
         
     }
     override func didReceiveMemoryWarning() {
@@ -48,7 +79,7 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
         if section != 1{
             let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
             
-            headerView.titelLabel.text = "Grocery"
+            headerView.titelLabel.text = section == 0 ? "Quick Action" : "Recent Visitor"
             
             return headerView
         }else{
@@ -64,28 +95,55 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0{
+            return residentDashboardData != nil ? 1 : 0
+        }else if section == 2 {
+            return residentDashboardData != nil ? (residentDashboardData?.visitorData.count)! : 0
+        }
         return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell? = nil
+//        var cell : UITableViewCell? = nil
         
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "QuickActionTableViewCell") as! QuickActionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "QuickActionTableViewCell") as! QuickActionTableViewCell
+            cell.setData(data:residentDashboardData!)
+            
+            return cell
             
         case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ExpectedVisitorTableViewCell") as! ExpectedVisitorTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExpectedVisitorTableViewCell") as! ExpectedVisitorTableViewCell
+            return cell
             
         case 2:
-            cell = tableView.dequeueReusableCell(withIdentifier: "RecentVisitorTableViewCell") as! RecentVisitorTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentVisitorTableViewCell") as! RecentVisitorTableViewCell
+            cell.setData(data: (residentDashboardData?.visitorData[indexPath.row])!)
+            return cell
         default:
-            break
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentVisitorTableViewCell") as! RecentVisitorTableViewCell
+            return cell
+//            break
         }
         
-        return cell!
+//        return cell!
     }
+    
+    public func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return residentDashboardData != nil ? (residentDashboardData?.bannerData.count)! : 0
+    }
+    
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.set_sdWebImage(With: (residentDashboardData?.bannerData[index].banner)!, placeHolderImage: "userIcon") //image = UIImage(named: (residentDashboardData?.bannerData[index].banner)!)
+        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.clipsToBounds = true
+        cell.textLabel?.text = (residentDashboardData?.bannerData[index].bannerID)!
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

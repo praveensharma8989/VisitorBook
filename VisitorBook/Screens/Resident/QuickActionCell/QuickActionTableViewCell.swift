@@ -27,6 +27,17 @@ class QuickActionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setData(data:ResidentDashboardData){
+        
+        todayVisitorCountLabel.text = data.today
+        weeklyVisitorCountLabel.text = data.weekly
+        totalVisitorCountLabel.text = data.total
+        notificationCountLabel.text = data.notification
+        allComplaintCountLabel.text = data.complaint
+        
+    }
+    
     @IBAction func todayVisitorButton_press(_ sender: Any) {
     }
     @IBAction func weeklyVisitorButton_press(_ sender: Any) {
