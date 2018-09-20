@@ -416,3 +416,18 @@ Pods/Target Support Files/PGSideMenu/PGSideMenu-umbrella.h
 Pods/Target Support Files/PGSideMenu/PGSideMenu.modulemap
 Pods/Target Support Files/PGSideMenu/PGSideMenu.xcconfig
 Pods/Target Support Files/PGSideMenu/ResourceBundle-PGSideMenu-Info.plist
+Pods/FSPagerView/LICENSE
+Pods/FSPagerView/README-OBJECTIVE-C.md
+Pods/FSPagerView/Sources/FSPageControl.swift
+Pods/FSPagerView/Sources/FSPagerCollectionView.swift
+Pods/FSPagerView/Sources/FSPagerView.swift
+Pods/FSPagerView/Sources/FSPagerViewCell.swift
+Pods/FSPagerView/Sources/FSPagerViewLayoutAttributes.swift
+Pods/FSPagerView/Sources/FSPageViewLayout.swift
+Pods/FSPagerView/Sources/FSPageViewTransformer.swift
+Pods/Target Support Files/FSPagerView/FSPagerView-dummy.m
+Pods/Target Support Files/FSPagerView/FSPagerView-prefix.pch
+Pods/Target Support Files/FSPagerView/FSPagerView-umbrella.h
+Pods/Target Support Files/FSPagerView/FSPagerView.modulemap
+Pods/Target Support Files/FSPagerView/FSPagerView.xcconfig
+Pods/Target Support Files/FSPagerView/Info.plist
