@@ -9,6 +9,7 @@
 import UIKit
 import FSPagerView
 
+typealias DashBoardApiCompete = (ResidentDashboardData) -> (Void)
 
 class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource, FSPagerViewDataSource, FSPagerViewDelegate {
 
@@ -16,8 +17,11 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
     
     @IBOutlet weak var pagerView: FSPagerView!
     
+    static let sharedInstance = DashBoardViewController()
     
+    var dashBoardApiCompete : DashBoardApiCompete? = nil
     
+    var residentDashboardData: ResidentDashboardData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +29,12 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
         // Do any additional setup after loading the view.
     }
 
+//    func checkDashBoardApi()
+    
     func initilize(){
         registerCell()
-        
+        tableView.contentInset = .zero
+        tableView.contentInsetAdjustmentBehavior = .never
         pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
         pagerView.delegate = self
         pagerView.dataSource = self
@@ -35,8 +42,13 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
         pagerView.automaticSlidingInterval = 3.0
         
         if residentDashboardData == nil{
-            callDashBoardData { (status) -> (Void) in
+            callDashBoardData { (response, status) -> (Void) in
                 if status{
+
+                    self.residentDashboardData = response
+//                    if DashBoardViewController.sharedInstance.dashBoardApiCompete != nil{
+//                        DashBoardViewController.sharedInstance.dashBoardApiCompete!(self.residentDashboardData!)
+//                    }
                     self.tableView.reloadData()
                     self.pagerView.reloadData()
                 }
@@ -53,6 +65,12 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
         
         
     }
+    
+    func getDataResident()->ResidentDashboardData?{
+        
+        return residentDashboardData
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

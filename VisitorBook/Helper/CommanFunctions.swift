@@ -110,6 +110,36 @@ class CommanFunction: NSObject {
         UserDefaults.standard.synchronize()
     }
     
+    func saveUserDataResidentDashBoard(data: [String : Any]){
+        
+        let value : Any = data
+        
+        UserDefaults.standard.set(value, forKey: AppConstants.k_residentUserDashboard)
+        UserDefaults.standard.synchronize()
+        
+    }
+    
+    func getUserDataResidentDashBoard()-> ResidentDashboardData?{
+        let value = UserDefaults.standard.object(forKey: AppConstants.k_residentUserDashboard)
+        //        let value = UserDefaults.standard.array(forKey: AppConstants.k_gateKeeperUser)
+        
+        if value != nil{
+            let jsonData = try? JSONSerialization.data(withJSONObject: value!)
+            let jsonDecoder = JSONDecoder()
+            let userData = try? jsonDecoder.decode(ResidentDashboardData.self, from: jsonData!)
+            
+            return userData
+        }
+        
+        return nil
+        
+    }
+    
+    func removeResidentDashBoard(){
+        UserDefaults.standard.removeObject(forKey: AppConstants.k_residentUserDashboard)
+        UserDefaults.standard.synchronize()
+    }
+    
     func checkUserType()->UserType{
         
         let userType = UserDefaults.standard.integer(forKey: AppConstants.k_userType)

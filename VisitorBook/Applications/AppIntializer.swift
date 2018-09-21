@@ -9,7 +9,7 @@
 import UIKit
 import SwiftMessages
 import SVProgressHUD
-import PGSideMenu
+import FAPanels
 
 class AppIntializer: NSObject {
     
@@ -84,19 +84,42 @@ class AppIntializer: NSObject {
 //
 //        navigationcontroller.setNavigationBarHidden(false, animated: false)
 
+        
+        
+        
+        
         let storyboard = UIStoryboard.init(name: "Resident", bundle: nil)
         
         let ContentController = storyboard.instantiateViewController(withIdentifier:"PageSegmentViewController") as! PageSegmentViewController
         
         let LeftMenuController = storyboard.instantiateViewController(withIdentifier:"LeftMenuViewController") as! LeftMenuViewController
         
-        let sideMenuController = PGSideMenu(animationType: .slideOver)
-        let contentController = ContentController
-        let leftMenuController = LeftMenuController
-        sideMenuController.addContentController(contentController)
-        sideMenuController.addLeftMenuController(leftMenuController)
+        var fAPanelController = storyboard.instantiateViewController(withIdentifier:"FAPanelController") as! FAPanelController
         
-        AppDelegate.sharedInstance.window?.rootViewController = sideMenuController
+//        FAPanelController
+        
+//        let navigationcontroller = UINavigationController.init(rootViewController: ContentController)
+//
+//        navigationcontroller.setNavigationBarHidden(false, animated: false)
+        
+//        AppDelegate.sharedInstance.window?.rootViewController = ContentController
+        
+        fAPanelController.leftPanelPosition = .front
+        _ = fAPanelController.center(ContentController).left(LeftMenuController)
+        
+        AppDelegate.sharedInstance.window?.rootViewController = fAPanelController
+        
+//        fAPanelController = AppDelegate.sharedInstance.window?.rootViewController as! FAPanelController
+        
+        
+//        let sideMenuController = PGSideMenu(animationType: .slideInRotate)
+//        let contentController = ContentController
+//        let leftMenuController = LeftMenuController
+//        sideMenuController.addContentController(contentController)
+//        sideMenuController.addLeftMenuController(leftMenuController)
+        
+        
+//        AppDelegate.sharedInstance.window?.rootViewController = sideMenuController
         
         AppDelegate.sharedInstance.window?.makeKeyAndVisible()
         

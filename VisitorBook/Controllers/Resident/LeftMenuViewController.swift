@@ -9,16 +9,39 @@
 import UIKit
 
 
-class LeftMenuViewController: UIViewController {
-
+class LeftMenuViewController: ResidentAllPageViewController {
     
+    @IBOutlet weak var moneyLbl: UILabel!
+    @IBOutlet weak var payStatus: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userNameLbl: UILabel!
+    @IBOutlet weak var flateLbl: UILabel!
+    
+    var residentDashboardDataNew : ResidentDashboardData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if residentDashboardDataNew == nil{
+            
+            self.residentDashboardDataNew = DashBoardViewController.sharedInstance.getDataResident()
+                self.setData()
+        }else{
+            setData()
+        }
+        
         // Do any additional setup after loading the view.
     }
 
+    func setData(){
+        
+        userImage.set_sdWebImage(With: (residentDashboardDataNew?.photo)!, placeHolderImage: "userIcon")
+        userNameLbl.text = residentDashboardDataNew?.name
+        flateLbl.text = residentDashboardDataNew?.userType
+        moneyLbl.text = "Rs. " + (residentDashboardDataNew?.maintanance)!
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

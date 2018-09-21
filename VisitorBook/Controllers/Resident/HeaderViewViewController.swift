@@ -7,12 +7,14 @@
 //
 
 import UIKit
-import PGSideMenu
+import FAPanels
 
 typealias LeftMenuClick = () -> (Void)
 
 class HeaderViewViewController: UIViewController {
 
+    
+    
     @IBOutlet weak var leftMenuButton: UIButton!
     var leftMenuClick : LeftMenuClick? = nil
 //    var currentAnimationType: PGSideMenuAnimationType = .slideIn

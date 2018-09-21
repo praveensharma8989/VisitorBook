@@ -431,3 +431,21 @@ Pods/Target Support Files/FSPagerView/FSPagerView-umbrella.h
 Pods/Target Support Files/FSPagerView/FSPagerView.modulemap
 Pods/Target Support Files/FSPagerView/FSPagerView.xcconfig
 Pods/Target Support Files/FSPagerView/Info.plist
+Pods/FAPanels/LICENSE
+Pods/FAPanels/README.md
+Pods/FAPanels/FAPanels/Classes/Collection+FAPanel.swift
+Pods/FAPanels/FAPanels/Classes/FAPanel+Animations.swift
+Pods/FAPanels/FAPanels/Classes/FAPanel+Gestures.swift
+Pods/FAPanels/FAPanels/Classes/FAPanel+InterfaceRotation.swift
+Pods/FAPanels/FAPanels/Classes/FAPanel+KVO.swift
+Pods/FAPanels/FAPanels/Classes/FAPanel.swift
+Pods/FAPanels/FAPanels/Classes/FAPanelConfigurations.swift
+Pods/FAPanels/FAPanels/Classes/UIImage+FAPanel.swift
+Pods/FAPanels/FAPanels/Classes/UIView+FAPanel.swift
+Pods/FAPanels/FAPanels/Classes/UIViewController+FAPanel.swift
+Pods/Target Support Files/FAPanels/FAPanels-dummy.m
+Pods/Target Support Files/FAPanels/FAPanels-prefix.pch
+Pods/Target Support Files/FAPanels/FAPanels-umbrella.h
+Pods/Target Support Files/FAPanels/FAPanels.modulemap
+Pods/Target Support Files/FAPanels/FAPanels.xcconfig
+Pods/Target Support Files/FAPanels/Info.plist

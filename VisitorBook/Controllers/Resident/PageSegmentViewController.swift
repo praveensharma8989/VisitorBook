@@ -8,12 +8,12 @@
 
 import UIKit
 import SJSegmentedScrollView
-import PGSideMenu
+import FAPanels
 
 class PageSegmentViewController: SJSegmentedViewController{
 
+    
     var selectedSegment: SJSegmentTab?
-    var currentAnimationType: PGSideMenuAnimationType = .slideOver
     
     override func viewDidLoad() {
         segmentConfig()
@@ -26,7 +26,6 @@ class PageSegmentViewController: SJSegmentedViewController{
 
     func initilize(){
         
-        configureController()
         
     }
     
@@ -53,9 +52,10 @@ class PageSegmentViewController: SJSegmentedViewController{
             
             header.leftMenuClick = {() in
                 
-                if let sideMenuController = self.parent as? PGSideMenu {
-                    sideMenuController.toggleLeftMenu()
-                }
+                self.panel?.openLeft(animated: true)
+//                if let sideMenuController = self.parent as? PGSideMenu {
+//                    sideMenuController.toggleLeftMenu()
+//                }
                 
             }
             
@@ -82,11 +82,6 @@ class PageSegmentViewController: SJSegmentedViewController{
         
     }
     
-    func configureController() {
-        if let sideMenu = self.parent as? PGSideMenu {
-            sideMenu.animationType = self.currentAnimationType
-        }
-    }
     
     
     func getSegmentTabWithImage(_ imageName: String) -> UIView {

@@ -8,12 +8,11 @@
 
 import UIKit
 
-typealias GetDeshBoardBlock = (Bool) -> (Void)
+typealias GetDeshBoardBlock = (ResidentDashboardData?, Bool) -> (Void)
 
 class ResidentAllPageViewController: AllPageViewController {
 
     var residentData : ResidentData?
-    var residentDashboardData : ResidentDashboardData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +32,17 @@ class ResidentAllPageViewController: AllPageViewController {
         PSServiceManager.CallDashboard(param: param) { (response, status, error) -> (Void) in
             self.dismissLoader()
             
+            var residentDashboardData : ResidentDashboardData?
+            
             if status {
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
-                self.residentDashboardData = try? jsonDecoder.decode(ResidentDashboardData.self, from: jsonData!)
+                residentDashboardData = try? jsonDecoder.decode(ResidentDashboardData.self, from: jsonData!)
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
             }
-            GetDeshBoardBlock(status)
+            GetDeshBoardBlock(residentDashboardData,status)
             
         }
     }

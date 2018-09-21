@@ -70,6 +70,7 @@ struct AppConstants {
     static var k_gateKeeperUserPassword : String = "gateKeeperUserPassword"
     
     static var k_residentUser : String = "residentUser"
+    static var k_residentUserDashboard : String = "residentUserDashboard"
     
     // Date Format
     static var K_DATE_MMDDYY: String = "yy-MM-dd"
