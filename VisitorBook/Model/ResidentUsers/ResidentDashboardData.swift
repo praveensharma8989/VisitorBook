@@ -49,7 +49,7 @@ struct VisitorData: Codable {
     let visitDate, outDate: String?
     let exitStatus: String?
     let status, visitorType: String?
-    let photo: String
+    let photo: String?
     let gender, age, vehicleNo, stickerNo: String?
     let sosName1, sosMob1, sosName2, sosMob2: String?
     let sosMsg: String?

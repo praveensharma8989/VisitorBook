@@ -37,7 +37,9 @@ class ResidentAllPageViewController: AllPageViewController {
             if status {
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
+                
                 residentDashboardData = try? jsonDecoder.decode(ResidentDashboardData.self, from: jsonData!)
+                CommanFunction.instance.saveUserDataResidentDashBoard(data: residentDashboardData!)
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)

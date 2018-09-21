@@ -110,11 +110,11 @@ class CommanFunction: NSObject {
         UserDefaults.standard.synchronize()
     }
     
-    func saveUserDataResidentDashBoard(data: [String : Any]){
+    func saveUserDataResidentDashBoard(data: ResidentDashboardData){
         
-        let value : Any = data
+        let encodeData = NSKeyedArchiver.archivedData(withRootObject: data)
         
-        UserDefaults.standard.set(value, forKey: AppConstants.k_residentUserDashboard)
+        UserDefaults.standard.set(encodeData, forKey: AppConstants.k_residentUserDashboard)
         UserDefaults.standard.synchronize()
         
     }
