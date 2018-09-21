@@ -40,6 +40,12 @@
 		E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */; };
 		E96E5EFD2152B64D008415D8 /* QuickActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */; };
 		E96E5EFE2152B64D008415D8 /* QuickActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */; };
+		E97069B1215533F500427CFB /* NabigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97069B0215533F500427CFB /* NabigationBar.swift */; };
+		E97069B32155386C00427CFB /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97069B22155386C00427CFB /* NavigationBarView.xib */; };
+		E97069B92155472B00427CFB /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97069B72155472B00427CFB /* SideMenuTableViewCell.swift */; };
+		E97069BA2155472B00427CFB /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97069B82155472B00427CFB /* SideMenuTableViewCell.xib */; };
+		E97069C021555B7A00427CFB /* SideMenuSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97069BF21555B7A00427CFB /* SideMenuSectionHeaderView.swift */; };
+		E97069C221555B8600427CFB /* SideMenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97069C121555B8600427CFB /* SideMenuSectionHeaderView.xib */; };
 		E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E21222146D69800135CDA /* PendingVisitData.swift */; };
 		E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212421479A5300135CDA /* ExitCodeViewController.swift */; };
 		E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */; };
@@ -122,6 +128,12 @@
 		E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitViewController.swift; sourceTree = "<group>"; };
 		E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionTableViewCell.swift; sourceTree = "<group>"; };
 		E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionTableViewCell.xib; sourceTree = "<group>"; };
+		E97069B0215533F500427CFB /* NabigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NabigationBar.swift; sourceTree = "<group>"; };
+		E97069B22155386C00427CFB /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
+		E97069B72155472B00427CFB /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		E97069B82155472B00427CFB /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		E97069BF21555B7A00427CFB /* SideMenuSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSectionHeaderView.swift; sourceTree = "<group>"; };
+		E97069C121555B8600427CFB /* SideMenuSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuSectionHeaderView.xib; sourceTree = "<group>"; };
 		E97E21222146D69800135CDA /* PendingVisitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitData.swift; sourceTree = "<group>"; };
 		E97E212421479A5300135CDA /* ExitCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCodeViewController.swift; sourceTree = "<group>"; };
 		E97E212621479B8A00135CDA /* EnterVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVehicleViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +218,8 @@
 			children = (
 				79F4060B2152D17E00D2A5A3 /* HeaderView.swift */,
 				79F4060D2152D18A00D2A5A3 /* HeaderView.xib */,
+				E97069BF21555B7A00427CFB /* SideMenuSectionHeaderView.swift */,
+				E97069C121555B8600427CFB /* SideMenuSectionHeaderView.xib */,
 			);
 			path = SectionHeaderView;
 			sourceTree = "<group>";
@@ -361,6 +375,8 @@
 		E96E5EF92152B5F8008415D8 /* Resident */ = {
 			isa = PBXGroup;
 			children = (
+				E97069B4215546E500427CFB /* SideMenuCell */,
+				E97069AD215533E300427CFB /* NavigationBar */,
 				79F4060F2152DAB200D2A5A3 /* ExpectedVisitorCell */,
 				79F406102152DAB200D2A5A3 /* RecentVisitorCell */,
 				79F406082152D13100D2A5A3 /* SectionHeaderView */,
@@ -377,6 +393,25 @@
 			);
 			path = QuickActionCell;
 			sourceTree = "<group>";
+		};
+		E97069AD215533E300427CFB /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				E97069B0215533F500427CFB /* NabigationBar.swift */,
+				E97069B22155386C00427CFB /* NavigationBarView.xib */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		E97069B4215546E500427CFB /* SideMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				E97069B72155472B00427CFB /* SideMenuTableViewCell.swift */,
+				E97069B82155472B00427CFB /* SideMenuTableViewCell.xib */,
+			);
+			name = SideMenuCell;
+			path = VisitorBook/Screens/SideMenuCell;
+			sourceTree = SOURCE_ROOT;
 		};
 		E97E212821479C6200135CDA /* UserDetailView */ = {
 			isa = PBXGroup;
@@ -565,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9929C90214ADCB40034550F /* DailySOSTableViewCell.xib in Resources */,
+				E97069BA2155472B00427CFB /* SideMenuTableViewCell.xib in Resources */,
 				79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */,
 				79F406182152DAF200D2A5A3 /* RecentVisitorTableViewCell.xib in Resources */,
 				E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */,
@@ -578,6 +614,8 @@
 				79FE29D1213DAD9500CE95CE /* LaunchScreen.storyboard in Resources */,
 				E96E5EFE2152B64D008415D8 /* QuickActionTableViewCell.xib in Resources */,
 				E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */,
+				E97069C221555B8600427CFB /* SideMenuSectionHeaderView.xib in Resources */,
+				E97069B32155386C00427CFB /* NavigationBarView.xib in Resources */,
 				79F4060E2152D18A00D2A5A3 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +713,7 @@
 				79F4CAFF2151745500D0D02B /* DashBoardViewController.swift in Sources */,
 				79F406132152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift in Sources */,
 				E9929C85214ADA7E0034550F /* DailySOSViewController.swift in Sources */,
+				E97069C021555B7A00427CFB /* SideMenuSectionHeaderView.swift in Sources */,
 				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
 				E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */,
 				79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */,
@@ -693,6 +732,7 @@
 				E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
 				E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */,
+				E97069B1215533F500427CFB /* NabigationBar.swift in Sources */,
 				E9929C8F214ADCB40034550F /* DailySOSTableViewCell.swift in Sources */,
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				E9A8F403214B99FA0015EED5 /* DailySOSData.swift in Sources */,
@@ -700,6 +740,7 @@
 				E92FDB47215233A2003AEE58 /* HeaderViewViewController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
 				E97E212A21479CB300135CDA /* UserDetailView.swift in Sources */,
+				E97069B92155472B00427CFB /* SideMenuTableViewCell.swift in Sources */,
 				E9FEF7062146A503006F72C8 /* PendingVisitTableViewCell.swift in Sources */,
 				E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */,
 				E98C4A59213FEF92006202FA /* UIFont+PS.swift in Sources */,
@@ -871,7 +912,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -886,7 +930,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

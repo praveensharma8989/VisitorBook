@@ -111,11 +111,21 @@ class CommanFunction: NSObject {
     }
     
     func saveUserDataResidentDashBoard(data: ResidentDashboardData){
-        
-        let encodeData = NSKeyedArchiver.archivedData(withRootObject: data)
+        do{
+       // print()
+      
+            
+            let dataToSave = try JSONEncoder().encode(data)
+        let encodeData = NSKeyedArchiver.archivedData(withRootObject: dataToSave)
         
         UserDefaults.standard.set(encodeData, forKey: AppConstants.k_residentUserDashboard)
         UserDefaults.standard.synchronize()
+            
+         
+        }
+        catch{
+            print(error)
+        }
         
     }
     
@@ -124,11 +134,17 @@ class CommanFunction: NSObject {
         //        let value = UserDefaults.standard.array(forKey: AppConstants.k_gateKeeperUser)
         
         if value != nil{
-            let jsonData = try? JSONSerialization.data(withJSONObject: value!)
-            let jsonDecoder = JSONDecoder()
-            let userData = try? jsonDecoder.decode(ResidentDashboardData.self, from: jsonData!)
-            
-            return userData
+            do{
+                let valueToRetrieve = UserDefaults.standard.value(forKey: AppConstants.k_residentUserDashboard)
+                let unArchievedValue = NSKeyedUnarchiver.unarchiveObject(with: valueToRetrieve as! Data)
+                let decodedValue = try JSONDecoder().decode(ResidentDashboardData.self, from: unArchievedValue as! Data) as ResidentDashboardData
+                //            print(decodedValue)
+                return decodedValue
+                
+            }
+            catch{
+                print(error)
+            }
         }
         
         return nil

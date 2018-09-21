@@ -30,7 +30,7 @@ class RecentVisitorTableViewCell: UITableViewCell {
     
     func setData(data : VisitorData){
         
-        userImage.set_sdWebImage(With: data.photo, placeHolderImage: "userIcon")
+        userImage.set_sdWebImage(With: data.photo ?? "", placeHolderImage: "userIcon")
         userName.text = data.name
         userPhone.text = data.mobile
         userEmail.text = data.email

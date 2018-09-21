@@ -9,14 +9,14 @@
 import UIKit
 import FAPanels
 
-typealias LeftMenuClick = () -> (Void)
+//typealias LeftMenuClick = () -> (Void)
 
 class HeaderViewViewController: UIViewController {
 
     
     
     @IBOutlet weak var leftMenuButton: UIButton!
-    var leftMenuClick : LeftMenuClick? = nil
+//    var leftMenuClick : LeftMenuClick? = nil
 //    var currentAnimationType: PGSideMenuAnimationType = .slideIn
     
     override func viewDidLoad() {
@@ -39,9 +39,9 @@ class HeaderViewViewController: UIViewController {
     
     @IBAction func leftMenuButton_press(_ sender: Any) {
 
-        if leftMenuClick != nil{
-            leftMenuClick!()
-        }
+//        if leftMenuClick != nil{
+//            leftMenuClick!()
+//        }
         
 //        if let sideMenuController = self.parent as? PGSideMenu {
 //            sideMenuController.toggleLeftMenu()

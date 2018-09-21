@@ -14,6 +14,7 @@ class PageSegmentViewController: SJSegmentedViewController{
 
     
     var selectedSegment: SJSegmentTab?
+    var navigationBarView : NavigationBarView?
     
     override func viewDidLoad() {
         segmentConfig()
@@ -26,6 +27,15 @@ class PageSegmentViewController: SJSegmentedViewController{
 
     func initilize(){
         
+        navigationBarView = NavigationBarView.init(frame: (navigationController?.navigationBar.bounds)!)
+        
+        navigationBarView!.leftMenuClick = {() in
+            
+            self.panel?.openLeft(animated: true)
+            
+        }
+        
+        navigationController?.navigationBar.addSubview(navigationBarView!)
         
     }
     
@@ -50,25 +60,26 @@ class PageSegmentViewController: SJSegmentedViewController{
             let header = storyboard
                 .instantiateViewController(withIdentifier: "HeaderViewViewController") as! HeaderViewViewController
             
-            header.leftMenuClick = {() in
-                
-                self.panel?.openLeft(animated: true)
-//                if let sideMenuController = self.parent as? PGSideMenu {
-//                    sideMenuController.toggleLeftMenu()
-//                }
-                
-            }
+//            header.leftMenuClick = {() in
+//
+//                self.panel?.openLeft(animated: true)
+////                if let sideMenuController = self.parent as? PGSideMenu {
+////                    sideMenuController.toggleLeftMenu()
+////                }
+//
+//            }
             
             
-            headerViewController = header
+//            headerViewController = header
             
-            headerViewHeight = 70
+//            headerViewHeight = 200
             segmentControllers = [firstViewController,
                                   secondViewController,
                                   thirdViewController]
             
+            
             selectedSegmentViewHeight = 5.0
-            headerViewOffsetHeight = 40.0
+//            headerViewOffsetHeight = 40.0
             segmentTitleColor = .gray
             selectedSegmentViewColor = .red
             segmentShadow = SJShadow.light()
@@ -77,8 +88,6 @@ class PageSegmentViewController: SJSegmentedViewController{
             segmentBounces = false
             delegate = self
         }
-        
-        title = "Segment"
         
     }
     
