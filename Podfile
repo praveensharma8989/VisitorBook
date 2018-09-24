@@ -17,4 +17,5 @@ target 'VisitorBook' do
   pod 'FSPagerView'
   pod 'FAPanels'
   pod 'NewPopMenu'
+  pod 'CircleProgressView', :git => 'https://github.com/CardinalNow/iOS-CircleProgressView.git'
 end

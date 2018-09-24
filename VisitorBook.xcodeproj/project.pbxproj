@@ -38,6 +38,9 @@
 		E92FDB3721516006003AEE58 /* ResidentDashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB3621516006003AEE58 /* ResidentDashboardData.swift */; };
 		E92FDB392151637E003AEE58 /* ResidentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB382151637E003AEE58 /* ResidentData.swift */; };
 		E92FDB4521522CCA003AEE58 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */; };
+		E95BA0992159319000479C4C /* ResidentInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BA0972159319000479C4C /* ResidentInfoTableViewCell.swift */; };
+		E95BA09A2159319000479C4C /* ResidentInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95BA0982159319000479C4C /* ResidentInfoTableViewCell.xib */; };
+		E95BA09C2159584300479C4C /* ResidentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95BA09B2159584200479C4C /* ResidentProfileViewController.swift */; };
 		E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */; };
 		E96E5EFD2152B64D008415D8 /* QuickActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */; };
 		E96E5EFE2152B64D008415D8 /* QuickActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */; };
@@ -127,6 +130,9 @@
 		E92FDB3621516006003AEE58 /* ResidentDashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentDashboardData.swift; sourceTree = "<group>"; };
 		E92FDB382151637E003AEE58 /* ResidentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentData.swift; sourceTree = "<group>"; };
 		E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		E95BA0972159319000479C4C /* ResidentInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentInfoTableViewCell.swift; sourceTree = "<group>"; };
+		E95BA0982159319000479C4C /* ResidentInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResidentInfoTableViewCell.xib; sourceTree = "<group>"; };
+		E95BA09B2159584200479C4C /* ResidentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentProfileViewController.swift; sourceTree = "<group>"; };
 		E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitViewController.swift; sourceTree = "<group>"; };
 		E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionTableViewCell.swift; sourceTree = "<group>"; };
 		E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionTableViewCell.xib; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 				79F4CB022151746F00D0D02B /* PostViewController.swift */,
 				E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */,
 				79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */,
+				E95BA09B2159584200479C4C /* ResidentProfileViewController.swift */,
 			);
 			path = Resident;
 			sourceTree = "<group>";
@@ -375,9 +382,19 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		E95BA0962159315D00479C4C /* ResidentInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				E95BA0972159319000479C4C /* ResidentInfoTableViewCell.swift */,
+				E95BA0982159319000479C4C /* ResidentInfoTableViewCell.xib */,
+			);
+			path = ResidentInfoCell;
+			sourceTree = "<group>";
+		};
 		E96E5EF92152B5F8008415D8 /* Resident */ = {
 			isa = PBXGroup;
 			children = (
+				E95BA0962159315D00479C4C /* ResidentInfoCell */,
 				E97069B4215546E500427CFB /* SideMenuCell */,
 				E97069AD215533E300427CFB /* NavigationBar */,
 				79F4060F2152DAB200D2A5A3 /* ExpectedVisitorCell */,
@@ -611,6 +628,7 @@
 				E97E212C21479CD600135CDA /* UserDetailView.xib in Resources */,
 				E97E212E2147A2AD00135CDA /* VehicleDetailView.xib in Resources */,
 				E9929C92214AE6740034550F /* DailySOSImageView.xib in Resources */,
+				E95BA09A2159319000479C4C /* ResidentInfoTableViewCell.xib in Resources */,
 				E9929C8A214ADC510034550F /* DotViewMenu.xib in Resources */,
 				E9B2B09F21515AAE00C7737D /* Resident.storyboard in Resources */,
 				79FE29D0213DAD9500CE95CE /* Assets.xcassets in Resources */,
@@ -670,6 +688,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -685,6 +704,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -716,6 +736,7 @@
 				E98550EF2153691900B8E285 /* ResidentAllPageViewController.swift in Sources */,
 				79F4CB032151746F00D0D02B /* PostViewController.swift in Sources */,
 				79F4CAFF2151745500D0D02B /* DashBoardViewController.swift in Sources */,
+				E95BA0992159319000479C4C /* ResidentInfoTableViewCell.swift in Sources */,
 				79F406132152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift in Sources */,
 				E9929C85214ADA7E0034550F /* DailySOSViewController.swift in Sources */,
 				E97069C021555B7A00427CFB /* SideMenuSectionHeaderView.swift in Sources */,
@@ -753,6 +774,7 @@
 				E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */,
 				79F4CB052151777700D0D02B /* ResidentOTPViewController.swift in Sources */,
 				E98C4A58213FEF92006202FA /* UIColor+PS.swift in Sources */,
+				E95BA09C2159584300479C4C /* ResidentProfileViewController.swift in Sources */,
 				79E482FE2155797900AF9838 /* PopMenuExamples.swift in Sources */,
 				79F406172152DAF200D2A5A3 /* RecentVisitorTableViewCell.swift in Sources */,
 				E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */,
@@ -916,8 +938,8 @@
 			baseConfigurationReference = 40360B1922E8AAD2C2BA88F6 /* Pods-VisitorBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y37VWU7YCS;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -926,7 +948,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = VisitorForAppStore;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -937,8 +959,8 @@
 			baseConfigurationReference = 2E66423D006BD9857E3CDB4B /* Pods-VisitorBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y37VWU7YCS;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -947,7 +969,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = VisitorForAppStore;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
