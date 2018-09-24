@@ -468,3 +468,15 @@ Pods/Target Support Files/NewPopMenu/NewPopMenu-prefix.pch
 Pods/Target Support Files/NewPopMenu/NewPopMenu-umbrella.h
 Pods/Target Support Files/NewPopMenu/NewPopMenu.modulemap
 Pods/Target Support Files/NewPopMenu/NewPopMenu.xcconfig
+Pods/CircleProgressView/LICENSE.md
+Pods/CircleProgressView/README.md
+Pods/CircleProgressView/CircleProgressView/AppDelegate.swift
+Pods/CircleProgressView/CircleProgressView/CircleProgressView.swift
+Pods/CircleProgressView/CircleProgressView/ViewController.swift
+Pods/Local Podspecs/CircleProgressView.podspec.json
+Pods/Target Support Files/CircleProgressView/CircleProgressView-dummy.m
+Pods/Target Support Files/CircleProgressView/CircleProgressView-prefix.pch
+Pods/Target Support Files/CircleProgressView/CircleProgressView-umbrella.h
+Pods/Target Support Files/CircleProgressView/CircleProgressView.modulemap
+Pods/Target Support Files/CircleProgressView/CircleProgressView.xcconfig
+Pods/Target Support Files/CircleProgressView/Info.plist
