@@ -81,6 +81,7 @@ struct AppConstants {
     
     static var k_residentUser : String = "residentUser"
     static var k_residentUserDashboard : String = "residentUserDashboard"
+    static var k_residentFlatProfile : String = "residentFlatProfile"
     
     // Date Format
     static var K_DATE_MMDDYY: String = "yy-MM-dd"

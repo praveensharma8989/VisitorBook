@@ -22,6 +22,15 @@ class ResidentInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setData(data : FlatUser){
+        
+        UserImage.set_sdWebImage(With: data.photo!, placeHolderImage: "userIcon")
+        userNameLbl.text = data.name
+        userTypeLbl.text = data.usertype
+        userFlateLbl.text = ((data.tower != nil) ? data.tower! : "") + ((data.floor != nil) ? data.floor! : "") + ((data.flat != nil) ? data.flat! : "")
+        
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

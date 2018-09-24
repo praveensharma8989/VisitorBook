@@ -110,6 +110,35 @@ class CommanFunction: NSObject {
         UserDefaults.standard.synchronize()
     }
     
+    func saveResidentFlatProfile(data: [String : Any]){
+        
+        let value : Any = data
+        
+        UserDefaults.standard.set(value, forKey: AppConstants.k_residentFlatProfile)
+        UserDefaults.standard.synchronize()
+        
+    }
+    
+    func getResidentFlatProfile()-> FlateProfileData?{
+        let value = UserDefaults.standard.object(forKey: AppConstants.k_residentFlatProfile)
+        
+        if value != nil{
+            let jsonData = try? JSONSerialization.data(withJSONObject: value!)
+            let jsonDecoder = JSONDecoder()
+            let userData = try? jsonDecoder.decode(FlateProfileData.self, from: jsonData!)
+            
+            return userData
+        }
+        
+        return nil
+        
+    }
+    
+    func removeResidentFlatProfile(){
+        UserDefaults.standard.removeObject(forKey: AppConstants.k_residentFlatProfile)
+        UserDefaults.standard.synchronize()
+    }
+    
     func saveUserDataResidentDashBoard(data: ResidentDashboardData){
         do{
        // print()

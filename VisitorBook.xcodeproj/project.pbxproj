@@ -14,6 +14,9 @@
 		79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A93214411CB0010952B /* TowerPurposeData.swift */; };
 		79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */; };
 		79D479A42157C85800DD6747 /* VisitorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */; };
+		79D479A6215969EA00DD6747 /* ResidentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D479A5215969EA00DD6747 /* ResidentInfoViewController.swift */; };
+		79D479A821596BA800DD6747 /* ResidentInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D479A721596BA800DD6747 /* ResidentInfoData.swift */; };
+		79D479AA2159765A00DD6747 /* ResidentFlateProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D479A92159765A00DD6747 /* ResidentFlateProfileData.swift */; };
 		79E482FE2155797900AF9838 /* PopMenuExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E482FD2155797800AF9838 /* PopMenuExamples.swift */; };
 		79F4060C2152D17E00D2A5A3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4060B2152D17E00D2A5A3 /* HeaderView.swift */; };
 		79F4060E2152D18A00D2A5A3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F4060D2152D18A00D2A5A3 /* HeaderView.xib */; };
@@ -103,6 +106,9 @@
 		79B49A93214411CB0010952B /* TowerPurposeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerPurposeData.swift; sourceTree = "<group>"; };
 		79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorInfoViewController.swift; sourceTree = "<group>"; };
+		79D479A5215969EA00DD6747 /* ResidentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentInfoViewController.swift; sourceTree = "<group>"; };
+		79D479A721596BA800DD6747 /* ResidentInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentInfoData.swift; sourceTree = "<group>"; };
+		79D479A92159765A00DD6747 /* ResidentFlateProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentFlateProfileData.swift; sourceTree = "<group>"; };
 		79E482FD2155797800AF9838 /* PopMenuExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuExamples.swift; sourceTree = "<group>"; };
 		79F4060B2152D17E00D2A5A3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		79F4060D2152D18A00D2A5A3 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 				E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */,
 				79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */,
 				E95BA09B2159584200479C4C /* ResidentProfileViewController.swift */,
+				79D479A5215969EA00DD6747 /* ResidentInfoViewController.swift */,
 			);
 			path = Resident;
 			sourceTree = "<group>";
@@ -371,6 +378,8 @@
 			children = (
 				E92FDB3621516006003AEE58 /* ResidentDashboardData.swift */,
 				E92FDB382151637E003AEE58 /* ResidentData.swift */,
+				79D479A721596BA800DD6747 /* ResidentInfoData.swift */,
+				79D479A92159765A00DD6747 /* ResidentFlateProfileData.swift */,
 			);
 			path = ResidentUsers;
 			sourceTree = "<group>";
@@ -731,6 +740,7 @@
 			files = (
 				E97E212521479A5300135CDA /* ExitCodeViewController.swift in Sources */,
 				E98C4A63213FF457006202FA /* AppConstants.swift in Sources */,
+				79D479A6215969EA00DD6747 /* ResidentInfoViewController.swift in Sources */,
 				E96E5EFD2152B64D008415D8 /* QuickActionTableViewCell.swift in Sources */,
 				E97E21232146D69800135CDA /* PendingVisitData.swift in Sources */,
 				E98550EF2153691900B8E285 /* ResidentAllPageViewController.swift in Sources */,
@@ -742,6 +752,7 @@
 				E97069C021555B7A00427CFB /* SideMenuSectionHeaderView.swift in Sources */,
 				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
 				E98C4A7421403ADC006202FA /* RegisterViewController.swift in Sources */,
+				79D479AA2159765A00DD6747 /* ResidentFlateProfileData.swift in Sources */,
 				79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */,
 				E97E21302147A2BE00135CDA /* VehicleDetailView.swift in Sources */,
 				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
@@ -792,6 +803,7 @@
 				E9929C94214AE6C50034550F /* DailySOSImageView.swift in Sources */,
 				E9D9BF00214282FE0004FB6E /* VisitorDetailsViewController.swift in Sources */,
 				E9929C83214AD4570034550F /* PasswordChangeViewController.swift in Sources */,
+				79D479A821596BA800DD6747 /* ResidentInfoData.swift in Sources */,
 				79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */,
 				79F4060C2152D17E00D2A5A3 /* HeaderView.swift in Sources */,
 			);

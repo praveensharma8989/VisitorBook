@@ -50,7 +50,6 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
     func registerCell(){
 
         tableVIew.register(UINib(nibName: "RecentVisitorTableViewCell", bundle: nil), forCellReuseIdentifier: "RecentVisitorTableViewCell")
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
