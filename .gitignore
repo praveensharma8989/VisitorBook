@@ -449,3 +449,22 @@ Pods/Target Support Files/FAPanels/FAPanels-umbrella.h
 Pods/Target Support Files/FAPanels/FAPanels.modulemap
 Pods/Target Support Files/FAPanels/FAPanels.xcconfig
 Pods/Target Support Files/FAPanels/Info.plist
+Pods/NewPopMenu/LICENSE
+Pods/NewPopMenu/README.md
+Pods/NewPopMenu/PopMenu/PopMenu.h
+Pods/NewPopMenu/PopMenu/Classes/PopMenuAppearance.swift
+Pods/NewPopMenu/PopMenu/Classes/PopMenuManager.swift
+Pods/NewPopMenu/PopMenu/Classes/Helpers/Haptics.swift
+Pods/NewPopMenu/PopMenu/Classes/Helpers/PopMenuGradientView.swift
+Pods/NewPopMenu/PopMenu/Classes/Helpers/UIColor+Contrast.swift
+Pods/NewPopMenu/PopMenu/Classes/Helpers/UIView+Shadows.swift
+Pods/NewPopMenu/PopMenu/Transitions/PopMenuDismissAnimationController.swift
+Pods/NewPopMenu/PopMenu/Transitions/PopMenuPresentAnimationController.swift
+Pods/NewPopMenu/PopMenu/View Controller & Views/PopMenuAction.swift
+Pods/NewPopMenu/PopMenu/View Controller & Views/PopMenuViewController.swift
+Pods/Target Support Files/NewPopMenu/Info.plist
+Pods/Target Support Files/NewPopMenu/NewPopMenu-dummy.m
+Pods/Target Support Files/NewPopMenu/NewPopMenu-prefix.pch
+Pods/Target Support Files/NewPopMenu/NewPopMenu-umbrella.h
+Pods/Target Support Files/NewPopMenu/NewPopMenu.modulemap
+Pods/Target Support Files/NewPopMenu/NewPopMenu.xcconfig
