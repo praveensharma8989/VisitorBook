@@ -31,10 +31,20 @@ enum CARequestApiName:String {
     ResentVisitReq          = "ResentVisitReq.php",
     SearchVisitor           = "SearchVisitor.php",
     ChangePassword          = "reset_pwd.php",
-    SOSDetail               = "SOS_Detail",
-    GuardLogout             = "GuardLogout",
-    VisitExit               = "VisitExit",
-    DashBoard               = "dashboard"
+    SOSDetail               = "SOS_Detail.php",
+    GuardLogout             = "GuardLogout.php",
+    VisitExit               = "VisitExit.php",
+    DashBoard               = "dashboard.php",
+    Maintanance             = "maintanance.php",
+    FlatMobile              = "FlatMobile.php",
+    FlatProfile             = "FaltProfile.php",
+    Events                  = "Events.php",
+    EventsImages            = "EventsImages.php",
+    Flat_Visitor            = "Flat_Visitor.php",
+    RWAList                 = "RWAList.php",
+    ComplainList            = "ComplainList.php",
+    ComplainCat             = "ComplainCat.php",
+    NotificationList        = "NotificationList.php"
     
 }
 

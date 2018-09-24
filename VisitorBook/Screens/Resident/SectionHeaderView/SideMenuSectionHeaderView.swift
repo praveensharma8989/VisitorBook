@@ -8,8 +8,12 @@
 
 import UIKit
 
+typealias HeaderSelected = () -> (Void)
+
 class SideMenuSectionHeaderView: UITableViewHeaderFooterView {
 
+    var headerSelected : HeaderSelected? = nil
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,4 +22,10 @@ class SideMenuSectionHeaderView: UITableViewHeaderFooterView {
     }
     */
 
+    @IBAction func SectionSelectButton_press(_ sender: Any) {
+        
+        if headerSelected != nil{
+            headerSelected!()
+        }
+    }
 }

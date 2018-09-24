@@ -13,6 +13,7 @@ typealias UserDetailCancel =  () -> (Void)
 class UserDetailView: UIView {
 
     var userData : PendingVisit?
+    var visitorData : VisitorData?
     var userDetailCancel : UserDetailCancel? = nil
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var userImage: UIImageView!
@@ -58,7 +59,21 @@ class UserDetailView: UIView {
             flatLabel.text = userData?.flats
             inTimeLabel.text = userData?.visitDate
             outTimeLabel.text = userData?.outDate
+        }else if visitorData != nil{
+            userImage.set_sdWebImage(With: (visitorData?.photo)!, placeHolderImage: "userIcon")
+            userNameLabel.text = visitorData?.name
+            emailLabel.text = visitorData?.email
+            mobileLabel.text = visitorData?.mobile
+            companyLabel.text = visitorData?.company
+            addressLabel.text = visitorData?.address
+            meetPurposeLabel.text = visitorData?.meetPurpose
+            vehicleLabel.text = visitorData?.vehicle
+            flatLabel.isHidden = true
+//            flatLabel.text = visitorData?.flats
+            inTimeLabel.text = visitorData?.visitDate
+            outTimeLabel.text = visitorData?.outDate
         }
+        
         self.setNeedsDisplay()
     }
     

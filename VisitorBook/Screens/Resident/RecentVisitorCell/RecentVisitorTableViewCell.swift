@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias VisitorImageClick = () -> (Void)
+
 class RecentVisitorTableViewCell: UITableViewCell {
 
     @IBOutlet weak var userImage: UIImageView!
@@ -17,6 +19,9 @@ class RecentVisitorTableViewCell: UITableViewCell {
     @IBOutlet weak var inTime: UILabel!
     @IBOutlet weak var outTime: UILabel!
     @IBOutlet weak var staff: UILabel!
+    
+    var visitorImageClick : VisitorImageClick? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,6 +44,13 @@ class RecentVisitorTableViewCell: UITableViewCell {
         staff.text = data.visitorType
         staff.isHidden = data.visitorType == "" ? true : false
         outTime.isHidden  = data.outDate == "" ? true : false
+    }
+    @IBAction func showImage_press(_ sender: Any) {
+        
+        if visitorImageClick != nil{
+            return visitorImageClick!()
+        }
+        
     }
     
 }

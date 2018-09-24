@@ -16,4 +16,5 @@ target 'VisitorBook' do
   pod 'SJSegmentedScrollView', ‘1.3.8'
   pod 'FSPagerView'
   pod 'FAPanels'
+  pod 'NewPopMenu'
 end

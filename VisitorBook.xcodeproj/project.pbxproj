@@ -13,6 +13,8 @@
 		79B49A922143B9760010952B /* SelectTowerAndPusposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */; };
 		79B49A94214411CB0010952B /* TowerPurposeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A93214411CB0010952B /* TowerPurposeData.swift */; };
 		79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */; };
+		79D479A42157C85800DD6747 /* VisitorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */; };
+		79E482FE2155797900AF9838 /* PopMenuExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E482FD2155797800AF9838 /* PopMenuExamples.swift */; };
 		79F4060C2152D17E00D2A5A3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4060B2152D17E00D2A5A3 /* HeaderView.swift */; };
 		79F4060E2152D18A00D2A5A3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F4060D2152D18A00D2A5A3 /* HeaderView.xib */; };
 		79F406132152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F406112152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift */; };
@@ -36,7 +38,6 @@
 		E92FDB3721516006003AEE58 /* ResidentDashboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB3621516006003AEE58 /* ResidentDashboardData.swift */; };
 		E92FDB392151637E003AEE58 /* ResidentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB382151637E003AEE58 /* ResidentData.swift */; };
 		E92FDB4521522CCA003AEE58 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */; };
-		E92FDB47215233A2003AEE58 /* HeaderViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FDB46215233A2003AEE58 /* HeaderViewViewController.swift */; };
 		E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */; };
 		E96E5EFD2152B64D008415D8 /* QuickActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */; };
 		E96E5EFE2152B64D008415D8 /* QuickActionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */; };
@@ -98,6 +99,8 @@
 		79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTowerAndPusposeViewController.swift; sourceTree = "<group>"; };
 		79B49A93214411CB0010952B /* TowerPurposeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerPurposeData.swift; sourceTree = "<group>"; };
 		79CF15F4213EFDCB000FAB8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorInfoViewController.swift; sourceTree = "<group>"; };
+		79E482FD2155797800AF9838 /* PopMenuExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuExamples.swift; sourceTree = "<group>"; };
 		79F4060B2152D17E00D2A5A3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		79F4060D2152D18A00D2A5A3 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		79F406112152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedVisitorTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,7 +127,6 @@
 		E92FDB3621516006003AEE58 /* ResidentDashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentDashboardData.swift; sourceTree = "<group>"; };
 		E92FDB382151637E003AEE58 /* ResidentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentData.swift; sourceTree = "<group>"; };
 		E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
-		E92FDB46215233A2003AEE58 /* HeaderViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewViewController.swift; sourceTree = "<group>"; };
 		E95D1C882146B33900B3CC85 /* PendingVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitViewController.swift; sourceTree = "<group>"; };
 		E96E5EFB2152B64D008415D8 /* QuickActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionTableViewCell.swift; sourceTree = "<group>"; };
 		E96E5EFC2152B64D008415D8 /* QuickActionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickActionTableViewCell.xib; sourceTree = "<group>"; };
@@ -250,7 +252,7 @@
 				79F4CB002151746300D0D02B /* EventViewController.swift */,
 				79F4CB022151746F00D0D02B /* PostViewController.swift */,
 				E92FDB4421522CCA003AEE58 /* LeftMenuViewController.swift */,
-				E92FDB46215233A2003AEE58 /* HeaderViewViewController.swift */,
+				79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */,
 			);
 			path = Resident;
 			sourceTree = "<group>";
@@ -308,6 +310,7 @@
 		79FE29D9213DC70400CE95CE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				79E482FD2155797800AF9838 /* PopMenuExamples.swift */,
 				79FE29E0213DC7AE00CE95CE /* CommanFunctions.swift */,
 			);
 			path = Helper;
@@ -670,6 +673,7 @@
 				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
@@ -684,6 +688,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
@@ -724,6 +729,7 @@
 				E97E2137214803FD00135CDA /* VehicleData.swift in Sources */,
 				E98C4A60213FF084006202FA /* PSValidator.swift in Sources */,
 				E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */,
+				79D479A42157C85800DD6747 /* VisitorInfoViewController.swift in Sources */,
 				E98C4A5A213FEF92006202FA /* NSString+PS.swift in Sources */,
 				E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */,
 				79B49A922143B9760010952B /* SelectTowerAndPusposeViewController.swift in Sources */,
@@ -737,7 +743,6 @@
 				79FE29D3213DAD9500CE95CE /* AppDelegate.swift in Sources */,
 				E9A8F403214B99FA0015EED5 /* DailySOSData.swift in Sources */,
 				E9D652252141443C00B61425 /* GateKeeperTabBatController.swift in Sources */,
-				E92FDB47215233A2003AEE58 /* HeaderViewViewController.swift in Sources */,
 				79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */,
 				E97E212A21479CB300135CDA /* UserDetailView.swift in Sources */,
 				E97069B92155472B00427CFB /* SideMenuTableViewCell.swift in Sources */,
@@ -748,6 +753,7 @@
 				E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */,
 				79F4CB052151777700D0D02B /* ResidentOTPViewController.swift in Sources */,
 				E98C4A58213FEF92006202FA /* UIColor+PS.swift in Sources */,
+				79E482FE2155797900AF9838 /* PopMenuExamples.swift in Sources */,
 				79F406172152DAF200D2A5A3 /* RecentVisitorTableViewCell.swift in Sources */,
 				E95D1C892146B33900B3CC85 /* PendingVisitViewController.swift in Sources */,
 				79F4CB012151746300D0D02B /* EventViewController.swift in Sources */,
@@ -910,7 +916,9 @@
 			baseConfigurationReference = 40360B1922E8AAD2C2BA88F6 /* Pods-VisitorBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y37VWU7YCS;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -918,6 +926,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -928,7 +937,9 @@
 			baseConfigurationReference = 2E66423D006BD9857E3CDB4B /* Pods-VisitorBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y37VWU7YCS;
 				INFOPLIST_FILE = VisitorBook/Applications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -936,6 +947,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ayon.VisitorBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

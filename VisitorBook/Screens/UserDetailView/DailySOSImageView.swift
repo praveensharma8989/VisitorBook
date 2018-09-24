@@ -17,6 +17,7 @@ class DailySOSImageView: UIView {
     
     var dailySOSCancel : DailySOSCancel? = nil
     var sosData : SosData?
+    var visitorInfo : VisitorData?
     
     @IBAction func CancelButton_press(_ sender: Any) {
         if dailySOSCancel != nil{
@@ -43,6 +44,10 @@ class DailySOSImageView: UIView {
             
         }
         
+        if visitorInfo != nil{
+            nameLable.text = visitorInfo?.name
+            userImageView.set_sdWebImage(With: (visitorInfo?.photo)!, placeHolderImage: "CameraImage")
+        }
     }
     
     private func commanInit(){

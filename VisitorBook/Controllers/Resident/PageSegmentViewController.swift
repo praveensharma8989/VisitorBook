@@ -35,8 +35,16 @@ class PageSegmentViewController: SJSegmentedViewController{
             
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.addSubview(navigationBarView!)
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationBarView?.removeFromSuperview()
     }
     
     func segmentConfig(){
@@ -57,22 +65,6 @@ class PageSegmentViewController: SJSegmentedViewController{
                 .instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
             thirdViewController.title = "Post"
             
-            let header = storyboard
-                .instantiateViewController(withIdentifier: "HeaderViewViewController") as! HeaderViewViewController
-            
-//            header.leftMenuClick = {() in
-//
-//                self.panel?.openLeft(animated: true)
-////                if let sideMenuController = self.parent as? PGSideMenu {
-////                    sideMenuController.toggleLeftMenu()
-////                }
-//
-//            }
-            
-            
-//            headerViewController = header
-            
-//            headerViewHeight = 200
             segmentControllers = [firstViewController,
                                   secondViewController,
                                   thirdViewController]

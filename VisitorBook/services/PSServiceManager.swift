@@ -454,6 +454,196 @@ class PSServiceManager: NSObject {
         }
     }
     
+    public static func  CallMaintanance(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.Maintanance.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallFlatMobile(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.FlatMobile.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallFlatProfile(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.FlatProfile.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallEvents(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.Events.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallEventsImages(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.EventsImages.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallFlat_Visitor(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.Flat_Visitor.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallRWAList(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.RWAList.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallComplainList(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.ComplainList.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallComplainCat(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.ComplainCat.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
+    public static func  CallNotificationList(param:[String:Any],completionBlock:@escaping completionBlock) -> Void {
+        
+        HTTPClient.shared?.PostHTTPRequest(baseUrl: ServiceConstant.BaseURL+CARequestApiName.NotificationList.rawValue, params: param) { ( responsedata, statuscode , error) -> (Void) in
+            if statuscode == 200 {
+                
+                if responsedata!["error"] as? Bool == true{
+                    completionBlock(responsedata,true, nil)
+                }else{
+                    completionBlock(nil,false, responsedata!["msg"] as? String)
+                }
+                
+            }
+            else{
+                
+                completionBlock(nil,false,(filterErrorMessageUsingResponseRequestOperation(response: responsedata, errorcode: statuscode, error: error ?? nil)))
+            }
+        }
+    }
+    
 //    public static func resendOTPCall(completionBlock:@escaping completionBlock) -> Void {
 //        
 //        

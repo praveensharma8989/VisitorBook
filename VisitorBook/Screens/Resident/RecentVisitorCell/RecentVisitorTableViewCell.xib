@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="RecentVisitorTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentVisitorTableViewCell" rowHeight="128" id="KGk-i7-Jjw" customClass="RecentVisitorTableViewCell" customModule="VisitorBook" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="RecentVisitorTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecentVisitorTableViewCell" rowHeight="128" id="KGk-i7-Jjw" customClass="RecentVisitorTableViewCell" customModule="VisitorBook" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -34,6 +34,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-Kq-vQ1">
+                                <rect key="frame" x="10" y="34" width="60" height="60"/>
+                                <connections>
+                                    <action selector="showImage_press:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kag-gW-mNv"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jU-R3-NQW">
                                 <rect key="frame" x="90" y="10" width="49.5" height="21"/>
                                 <constraints>
@@ -97,9 +103,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uYV-Kq-vQ1" firstAttribute="centerY" secondItem="FcD-fn-MPY" secondAttribute="centerY" id="40H-uP-tDe"/>
                             <constraint firstAttribute="trailing" secondItem="HOL-DB-soE" secondAttribute="trailing" constant="10" id="7ny-Lo-WyW"/>
                             <constraint firstAttribute="trailing" secondItem="Z5d-lx-32w" secondAttribute="trailing" id="8wV-WY-8rb"/>
                             <constraint firstAttribute="bottom" secondItem="Z5d-lx-32w" secondAttribute="bottom" id="EgC-uD-BdM"/>
+                            <constraint firstItem="uYV-Kq-vQ1" firstAttribute="height" secondItem="FcD-fn-MPY" secondAttribute="height" id="Hgp-IA-CD7"/>
                             <constraint firstItem="HOL-DB-soE" firstAttribute="centerY" secondItem="ouQ-gr-ngL" secondAttribute="centerY" id="J5L-ev-wKT"/>
                             <constraint firstItem="HOL-DB-soE" firstAttribute="leading" secondItem="g67-4o-bCZ" secondAttribute="trailing" id="Koa-5k-FBV"/>
                             <constraint firstItem="g67-4o-bCZ" firstAttribute="width" secondItem="ouQ-gr-ngL" secondAttribute="width" multiplier="0.5" id="OB3-RU-NHm"/>
@@ -107,6 +115,8 @@
                             <constraint firstItem="g67-4o-bCZ" firstAttribute="leading" secondItem="FcD-fn-MPY" secondAttribute="trailing" constant="20" id="SC6-5y-L0Z"/>
                             <constraint firstItem="Z5d-lx-32w" firstAttribute="top" secondItem="g67-4o-bCZ" secondAttribute="bottom" constant="10" id="SaA-10-xPw"/>
                             <constraint firstItem="FcD-fn-MPY" firstAttribute="centerY" secondItem="ouQ-gr-ngL" secondAttribute="centerY" id="YL2-Mf-BMk"/>
+                            <constraint firstItem="uYV-Kq-vQ1" firstAttribute="centerX" secondItem="FcD-fn-MPY" secondAttribute="centerX" id="Zee-jE-1s3"/>
+                            <constraint firstItem="uYV-Kq-vQ1" firstAttribute="width" secondItem="FcD-fn-MPY" secondAttribute="width" id="nEF-nr-1CP"/>
                             <constraint firstItem="Z5d-lx-32w" firstAttribute="leading" secondItem="ouQ-gr-ngL" secondAttribute="leading" id="qyw-JE-5k4"/>
                             <constraint firstItem="FcD-fn-MPY" firstAttribute="leading" secondItem="ouQ-gr-ngL" secondAttribute="leading" constant="10" id="rvB-Vi-9se"/>
                             <constraint firstItem="4jU-R3-NQW" firstAttribute="top" secondItem="ouQ-gr-ngL" secondAttribute="top" constant="10" id="wIG-0T-Bam"/>

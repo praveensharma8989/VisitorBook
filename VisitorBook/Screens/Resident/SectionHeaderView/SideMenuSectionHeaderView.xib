@@ -15,9 +15,58 @@
         <view contentMode="scaleToFill" restorationIdentifier="SideMenuSectionHeaderView" id="iN0-l3-epB" customClass="SideMenuSectionHeaderView" customModule="VisitorBook" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLU-q8-gAd">
+                    <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="MW1-eu-E4w"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Flat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFo-Nu-pVS">
+                    <rect key="frame" x="10" y="14" width="102" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="jqL-gb-co0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jDN-7s-SGk">
+                    <rect key="frame" x="340" y="17" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="RdL-NG-TLJ"/>
+                        <constraint firstAttribute="height" constant="15" id="voW-PK-W4G"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgD-9Q-VcI">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                    <connections>
+                        <action selector="SectionSelectButton_press:" destination="-1" eventType="touchUpInside" id="2Te-9P-k7E"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TLU-q8-gAd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0JC-Kp-Jfk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jDN-7s-SGk" secondAttribute="trailing" constant="20" id="3e7-pP-ISi"/>
+                <constraint firstItem="TLU-q8-gAd" firstAttribute="top" secondItem="BFo-Nu-pVS" secondAttribute="bottom" constant="14" id="4If-kN-VvQ"/>
+                <constraint firstAttribute="bottom" secondItem="TLU-q8-gAd" secondAttribute="bottom" id="CX2-Ve-Lce"/>
+                <constraint firstItem="BFo-Nu-pVS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Cpi-qZ-7Xv"/>
+                <constraint firstItem="BFo-Nu-pVS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="14" id="DsW-am-Dfa"/>
+                <constraint firstItem="TLU-q8-gAd" firstAttribute="top" secondItem="XgD-9Q-VcI" secondAttribute="bottom" id="Unp-Ba-mE4"/>
+                <constraint firstItem="XgD-9Q-VcI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="YxB-dS-XQl"/>
+                <constraint firstItem="XgD-9Q-VcI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="f2X-2v-rcW"/>
+                <constraint firstItem="XgD-9Q-VcI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lom-Y7-ziC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TLU-q8-gAd" secondAttribute="trailing" id="mFm-03-bIG"/>
+                <constraint firstItem="jDN-7s-SGk" firstAttribute="centerY" secondItem="BFo-Nu-pVS" secondAttribute="centerY" id="ngR-TD-EkV"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="143.02848575712144"/>
         </view>
     </objects>
+    <resources>
+        <image name="DownArrowIcon" width="16" height="16"/>
+    </resources>
 </document>

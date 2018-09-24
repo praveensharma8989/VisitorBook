@@ -8,6 +8,18 @@
 
 import UIKit
 
+typealias QuickActionClick = (QuickActionClickType) -> (Void)
+
+enum QuickActionClickType : Int {
+    
+    case TodayClick  = 0
+    case WeekClick
+    case TotalClick
+    case NotificationClick
+    case ComplaintClick
+    case ResidentClick
+}
+
 class QuickActionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var todayVisitorCountLabel: UILabel!
@@ -16,6 +28,7 @@ class QuickActionTableViewCell: UITableViewCell {
     @IBOutlet weak var notificationCountLabel: UILabel!
     @IBOutlet weak var allComplaintCountLabel: UILabel!
 
+    var quickActionClick : QuickActionClick? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,16 +52,34 @@ class QuickActionTableViewCell: UITableViewCell {
     }
     
     @IBAction func todayVisitorButton_press(_ sender: Any) {
+        if quickActionClick != nil{
+            return quickActionClick!(.TodayClick)
+        }
     }
     @IBAction func weeklyVisitorButton_press(_ sender: Any) {
+        if quickActionClick != nil{
+            return quickActionClick!(.WeekClick)
+        }
     }
     @IBAction func totalVisitorButton_press(_ sender: Any) {
+        if quickActionClick != nil{
+            return quickActionClick!(.TotalClick)
+        }
     }
     @IBAction func notificationButton_press(_ sender: Any) {
+        if quickActionClick != nil{
+            return quickActionClick!(.NotificationClick)
+        }
     }
     @IBAction func allComplaintButton_press(_ sender: Any) {
+        if quickActionClick != nil{
+            return quickActionClick!(.ComplaintClick)
+        }
     }
     @IBAction func residentButton_press(_ sender: Any) {
+        if quickActionClick != nil{
+            return quickActionClick!(.ResidentClick)
+        }
     }
     
 }

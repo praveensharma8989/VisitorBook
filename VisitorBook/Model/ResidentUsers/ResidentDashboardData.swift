@@ -8,6 +8,19 @@
 
 import Foundation
 
+struct VisitorResponseData: Codable {
+    let code: Int
+    let error: Bool
+    let nums: Int
+    let msg: String
+    let visitor: [VisitorData]
+    
+    enum CodingKeys: String, CodingKey {
+        case code, error, nums, msg
+        case visitor = "Visitor"
+    }
+}
+
 struct ResidentDashboardData: Codable {
     let code: Int
     let error: Bool

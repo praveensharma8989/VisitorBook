@@ -11,11 +11,20 @@ import FSPagerView
 
 typealias DashBoardApiCompete = (ResidentDashboardData) -> (Void)
 
+enum VisitorActiontype : Int {
+    
+    case TodayVisitor  = 0
+    case WeeklyVisitor
+    case TotalVisitor
+}
+
 class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource, FSPagerViewDataSource, FSPagerViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var pagerView: FSPagerView!
+    @IBOutlet weak var ImageView: DailySOSImageView!
+    @IBOutlet weak var blackView: UIView!
+    @IBOutlet weak var userDetailView: UserDetailView!
     
     static let sharedInstance = DashBoardViewController()
     
@@ -57,12 +66,21 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
             tableView.reloadData()
             pagerView.reloadData()
         }
+        hideSubViews()
+        ImageView.dailySOSCancel = {() in
+            self.hideSubViews()
+        }
+        userDetailView.userDetailCancel = {() in
+            self.hideSubViews()
+        }
         
+    }
+    
+    func hideSubViews(){
         
-        
-//        self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-//        self.pagerView.itemSize = .zero
-        
+        blackView.isHidden = true
+        ImageView.isHidden = true
+        userDetailView.isHidden = true
         
     }
     
@@ -129,7 +147,11 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "QuickActionTableViewCell") as! QuickActionTableViewCell
             cell.setData(data:residentDashboardData!)
-            
+            cell.quickActionClick = {(ClickType) in
+                
+                self.moveToQuickActionScreen(ClickAction: ClickType)
+                
+            }
             return cell
             
         case 1:
@@ -139,6 +161,14 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentVisitorTableViewCell") as! RecentVisitorTableViewCell
             cell.setData(data: (residentDashboardData?.visitorData[indexPath.row])!)
+            cell.visitorImageClick = {() in
+                
+                self.ImageView.visitorInfo = (self.residentDashboardData?.visitorData[indexPath.row])!
+                self.ImageView.reloadData()
+                self.blackView.isHidden = false
+                self.ImageView.isHidden = false
+                
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecentVisitorTableViewCell") as! RecentVisitorTableViewCell
@@ -147,6 +177,37 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
         }
         
 //        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 2{
+            userDetailView.visitorData = (residentDashboardData?.visitorData[indexPath.row])!
+            userDetailView.reloadData()
+            blackView.isHidden = false
+            userDetailView.isHidden = false
+        }
+        
+    }
+    
+    func moveToQuickActionScreen(ClickAction : QuickActionClickType){
+        
+        if ClickAction == .TodayClick || ClickAction == .WeekClick || ClickAction == .TotalClick {
+            
+            let VisitorInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "VisitorInfoViewController") as! VisitorInfoViewController
+            
+            if ClickAction == .TodayClick{
+                VisitorInfoVC.visitorType = .TodayVisitor
+            }else if ClickAction == .WeekClick{
+                VisitorInfoVC.visitorType = .WeeklyVisitor
+            }else{
+                VisitorInfoVC.visitorType = .TotalVisitor
+            }
+            
+            Push(controller: VisitorInfoVC)
+            
+        }
+        
     }
     
     public func numberOfItems(in pagerView: FSPagerView) -> Int {

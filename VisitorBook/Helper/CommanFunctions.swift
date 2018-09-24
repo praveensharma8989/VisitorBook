@@ -116,10 +116,10 @@ class CommanFunction: NSObject {
       
             
             let dataToSave = try JSONEncoder().encode(data)
-        let encodeData = NSKeyedArchiver.archivedData(withRootObject: dataToSave)
-        
-        UserDefaults.standard.set(encodeData, forKey: AppConstants.k_residentUserDashboard)
-        UserDefaults.standard.synchronize()
+            let encodeData = NSKeyedArchiver.archivedData(withRootObject: dataToSave)
+            
+            UserDefaults.standard.set(encodeData, forKey: AppConstants.k_residentUserDashboard)
+            UserDefaults.standard.synchronize()
             
          
         }
