@@ -480,3 +480,35 @@ Pods/Target Support Files/CircleProgressView/CircleProgressView-umbrella.h
 Pods/Target Support Files/CircleProgressView/CircleProgressView.modulemap
 Pods/Target Support Files/CircleProgressView/CircleProgressView.xcconfig
 Pods/Target Support Files/CircleProgressView/Info.plist
+Pods/Cosmos/LICENSE
+Pods/Cosmos/README.md
+Pods/Cosmos/Cosmos/CosmosAccessibility.swift
+Pods/Cosmos/Cosmos/CosmosDefaultSettings.swift
+Pods/Cosmos/Cosmos/CosmosLayerHelper.swift
+Pods/Cosmos/Cosmos/CosmosLayers.swift
+Pods/Cosmos/Cosmos/CosmosLocalizedRating.swift
+Pods/Cosmos/Cosmos/CosmosRating.swift
+Pods/Cosmos/Cosmos/CosmosSettings.swift
+Pods/Cosmos/Cosmos/CosmosSize.swift
+Pods/Cosmos/Cosmos/CosmosText.swift
+Pods/Cosmos/Cosmos/CosmosTouch.swift
+Pods/Cosmos/Cosmos/CosmosView.swift
+Pods/Cosmos/Cosmos/StarFillMode.swift
+Pods/Cosmos/Cosmos/StarLayer.swift
+Pods/Cosmos/Cosmos/Helpers/CosmosTouchTarget.swift
+Pods/Cosmos/Cosmos/Helpers/RightToLeft.swift
+Pods/MIBlurPopup/LICENSE
+Pods/MIBlurPopup/README.md
+Pods/MIBlurPopup/MIBlurPopup/MIBlurPopup.swift
+Pods/Target Support Files/Cosmos/Cosmos-dummy.m
+Pods/Target Support Files/Cosmos/Cosmos-prefix.pch
+Pods/Target Support Files/Cosmos/Cosmos-umbrella.h
+Pods/Target Support Files/Cosmos/Cosmos.modulemap
+Pods/Target Support Files/Cosmos/Cosmos.xcconfig
+Pods/Target Support Files/Cosmos/Info.plist
+Pods/Target Support Files/MIBlurPopup/Info.plist
+Pods/Target Support Files/MIBlurPopup/MIBlurPopup-dummy.m
+Pods/Target Support Files/MIBlurPopup/MIBlurPopup-prefix.pch
+Pods/Target Support Files/MIBlurPopup/MIBlurPopup-umbrella.h
+Pods/Target Support Files/MIBlurPopup/MIBlurPopup.modulemap
+Pods/Target Support Files/MIBlurPopup/MIBlurPopup.xcconfig
