@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MIBlurPopup
 
-class NotificationViewController: ResidentAllPageViewController {
+class NotificationViewController: ResidentAllPageViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noRecordFoundView: UIView!
+    
+    var notificationInfoData : NotificationInfoData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +23,36 @@ class NotificationViewController: ResidentAllPageViewController {
     
     func initilize(){
         
+        registerCell()
         CallNotification()
+        
+        let popUp = NotificationPopUpViewController.init(nibName: "NotificationPopUpViewController", bundle: nil)
+        
+//        let myVC = Bundle.main.loadNibNamed("NotificationPopUpViewController", owner: self, options: nil)![0] as? NotificationPopUpViewController
+        
+        MIBlurPopup.show(popUp, on: self)
+        
+        
         
     }
     
+    func registerCell(){
+        tableView.register(UINib(nibName: "NotificationTableViewCell", bundle: nil), forCellReuseIdentifier: "NotificationTableViewCell")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notificationInfoData != nil ? (notificationInfoData?.notification.count)! : 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell") as! NotificationTableViewCell
+        
+        cell.setData(data : (notificationInfoData?.notification[indexPath.row])!)
+        
+        return cell
+        
+    }
     
     func CallNotification(){
         
@@ -38,13 +67,13 @@ class NotificationViewController: ResidentAllPageViewController {
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
                 
-                self.complainListDataClose = try? jsonDecoder.decode(ComplainListData.self, from: jsonData!)
+                self.notificationInfoData = try? jsonDecoder.decode(NotificationInfoData.self, from: jsonData!)
                 
-                self.noRecordFoundView.isHidden = false
+                self.noRecordFoundView.isHidden = true
                 self.tableView.reloadData()
                 
             }else{
-                self.noRecordFoundView.isHidden = true
+                self.noRecordFoundView.isHidden = false
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
             }
         }

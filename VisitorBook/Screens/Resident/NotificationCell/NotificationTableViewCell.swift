@@ -9,10 +9,22 @@
 import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var notificationImage: UIImageView!
+    @IBOutlet weak var subjectLbl: UILabel!
+    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var sendDateLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setData(data : NotificationData){
+        
+        subjectLbl.text = data.subject
+        messageLbl.text = data.message
+        sendDateLbl.text = data.sendDate
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

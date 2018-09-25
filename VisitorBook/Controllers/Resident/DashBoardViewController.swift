@@ -212,6 +212,9 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
         }else if ClickAction == .ComplaintClick{
             let ComplainInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "ComplaintInfoViewController") as! ComplaintInfoViewController
             Push(controller: ComplainInfoVC)
+        }else if ClickAction == .NotificationClick{
+            let NotificationVC = self.storyboard?.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
+            Push(controller: NotificationVC)
         }
         
     }

@@ -58,6 +58,9 @@ class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDel
         
         if !(openButton.isSelected){
             openButton.isSelected = true
+            closeButton.isSelected = false
+            openButton.backgroundColor = UIColor.red
+            closeButton.backgroundColor = UIColor.darkGray
             CallComplaintApi()
         }
         
@@ -66,6 +69,9 @@ class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDel
         
         if !(closeButton.isSelected){
             closeButton.isSelected = true
+            openButton.isSelected = false
+            openButton.backgroundColor = UIColor.darkGray
+            closeButton.backgroundColor = UIColor.red
             CallComplaintApi()
         }
         
@@ -98,11 +104,11 @@ class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDel
                 }else{
                     self.complainListDataClose = try? jsonDecoder.decode(ComplainListData.self, from: jsonData!)
                 }
-                self.norecordFoundView.isHidden = false
+                self.norecordFoundView.isHidden = true
                 self.tableView.reloadData()
                 
             }else{
-                self.norecordFoundView.isHidden = true
+                self.norecordFoundView.isHidden = false
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
             }
         }

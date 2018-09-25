@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVx-cL-R56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="-1330"/>
+            <point key="canvasLocation" x="-468" y="-1330.8845577211396"/>
         </scene>
         <!--Complaint Info View Controller-->
         <scene sceneID="ge7-Pn-M7J">
@@ -291,7 +291,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="closeButton_press:" destination="GvI-Kc-uDR" eventType="touchUpInside" id="ky9-Ge-peQ"/>
                                             <action selector="openButton_press:" destination="GvI-Kc-uDR" eventType="touchUpInside" id="ujx-Wv-sWK"/>
                                         </connections>
                                     </button>
@@ -303,6 +302,9 @@
                                         <state key="normal" title="Close">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="closeButton_press:" destination="GvI-Kc-uDR" eventType="touchUpInside" id="lfb-Ox-4Ra"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

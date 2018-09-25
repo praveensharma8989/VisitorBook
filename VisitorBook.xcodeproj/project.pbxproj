@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6DC17AAD6958D0958BB14C71 /* Pods_VisitorBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C232C6E640FBD6DCE8A93376 /* Pods_VisitorBook.framework */; };
+		7910058C215AAD9100EBCBF7 /* NotificationInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910058B215AAD9100EBCBF7 /* NotificationInfoData.swift */; };
+		79100594215AC5B400EBCBF7 /* NotificationPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79100592215AC5B400EBCBF7 /* NotificationPopUpViewController.swift */; };
+		79100595215AC5B400EBCBF7 /* NotificationPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79100593215AC5B400EBCBF7 /* NotificationPopUpViewController.xib */; };
 		79B49A8C213F11090010952B /* AllPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A8B213F11090010952B /* AllPageViewController.swift */; };
 		79B49A90213F12610010952B /* UIViewController+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A8F213F12610010952B /* UIViewController+PS.swift */; };
 		79B49A922143B9760010952B /* SelectTowerAndPusposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */; };
@@ -108,6 +111,9 @@
 /* Begin PBXFileReference section */
 		2E66423D006BD9857E3CDB4B /* Pods-VisitorBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitorBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook.release.xcconfig"; sourceTree = "<group>"; };
 		40360B1922E8AAD2C2BA88F6 /* Pods-VisitorBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitorBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook.debug.xcconfig"; sourceTree = "<group>"; };
+		7910058B215AAD9100EBCBF7 /* NotificationInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInfoData.swift; sourceTree = "<group>"; };
+		79100592215AC5B400EBCBF7 /* NotificationPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPopUpViewController.swift; sourceTree = "<group>"; };
+		79100593215AC5B400EBCBF7 /* NotificationPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationPopUpViewController.xib; sourceTree = "<group>"; };
 		79B49A8B213F11090010952B /* AllPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPageViewController.swift; sourceTree = "<group>"; };
 		79B49A8F213F12610010952B /* UIViewController+PS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PS.swift"; sourceTree = "<group>"; };
 		79B49A912143B9760010952B /* SelectTowerAndPusposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTowerAndPusposeViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +226,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7910058D215ABFDA00EBCBF7 /* NotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				79100592215AC5B400EBCBF7 /* NotificationPopUpViewController.swift */,
+				79100593215AC5B400EBCBF7 /* NotificationPopUpViewController.xib */,
+			);
+			path = NotificationView;
+			sourceTree = "<group>";
+		};
 		79B49A8D213F12240010952B /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +415,7 @@
 				79D479A721596BA800DD6747 /* ResidentInfoData.swift */,
 				79D479A92159765A00DD6747 /* ResidentFlateProfileData.swift */,
 				E99C970D215A933400DA9DB1 /* ComplainListData.swift */,
+				7910058B215AAD9100EBCBF7 /* NotificationInfoData.swift */,
 			);
 			path = ResidentUsers;
 			sourceTree = "<group>";
@@ -423,6 +439,7 @@
 		E96E5EF92152B5F8008415D8 /* Resident */ = {
 			isa = PBXGroup;
 			children = (
+				7910058D215ABFDA00EBCBF7 /* NotificationView */,
 				E99C970F215A9D4900DA9DB1 /* NotificationCell */,
 				E99C9708215A8C2F00DA9DB1 /* ComplaintInfoCell */,
 				E95BA0962159315D00479C4C /* ResidentInfoCell */,
@@ -688,6 +705,7 @@
 				E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */,
 				E97069C221555B8600427CFB /* SideMenuSectionHeaderView.xib in Resources */,
 				E97069B32155386C00427CFB /* NavigationBarView.xib in Resources */,
+				79100595215AC5B400EBCBF7 /* NotificationPopUpViewController.xib in Resources */,
 				79F4060E2152D18A00D2A5A3 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,9 +758,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-VisitorBook/Pods-VisitorBook-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MIBlurPopup/MIBlurPopup.framework",
 				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
@@ -756,9 +776,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBlurPopup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
@@ -838,9 +860,11 @@
 				E92FDB392151637E003AEE58 /* ResidentData.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
+				79100594215AC5B400EBCBF7 /* NotificationPopUpViewController.swift in Sources */,
 				E99C9715215A9FFE00DA9DB1 /* NotificationViewController.swift in Sources */,
 				E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */,
 				E99C970E215A933400DA9DB1 /* ComplainListData.swift in Sources */,
+				7910058C215AAD9100EBCBF7 /* NotificationInfoData.swift in Sources */,
 				E99C970B215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.swift in Sources */,
 				E98C4A67213FFC5E006202FA /* AppIntializer.swift in Sources */,
 				E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */,
