@@ -85,6 +85,12 @@
 		E9929C90214ADCB40034550F /* DailySOSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9929C8E214ADCB40034550F /* DailySOSTableViewCell.xib */; };
 		E9929C92214AE6740034550F /* DailySOSImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9929C91214AE6740034550F /* DailySOSImageView.xib */; };
 		E9929C94214AE6C50034550F /* DailySOSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9929C93214AE6C50034550F /* DailySOSImageView.swift */; };
+		E99C970B215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9709215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.swift */; };
+		E99C970C215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99C970A215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.xib */; };
+		E99C970E215A933400DA9DB1 /* ComplainListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C970D215A933400DA9DB1 /* ComplainListData.swift */; };
+		E99C9712215A9D6100DA9DB1 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9710215A9D6100DA9DB1 /* NotificationTableViewCell.swift */; };
+		E99C9713215A9D6100DA9DB1 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99C9711215A9D6100DA9DB1 /* NotificationTableViewCell.xib */; };
+		E99C9715215A9FFE00DA9DB1 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9714215A9FFE00DA9DB1 /* NotificationViewController.swift */; };
 		E9A8F403214B99FA0015EED5 /* DailySOSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F402214B99FA0015EED5 /* DailySOSData.swift */; };
 		E9B2B09F21515AAE00C7737D /* Resident.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B2B09E21515AAE00C7737D /* Resident.storyboard */; };
 		E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D6522121413A5700B61425 /* GateKeeper.storyboard */; };
@@ -93,6 +99,8 @@
 		E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652342141A04400B61425 /* NewVisitorData.swift */; };
 		E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D652362141A74600B61425 /* VerifyOTPViewController.swift */; };
 		E9D9BF00214282FE0004FB6E /* VisitorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */; };
+		E9DA4584215A7C2500EE1ED4 /* SOSEditViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA4583215A7C2500EE1ED4 /* SOSEditViewViewController.swift */; };
+		E9DA4586215A891C00EE1ED4 /* ComplaintInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA4585215A891C00EE1ED4 /* ComplaintInfoViewController.swift */; };
 		E9FEF7062146A503006F72C8 /* PendingVisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FEF7042146A503006F72C8 /* PendingVisitTableViewCell.swift */; };
 		E9FEF7072146A503006F72C8 /* PendingVisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FEF7052146A503006F72C8 /* PendingVisitTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -180,6 +188,12 @@
 		E9929C8E214ADCB40034550F /* DailySOSTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailySOSTableViewCell.xib; sourceTree = "<group>"; };
 		E9929C91214AE6740034550F /* DailySOSImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailySOSImageView.xib; sourceTree = "<group>"; };
 		E9929C93214AE6C50034550F /* DailySOSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySOSImageView.swift; sourceTree = "<group>"; };
+		E99C9709215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintInfoTableViewCell.swift; sourceTree = "<group>"; };
+		E99C970A215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintInfoTableViewCell.xib; sourceTree = "<group>"; };
+		E99C970D215A933400DA9DB1 /* ComplainListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainListData.swift; sourceTree = "<group>"; };
+		E99C9710215A9D6100DA9DB1 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		E99C9711215A9D6100DA9DB1 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		E99C9714215A9FFE00DA9DB1 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		E9A8F402214B99FA0015EED5 /* DailySOSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySOSData.swift; sourceTree = "<group>"; };
 		E9B2B09E21515AAE00C7737D /* Resident.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Resident.storyboard; sourceTree = "<group>"; };
 		E9D6522121413A5700B61425 /* GateKeeper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GateKeeper.storyboard; sourceTree = "<group>"; };
@@ -188,6 +202,8 @@
 		E9D652342141A04400B61425 /* NewVisitorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitorData.swift; sourceTree = "<group>"; };
 		E9D652362141A74600B61425 /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
 		E9D9BEFF214282FE0004FB6E /* VisitorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorDetailsViewController.swift; sourceTree = "<group>"; };
+		E9DA4583215A7C2500EE1ED4 /* SOSEditViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSEditViewViewController.swift; sourceTree = "<group>"; };
+		E9DA4585215A891C00EE1ED4 /* ComplaintInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintInfoViewController.swift; sourceTree = "<group>"; };
 		E9FEF7042146A503006F72C8 /* PendingVisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVisitTableViewCell.swift; sourceTree = "<group>"; };
 		E9FEF7052146A503006F72C8 /* PendingVisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingVisitTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,6 +283,9 @@
 				79D479A32157C85800DD6747 /* VisitorInfoViewController.swift */,
 				E95BA09B2159584200479C4C /* ResidentProfileViewController.swift */,
 				79D479A5215969EA00DD6747 /* ResidentInfoViewController.swift */,
+				E9DA4583215A7C2500EE1ED4 /* SOSEditViewViewController.swift */,
+				E9DA4585215A891C00EE1ED4 /* ComplaintInfoViewController.swift */,
+				E99C9714215A9FFE00DA9DB1 /* NotificationViewController.swift */,
 			);
 			path = Resident;
 			sourceTree = "<group>";
@@ -380,6 +399,7 @@
 				E92FDB382151637E003AEE58 /* ResidentData.swift */,
 				79D479A721596BA800DD6747 /* ResidentInfoData.swift */,
 				79D479A92159765A00DD6747 /* ResidentFlateProfileData.swift */,
+				E99C970D215A933400DA9DB1 /* ComplainListData.swift */,
 			);
 			path = ResidentUsers;
 			sourceTree = "<group>";
@@ -403,6 +423,8 @@
 		E96E5EF92152B5F8008415D8 /* Resident */ = {
 			isa = PBXGroup;
 			children = (
+				E99C970F215A9D4900DA9DB1 /* NotificationCell */,
+				E99C9708215A8C2F00DA9DB1 /* ComplaintInfoCell */,
 				E95BA0962159315D00479C4C /* ResidentInfoCell */,
 				E97069B4215546E500427CFB /* SideMenuCell */,
 				E97069AD215533E300427CFB /* NavigationBar */,
@@ -528,6 +550,24 @@
 			path = DailySOSCell;
 			sourceTree = "<group>";
 		};
+		E99C9708215A8C2F00DA9DB1 /* ComplaintInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				E99C9709215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.swift */,
+				E99C970A215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.xib */,
+			);
+			path = ComplaintInfoCell;
+			sourceTree = "<group>";
+		};
+		E99C970F215A9D4900DA9DB1 /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				E99C9710215A9D6100DA9DB1 /* NotificationTableViewCell.swift */,
+				E99C9711215A9D6100DA9DB1 /* NotificationTableViewCell.xib */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
 		E9D652232141440D00B61425 /* GateKeeper */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,9 +669,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9929C90214ADCB40034550F /* DailySOSTableViewCell.xib in Resources */,
+				E99C970C215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.xib in Resources */,
 				E97069BA2155472B00427CFB /* SideMenuTableViewCell.xib in Resources */,
 				79FE29D2213DAD9500CE95CE /* Main.storyboard in Resources */,
 				79F406182152DAF200D2A5A3 /* RecentVisitorTableViewCell.xib in Resources */,
+				E99C9713215A9D6100DA9DB1 /* NotificationTableViewCell.xib in Resources */,
 				E9D6522221413A5700B61425 /* GateKeeper.storyboard in Resources */,
 				79F406142152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.xib in Resources */,
 				E97E212C21479CD600135CDA /* UserDetailView.xib in Resources */,
@@ -748,6 +790,8 @@
 				79F4CAFF2151745500D0D02B /* DashBoardViewController.swift in Sources */,
 				E95BA0992159319000479C4C /* ResidentInfoTableViewCell.swift in Sources */,
 				79F406132152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift in Sources */,
+				E9DA4586215A891C00EE1ED4 /* ComplaintInfoViewController.swift in Sources */,
+				E9DA4584215A7C2500EE1ED4 /* SOSEditViewViewController.swift in Sources */,
 				E9929C85214ADA7E0034550F /* DailySOSViewController.swift in Sources */,
 				E97069C021555B7A00427CFB /* SideMenuSectionHeaderView.swift in Sources */,
 				E98C4A7621403B0D006202FA /* ForgotPasswordViewController.swift in Sources */,
@@ -769,6 +813,7 @@
 				E98C4A5B213FEF92006202FA /* UIButton+PS.swift in Sources */,
 				E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */,
 				79FE29E1213DC7AE00CE95CE /* CommanFunctions.swift in Sources */,
+				E99C9712215A9D6100DA9DB1 /* NotificationTableViewCell.swift in Sources */,
 				E97E212721479B8A00135CDA /* EnterVehicleViewController.swift in Sources */,
 				E97069B1215533F500427CFB /* NabigationBar.swift in Sources */,
 				E9929C8F214ADCB40034550F /* DailySOSTableViewCell.swift in Sources */,
@@ -793,7 +838,10 @@
 				E92FDB392151637E003AEE58 /* ResidentData.swift in Sources */,
 				79FE29DF213DC70400CE95CE /* ViewController.swift in Sources */,
 				79FE29CE213DAD9500CE95CE /* VisitorBook.xcdatamodeld in Sources */,
+				E99C9715215A9FFE00DA9DB1 /* NotificationViewController.swift in Sources */,
 				E9D652352141A04400B61425 /* NewVisitorData.swift in Sources */,
+				E99C970E215A933400DA9DB1 /* ComplainListData.swift in Sources */,
+				E99C970B215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.swift in Sources */,
 				E98C4A67213FFC5E006202FA /* AppIntializer.swift in Sources */,
 				E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */,
 				E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */,

@@ -33,6 +33,7 @@ class PageSegmentViewController: SJSegmentedViewController{
             
             self.panel?.openLeft(animated: true)
             
+            
         }
         
     }

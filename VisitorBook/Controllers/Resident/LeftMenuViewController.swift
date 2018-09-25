@@ -8,6 +8,7 @@
 
 import UIKit
 import PopMenu
+import FAPanels
 
 class LeftMenuViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource, PopMenuViewControllerDelegate {
     
@@ -134,7 +135,22 @@ class LeftMenuViewController: ResidentAllPageViewController, UITableViewDelegate
         
         return cell
         
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            
+            
+            let navigation = self.panel?.center as! UINavigationController
+            
+            let myProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "ResidentProfileViewController") as! ResidentProfileViewController
+            self.panel?.closeLeft()
+            navigation.pushViewController(myProfileVC, animated: false)
+//            Push(controller: myProfileVC)
+        default:
+            break
+        }
     }
     
 

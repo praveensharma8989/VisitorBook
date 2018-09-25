@@ -74,7 +74,7 @@ class ResidentProfileViewController: ResidentAllPageViewController {
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
                 self.residentFlatProfileData = try? jsonDecoder.decode(FlateProfileData.self, from: jsonData!)
-                
+                self.setData()
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)
             }
@@ -83,6 +83,10 @@ class ResidentProfileViewController: ResidentAllPageViewController {
     }
     
     @IBAction func SOSSettingButton_press(_ sender: Any) {
+    
+        let SOSVC = self.storyboard?.instantiateViewController(withIdentifier: "SOSEditViewViewController") as! SOSEditViewViewController
+        Push(controller: SOSVC)
+    
     }
     
     @IBAction func editButton_press(_ sender: Any) {

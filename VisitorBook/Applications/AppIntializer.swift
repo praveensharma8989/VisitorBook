@@ -80,7 +80,7 @@ class AppIntializer: NSObject {
         
         let ContentController = storyboard.instantiateViewController(withIdentifier:"PageSegmentNavigationController") 
         
-        let LeftMenuController = storyboard.instantiateViewController(withIdentifier:"LeftMenuViewController") as! LeftMenuViewController
+        let LeftMenuController = storyboard.instantiateViewController(withIdentifier:"LeftMenuNavigationController")
         
         let fAPanelController = storyboard.instantiateViewController(withIdentifier:"FAPanelController") as! FAPanelController
 
