@@ -1,21 +1,35 @@
 //
-//  UserDetailView.swift
+//  UserDetailViewController.swift
 //  VisitorBook
 //
-//  Created by Praveen on 11/09/18.
+//  Created by Praveen on 26/09/18.
 //  Copyright © 2018 Praveen Sharma. All rights reserved.
 //
 
 import UIKit
+import MIBlurPopup
 
-typealias UserDetailCancel =  () -> (Void)
-
-class UserDetailView: UIView {
+class UserDetailViewController: UIViewController,  MIBlurPopupDelegate {
 
     var userData : PendingVisit?
     var visitorData : VisitorData?
     var userDetailCancel : UserDetailCancel? = nil
     @IBOutlet var contentView: UIView!
+    
+    
+    var popupView: UIView {
+        return contentView ?? UIView()
+    }
+    
+    var blurEffectStyle: UIBlurEffectStyle{
+        return .dark
+    }
+    
+    var initialScaleAmmount: CGFloat = 0.0
+    
+    var animationDuration: TimeInterval = 0.5
+    
+    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -27,23 +41,24 @@ class UserDetailView: UIView {
     @IBOutlet weak var flatLabel: UILabel!
     @IBOutlet weak var inTimeLabel: UILabel!
     @IBOutlet weak var outTimeLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        Bundle.main.loadNibNamed("UserDetailView", owner: self, options: nil)
+        self.view.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        
+        modalPresentationCapturesStatusBarAppearance = true
+        reloadData()
+        // Do any additional setup after loading the view.
+    }
+    
+
     @IBAction func cencelButton_press(_ sender: Any) {
         
-        if userDetailCancel != nil{
-            userDetailCancel!()
-        }
+        dismiss(animated: true)
         
-    }
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commanInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commanInit()
     }
     
     func reloadData() {
@@ -69,42 +84,21 @@ class UserDetailView: UIView {
             meetPurposeLabel.text = visitorData?.meetPurpose
             vehicleLabel.text = visitorData?.vehicle
             flatLabel.isHidden = true
-//            flatLabel.text = visitorData?.flats
+            //            flatLabel.text = visitorData?.flats
             inTimeLabel.text = visitorData?.visitDate
             outTimeLabel.text = visitorData?.outDate
         }
         
-        self.setNeedsDisplay()
-    }
-    
-    private func commanInit(){
-//        Bundle.main.loadNibNamed("UserDetailView", owner: self, options: nil)
-//        addSubview(contentView)
-//        contentView.frame = self.bounds
-//        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        
-//        if userData != nil{
-//            userImage.set_sdWebImage(With: (userData?.photo)!, placeHolderImage: "userIcon")
-//            userNameLabel.text = userData?.name
-//            emailLabel.text = userData?.email
-//            mobileLabel.text = userData?.mobile
-//            companyLabel.text = userData?.company
-//            addressLabel.text = userData?.address
-//            meetPurposeLabel.text = userData?.meetPurpose
-//            vehicleLabel.text = userData?.vehicle
-//            flatLabel.text = userData?.flats
-//            inTimeLabel.text = userData?.visitDate
-//            outTimeLabel.text = userData?.outDate
-//        }
-        
-        
+//        self.setNeedsDisplay()
     }
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
     */
 

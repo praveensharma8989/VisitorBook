@@ -126,6 +126,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="messageIcon" width="32" height="32"/>
+        <image name="messageIcon" width="200.34782409667969" height="200.34782409667969"/>
     </resources>
 </document>

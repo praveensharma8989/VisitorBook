@@ -8,6 +8,7 @@
 
 import UIKit
 import FSPagerView
+import MIBlurPopup
 
 typealias DashBoardApiCompete = (ResidentDashboardData) -> (Void)
 
@@ -163,10 +164,14 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
             cell.setData(data: (residentDashboardData?.visitorData[indexPath.row])!)
             cell.visitorImageClick = {() in
                 
-                self.ImageView.visitorInfo = (self.residentDashboardData?.visitorData[indexPath.row])!
-                self.ImageView.reloadData()
-                self.blackView.isHidden = false
-                self.ImageView.isHidden = false
+                let popUp = ImgeViewController.init(nibName: "DailySOSImageView", bundle: nil)
+                popUp.visitorInfo = (self.residentDashboardData?.visitorData[indexPath.row])!
+                MIBlurPopup.show(popUp, on: self)
+                
+//                self.ImageView.visitorInfo = (self.residentDashboardData?.visitorData[indexPath.row])!
+//                self.ImageView.reloadData()
+//                self.blackView.isHidden = false
+//                self.ImageView.isHidden = false
                 
             }
             return cell
@@ -182,10 +187,13 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 2{
-            userDetailView.visitorData = (residentDashboardData?.visitorData[indexPath.row])!
-            userDetailView.reloadData()
-            blackView.isHidden = false
-            userDetailView.isHidden = false
+            let popUp = UserDetailViewController.init(nibName: "UserDetailView", bundle: nil)
+            popUp.visitorData = (residentDashboardData?.visitorData[indexPath.row])!
+            MIBlurPopup.show(popUp, on: self)
+//            userDetailView.visitorData = (residentDashboardData?.visitorData[indexPath.row])!
+////            userDetailView.reloadData()
+////            blackView.isHidden = false
+////            userDetailView.isHidden = false
         }
         
     }

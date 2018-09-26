@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MIBlurPopup
 
 enum PendingType : Int {
     case Pending = 0,
@@ -119,14 +120,22 @@ class PendingVisitViewController: AllPageViewController, UITableViewDelegate, UI
         }
         
         cell.viewUserDetail = { () in
-            self.blackView.isHidden = false
-            self.userView.isHidden = false
+            
+            let popUp = UserDetailViewController.init(nibName: "UserDetailView", bundle: nil)
+            
+            
+            
+//            self.blackView.isHidden = false
+//            self.userView.isHidden = false
             if self.isAllData{
-                self.userView.userData = (self.allPendingVisitData?.pendingVisit[indexPath.row])!
+                popUp.userData = (self.allPendingVisitData?.pendingVisit[indexPath.row])!
+//                self.userView.userData = (self.allPendingVisitData?.pendingVisit[indexPath.row])!
             }else{
-                self.userView.userData = (self.pendingVisitData?.pendingVisit[indexPath.row])!
+                popUp.userData = (self.pendingVisitData?.pendingVisit[indexPath.row])!
+//                self.userView.userData = (self.pendingVisitData?.pendingVisit[indexPath.row])!
             }
-            self.userView.reloadData()
+            MIBlurPopup.show(popUp, on: self)
+//            self.userView.reloadData()
             
         }
         cell.topButtonClick = {() in

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MIBlurPopup
 
 class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -61,10 +62,14 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
         cell.setData(data: (visitorResponseData?.visitor[indexPath.row])!)
         cell.visitorImageClick = {() in
             
-            self.ImageView.visitorInfo = (self.visitorResponseData?.visitor[indexPath.row])!
-            self.ImageView.reloadData()
-            self.blackView.isHidden = false
-            self.ImageView.isHidden = false
+            let popUp = ImgeViewController.init(nibName: "DailySOSImageView", bundle: nil)
+            popUp.visitorInfo = (self.visitorResponseData?.visitor[indexPath.row])!
+            MIBlurPopup.show(popUp, on: self)
+            
+//            self.ImageView.visitorInfo = (self.visitorResponseData?.visitor[indexPath.row])!
+//            self.ImageView.reloadData()
+//            self.blackView.isHidden = false
+//            self.ImageView.isHidden = false
             
         }
         return cell
@@ -72,10 +77,14 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        userDetailView.visitorData = (self.visitorResponseData?.visitor[indexPath.row])!
-        userDetailView.reloadData()
-        blackView.isHidden = false
-        userDetailView.isHidden = false
+        let popUp = UserDetailViewController.init(nibName: "UserDetailView", bundle: nil)
+        popUp.visitorData = (self.visitorResponseData?.visitor[indexPath.row])!
+        MIBlurPopup.show(popUp, on: self)
+        
+//        userDetailView.visitorData = (self.visitorResponseData?.visitor[indexPath.row])!
+//        userDetailView.reloadData()
+//        blackView.isHidden = false
+//        userDetailView.isHidden = false
         
     }
     

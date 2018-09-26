@@ -51,10 +51,10 @@ class DailySOSImageView: UIView {
     }
     
     private func commanInit(){
-        Bundle.main.loadNibNamed("DailySOSImageView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        Bundle.main.loadNibNamed("DailySOSImageView", owner: self, options: nil)
+//        addSubview(contentView)
+//        contentView.frame = self.bounds
+//        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
     }
     

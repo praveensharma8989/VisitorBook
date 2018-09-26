@@ -64,6 +64,12 @@
 		E97E212E2147A2AD00135CDA /* VehicleDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */; };
 		E97E21302147A2BE00135CDA /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */; };
 		E97E2137214803FD00135CDA /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E2136214803FD00135CDA /* VehicleData.swift */; };
+		E983FD7E215BB71D009B21BC /* ImgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983FD7D215BB71D009B21BC /* ImgeViewController.swift */; };
+		E983FD80215BC75F009B21BC /* VehicleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983FD7F215BC75F009B21BC /* VehicleDetailViewController.swift */; };
+		E983FD84215BCC9B009B21BC /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983FD82215BCC9B009B21BC /* EventsTableViewCell.swift */; };
+		E983FD85215BCC9B009B21BC /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E983FD83215BCC9B009B21BC /* EventsTableViewCell.xib */; };
+		E983FD87215BD2B8009B21BC /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983FD86215BD2B8009B21BC /* EventData.swift */; };
+		E983FD89215BE2B4009B21BC /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983FD88215BE2B4009B21BC /* UserDetailViewController.swift */; };
 		E98550EF2153691900B8E285 /* ResidentAllPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98550EE2153691900B8E285 /* ResidentAllPageViewController.swift */; };
 		E98C4A4D213FEE90006202FA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4B213FEE90006202FA /* HTTPClient.swift */; };
 		E98C4A56213FEF92006202FA /* UIImage+PS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C4A4F213FEF92006202FA /* UIImage+PS.swift */; };
@@ -170,6 +176,12 @@
 		E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleDetailView.xib; sourceTree = "<group>"; };
 		E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
 		E97E2136214803FD00135CDA /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
+		E983FD7D215BB71D009B21BC /* ImgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgeViewController.swift; sourceTree = "<group>"; };
+		E983FD7F215BC75F009B21BC /* VehicleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewController.swift; sourceTree = "<group>"; };
+		E983FD82215BCC9B009B21BC /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		E983FD83215BCC9B009B21BC /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		E983FD86215BD2B8009B21BC /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		E983FD88215BE2B4009B21BC /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		E98550EE2153691900B8E285 /* ResidentAllPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentAllPageViewController.swift; sourceTree = "<group>"; };
 		E98C4A4B213FEE90006202FA /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		E98C4A4F213FEF92006202FA /* UIImage+PS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PS.swift"; sourceTree = "<group>"; };
@@ -416,6 +428,7 @@
 				79D479A92159765A00DD6747 /* ResidentFlateProfileData.swift */,
 				E99C970D215A933400DA9DB1 /* ComplainListData.swift */,
 				7910058B215AAD9100EBCBF7 /* NotificationInfoData.swift */,
+				E983FD86215BD2B8009B21BC /* EventData.swift */,
 			);
 			path = ResidentUsers;
 			sourceTree = "<group>";
@@ -439,6 +452,7 @@
 		E96E5EF92152B5F8008415D8 /* Resident */ = {
 			isa = PBXGroup;
 			children = (
+				E983FD81215BCC7E009B21BC /* EventsCell */,
 				7910058D215ABFDA00EBCBF7 /* NotificationView */,
 				E99C970F215A9D4900DA9DB1 /* NotificationCell */,
 				E99C9708215A8C2F00DA9DB1 /* ComplaintInfoCell */,
@@ -486,12 +500,24 @@
 			children = (
 				E97E212921479CB300135CDA /* UserDetailView.swift */,
 				E97E212B21479CD600135CDA /* UserDetailView.xib */,
+				E983FD88215BE2B4009B21BC /* UserDetailViewController.swift */,
 				E97E212F2147A2BE00135CDA /* VehicleDetailView.swift */,
 				E97E212D2147A2AD00135CDA /* VehicleDetailView.xib */,
+				E983FD7F215BC75F009B21BC /* VehicleDetailViewController.swift */,
 				E9929C93214AE6C50034550F /* DailySOSImageView.swift */,
 				E9929C91214AE6740034550F /* DailySOSImageView.xib */,
+				E983FD7D215BB71D009B21BC /* ImgeViewController.swift */,
 			);
 			path = UserDetailView;
+			sourceTree = "<group>";
+		};
+		E983FD81215BCC7E009B21BC /* EventsCell */ = {
+			isa = PBXGroup;
+			children = (
+				E983FD82215BCC9B009B21BC /* EventsTableViewCell.swift */,
+				E983FD83215BCC9B009B21BC /* EventsTableViewCell.xib */,
+			);
+			path = EventsCell;
 			sourceTree = "<group>";
 		};
 		E98C4A4A213FEE90006202FA /* services */ = {
@@ -706,6 +732,7 @@
 				E97069C221555B8600427CFB /* SideMenuSectionHeaderView.xib in Resources */,
 				E97069B32155386C00427CFB /* NavigationBarView.xib in Resources */,
 				79100595215AC5B400EBCBF7 /* NotificationPopUpViewController.xib in Resources */,
+				E983FD85215BCC9B009B21BC /* EventsTableViewCell.xib in Resources */,
 				79F4060E2152D18A00D2A5A3 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -813,6 +840,7 @@
 				E95BA0992159319000479C4C /* ResidentInfoTableViewCell.swift in Sources */,
 				79F406132152DADA00D2A5A3 /* ExpectedVisitorTableViewCell.swift in Sources */,
 				E9DA4586215A891C00EE1ED4 /* ComplaintInfoViewController.swift in Sources */,
+				E983FD89215BE2B4009B21BC /* UserDetailViewController.swift in Sources */,
 				E9DA4584215A7C2500EE1ED4 /* SOSEditViewViewController.swift in Sources */,
 				E9929C85214ADA7E0034550F /* DailySOSViewController.swift in Sources */,
 				E97069C021555B7A00427CFB /* SideMenuSectionHeaderView.swift in Sources */,
@@ -824,13 +852,16 @@
 				79CF15F5213EFDCB000FAB8A /* LoginViewController.swift in Sources */,
 				E9929C8B214ADC510034550F /* DotViewMenu.swift in Sources */,
 				E92FDB4521522CCA003AEE58 /* LeftMenuViewController.swift in Sources */,
+				E983FD87215BD2B8009B21BC /* EventData.swift in Sources */,
 				E97E2137214803FD00135CDA /* VehicleData.swift in Sources */,
 				E98C4A60213FF084006202FA /* PSValidator.swift in Sources */,
+				E983FD80215BC75F009B21BC /* VehicleDetailViewController.swift in Sources */,
 				E98C4A69213FFFEA006202FA /* PSServiceManager.swift in Sources */,
 				79D479A42157C85800DD6747 /* VisitorInfoViewController.swift in Sources */,
 				E98C4A5A213FEF92006202FA /* NSString+PS.swift in Sources */,
 				E98C4A57213FEF92006202FA /* UIView+PS.swift in Sources */,
 				79B49A922143B9760010952B /* SelectTowerAndPusposeViewController.swift in Sources */,
+				E983FD84215BCC9B009B21BC /* EventsTableViewCell.swift in Sources */,
 				79FE29E5213DCFCC00CE95CE /* DesignableUITextField.swift in Sources */,
 				E98C4A5B213FEF92006202FA /* UIButton+PS.swift in Sources */,
 				E909C60421426B6E00E8A0D6 /* OldVisitorConfirmScreenViewController.swift in Sources */,
@@ -868,6 +899,7 @@
 				E99C970B215A8C5700DA9DB1 /* ComplaintInfoTableViewCell.swift in Sources */,
 				E98C4A67213FFC5E006202FA /* AppIntializer.swift in Sources */,
 				E9D652372141A74600B61425 /* VerifyOTPViewController.swift in Sources */,
+				E983FD7E215BB71D009B21BC /* ImgeViewController.swift in Sources */,
 				E98C4A7221402982006202FA /* VisitorUsers.swift in Sources */,
 				79F4CAFD2151739B00D0D02B /* PageSegmentViewController.swift in Sources */,
 				E92FDB3721516006003AEE58 /* ResidentDashboardData.swift in Sources */,

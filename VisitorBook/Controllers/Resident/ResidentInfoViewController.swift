@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MIBlurPopup
 
 class ResidentInfoViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -40,7 +41,22 @@ class ResidentInfoViewController: ResidentAllPageViewController, UITableViewDele
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResidentInfoTableViewCell") as! ResidentInfoTableViewCell
         cell.setData(data: (residentInfoData?.flatUser[indexPath.row])!)
+        cell.residentInfoClick = {() in
+            
+            let popUp = ImgeViewController.init(nibName: "DailySOSImageView", bundle: nil)
+            popUp.flatUser = (self.residentInfoData?.flatUser[indexPath.row])!
+            MIBlurPopup.show(popUp, on: self)
+            
+        }
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let popUp = NotificationPopUpViewController.init(nibName: "NotificationPopUpViewController", bundle: nil)
+        popUp.flatUser = (residentInfoData?.flatUser[indexPath.row])!
+        MIBlurPopup.show(popUp, on: self)
         
     }
     

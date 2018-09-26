@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MIBlurPopup
 
 class NotificationViewController: ResidentAllPageViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -25,14 +24,6 @@ class NotificationViewController: ResidentAllPageViewController, UITableViewData
         
         registerCell()
         CallNotification()
-        
-        let popUp = NotificationPopUpViewController.init(nibName: "NotificationPopUpViewController", bundle: nil)
-        
-//        let myVC = Bundle.main.loadNibNamed("NotificationPopUpViewController", owner: self, options: nil)![0] as? NotificationPopUpViewController
-        
-        MIBlurPopup.show(popUp, on: self)
-        
-        
         
     }
     

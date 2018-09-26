@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MIBlurPopup
 
 class EnterVehicleViewController: AllPageViewController {
 
@@ -26,24 +27,24 @@ class EnterVehicleViewController: AllPageViewController {
         
         blackView.isHidden = true
         vehicleDetailView.isHidden = true
-        vehicleDetailView.vehicleCancel = {() in
-            
-            self.blackView.isHidden = true
-            self.vehicleDetailView.isHidden = true
-            
-        }
+//        vehicleDetailView.vehicleCancel = {() in
+//
+//            self.blackView.isHidden = true
+//            self.vehicleDetailView.isHidden = true
+//
+//        }
         
-        vehicleDetailView.callButton = {() in
-            
-            if let phoneCallURL = URL(string: "tel://\((self.vehicleData?.complain[0].mobile)!)") {
-                
-                let application:UIApplication = UIApplication.shared
-                if (application.canOpenURL(phoneCallURL)) {
-                    application.open(phoneCallURL, options: [:], completionHandler: nil)
-                }
-            }
-            
-        }
+//        vehicleDetailView.callButton = {() in
+//
+//            if let phoneCallURL = URL(string: "tel://\((self.vehicleData?.complain[0].mobile)!)") {
+//
+//                let application:UIApplication = UIApplication.shared
+//                if (application.canOpenURL(phoneCallURL)) {
+//                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+//                }
+//            }
+//
+//        }
         
     }
     
@@ -105,10 +106,14 @@ class EnterVehicleViewController: AllPageViewController {
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
                 self.vehicleData = try? jsonDecoder.decode(VehicleData.self, from: jsonData!)
-                self.vehicleDetailView.vehicleData = self.vehicleData?.complain[0]
-                self.blackView.isHidden = false
-                self.vehicleDetailView.isHidden = false
-                self.vehicleDetailView.reloadData()
+                
+                let popUp = VehicleDetailViewController.init(nibName: "VehicleDetailView", bundle: nil)
+                popUp.vehicleData = self.vehicleData?.complain[0]
+                MIBlurPopup.show(popUp, on: self)
+//                self.vehicleDetailView.vehicleData = self.vehicleData?.complain[0]
+//                self.blackView.isHidden = false
+//                self.vehicleDetailView.isHidden = false
+//                self.vehicleDetailView.reloadData()
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)

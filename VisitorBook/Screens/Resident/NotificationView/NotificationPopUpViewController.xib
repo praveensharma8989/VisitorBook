@@ -12,7 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationPopUpViewController" customModule="VisitorBook" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="0tf-6b-NPF" id="d5r-VL-uzT"/>
                 <outlet property="containerView" destination="Wry-MQ-9OE" id="3OK-Gv-cY8"/>
+                <outlet property="emailLabel" destination="Bwm-s7-0sN" id="zA6-Ct-PAC"/>
+                <outlet property="flatLabel" destination="JhK-fg-3Q7" id="diA-ed-bW0"/>
+                <outlet property="floor" destination="VVC-UJ-KwS" id="oh3-z1-XKm"/>
+                <outlet property="mobileLabel" destination="CTW-gT-bve" id="S3Y-XM-NZE"/>
+                <outlet property="stickerNo" destination="ZSU-rn-9ec" id="y6d-y5-M77"/>
+                <outlet property="tower" destination="oay-NG-fAW" id="yGH-Fz-Efx"/>
+                <outlet property="userImage" destination="9EB-3z-E3N" id="i6R-kL-MHT"/>
+                <outlet property="userNameLabel" destination="1Xa-OX-iTL" id="uhA-d3-L5G"/>
+                <outlet property="userNameLabelHeader" destination="iO2-Sw-dOe" id="FKQ-sy-3N1"/>
+                <outlet property="vehicleLabel" destination="3ZW-bz-T50" id="h1c-Zn-2OE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -315,6 +326,9 @@
                                     <state key="normal" title="Cencel">
                                         <color key="titleColor" red="0.68584526909999999" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="cencelButton_press:" destination="-1" eventType="touchUpInside" id="1bt-It-Gc0"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

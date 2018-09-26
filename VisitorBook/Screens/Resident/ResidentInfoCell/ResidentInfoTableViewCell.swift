@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+typealias ResidentInfoClick = () -> (Void)
 class ResidentInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var UserImage: UIImageView!
@@ -15,7 +17,7 @@ class ResidentInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var userTypeLbl: UILabel!
     @IBOutlet weak var userFlateLbl: UILabel!
     
-    
+    var residentInfoClick : ResidentInfoClick? = nil
     
     
     override func awakeFromNib() {
@@ -38,6 +40,11 @@ class ResidentInfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func imageAction_press(_ sender: Any) {
+        
+        if residentInfoClick != nil{
+            residentInfoClick!()
+        }
+        
     }
     
 }

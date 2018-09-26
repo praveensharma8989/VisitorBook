@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (4.7.3)
   - CircleProgressView (1.1.3)
-  - Cosmos (16.0.0)
+  - Cosmos (17.0.0)
   - FAPanels (0.5.0)
   - FSPagerView (0.7.2)
   - IQKeyboardManagerSwift (6.1.1)
   - MIBlurPopup (0.1.3)
-  - NewPopMenu (1.1.2)
+  - NewPopMenu (2.1.1)
   - pop (1.0.10)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -17,14 +17,14 @@ PODS:
   - SwiftMessages (5.0.1):
     - SwiftMessages/App (= 5.0.1)
   - SwiftMessages/App (5.0.1)
-  - SwiftyJSON (4.1.0)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - CircleProgressView (from `https://github.com/CardinalNow/iOS-CircleProgressView.git`)
   - Cosmos
   - FAPanels
-  - FSPagerView
+  - FSPagerView (~> 0.7.2)
   - IQKeyboardManagerSwift
   - MIBlurPopup
   - NewPopMenu
@@ -33,7 +33,7 @@ DEPENDENCIES:
   - SJSegmentedScrollView (= 1.3.8)
   - SRCountdownTimer
   - SVProgressHUD
-  - SwiftMessages
+  - SwiftMessages (~> 5.0.1)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -48,20 +48,20 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CircleProgressView: c49f2ca6cf170a6c80fc9a054eb5a73122c5e188
-  Cosmos: 7bcee0fa858a9355a214f2a181be5dffcee42c81
+  Cosmos: 309e489f21ffc91a1eeecfebef7f817cd2fcfba6
   FAPanels: def3b6e1e407ea1d1198d1acddc9d855d9e418ec
   FSPagerView: 7515f63c424da71623d299d4fbbfb3dd884642ff
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
   MIBlurPopup: e0834e469074cabf65a0ca6e6d900c84d48f8a4f
-  NewPopMenu: 42c2fbd46c7fcb7d7c1c3289c8675afd1877ffc8
+  NewPopMenu: 60d67846a401964dcaa51bffb792f04f6fe2fc76
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SJSegmentedScrollView: 2308af5e7dbbbcbf7042efd47128f162186ed078
   SRCountdownTimer: 9c92e444b5403c92f01dd6610299b8c634bc8562
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: 32ce3cfc8388b41aae56ff4853cc752a20101147
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 8c5c33952890eedc1bcc38c024ec6a08c8c59bb7
+PODFILE CHECKSUM: 1b98974c70d7b8d0961029d0b048cf3ca694e224
 
 COCOAPODS: 1.4.0

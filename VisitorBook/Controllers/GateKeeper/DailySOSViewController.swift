@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MIBlurPopup
 
 class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -62,10 +63,14 @@ class DailySOSViewController: AllPageViewController, UITableViewDelegate, UITabl
         
         cell.dailySOSImage = {() in
             
-            self.DailySOSView.sosData = (self.dailySOSData?.sosData[indexPath.row])!
-            self.DailySOSView.reloadData()
-            self.blackView.isHidden = false
-            self.DailySOSView.isHidden = false
+            let popUp = ImgeViewController.init(nibName: "DailySOSImageView", bundle: nil)
+            popUp.sosData = (self.dailySOSData?.sosData[indexPath.row])!
+            MIBlurPopup.show(popUp, on: self)
+            
+//            self.DailySOSView.sosData = (self.dailySOSData?.sosData[indexPath.row])!
+//            self.DailySOSView.reloadData()
+//            self.blackView.isHidden = false
+//            self.DailySOSView.isHidden = false
         }
         
         cell.dailySOSCall = {() in

@@ -25,19 +25,57 @@ class NotificationPopUpViewController: UIViewController, MIBlurPopupDelegate {
     
     var animationDuration: TimeInterval = 0.5
     
+    var flatUser : FlatUser?
+    
+    @IBOutlet weak var userNameLabelHeader: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var mobileLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var vehicleLabel: UILabel!
+    @IBOutlet weak var stickerNo: UILabel!
+    @IBOutlet weak var tower: UILabel!
+    @IBOutlet weak var floor: UILabel!
+    @IBOutlet weak var flatLabel: UILabel!
+    @IBAction func cencelButton_press(_ sender: Any) {
+        
+        dismiss(animated: true) {
+            
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Bundle.main.loadNibNamed("NotificationPopUpViewController", owner: self, options: nil)
-        
         self.view.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         
         modalPresentationCapturesStatusBarAppearance = true
+        
+        setData()
         // Do any additional setup after loading the view.
     }
 
+    func setData(){
+        
+        userNameLabelHeader.text = flatUser?.name
+        userImage.set_sdWebImage(With: (flatUser?.photo)!, placeHolderImage: "userIcon")
+        userNameLabel.text = flatUser?.name
+        emailLabel.text = flatUser?.email
+        mobileLabel.text = flatUser?.mobile
+        addressLabel.text = flatUser?.address
+        vehicleLabel.text = flatUser?.vehicleNo
+        stickerNo.text = flatUser?.stickerNo
+        tower.text = flatUser?.tower
+        floor.text = flatUser?.floor
+        flatLabel.text = flatUser?.flat
+        
+    }
 
+    
+    
     /*
     // MARK: - Navigation
 
