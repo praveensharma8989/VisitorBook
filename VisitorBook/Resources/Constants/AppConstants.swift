@@ -44,7 +44,8 @@ enum CARequestApiName:String {
     RWAList                 = "RWAList.php",
     ComplainList            = "ComplainList.php",
     ComplainCat             = "ComplainCat.php",
-    NotificationList        = "NotificationList.php"
+    NotificationList        = "NotificationList.php",
+    SOSDetailResident       = "SOSDetail.php"
     
 }
 

@@ -12,10 +12,8 @@ import MIBlurPopup
 class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var noRecordFoundView: UIView!
-    @IBOutlet weak var ImageView: DailySOSImageView!
-    @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var tableVIew: UITableView!
-    @IBOutlet weak var userDetailView: UserDetailView!
+    
     
     var visitorType : VisitorActiontype?
     var limit : Int = 0
@@ -29,23 +27,9 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
     
     func initilize(){
         
-        hideSubViews()
         registerCell()
         CallVisitorFlatVisitor()
-        ImageView.dailySOSCancel = {() in
-            self.hideSubViews()
-        }
-        userDetailView.userDetailCancel = {() in
-            self.hideSubViews()
-        }
-    }
     
-    func hideSubViews(){
-        
-        blackView.isHidden = true
-        ImageView.isHidden = true
-        userDetailView.isHidden = true
-        
     }
     
     func registerCell(){
@@ -66,11 +50,6 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
             popUp.visitorInfo = (self.visitorResponseData?.visitor[indexPath.row])!
             MIBlurPopup.show(popUp, on: self)
             
-//            self.ImageView.visitorInfo = (self.visitorResponseData?.visitor[indexPath.row])!
-//            self.ImageView.reloadData()
-//            self.blackView.isHidden = false
-//            self.ImageView.isHidden = false
-            
         }
         return cell
     }
@@ -80,11 +59,6 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
         let popUp = UserDetailViewController.init(nibName: "UserDetailView", bundle: nil)
         popUp.visitorData = (self.visitorResponseData?.visitor[indexPath.row])!
         MIBlurPopup.show(popUp, on: self)
-        
-//        userDetailView.visitorData = (self.visitorResponseData?.visitor[indexPath.row])!
-//        userDetailView.reloadData()
-//        blackView.isHidden = false
-//        userDetailView.isHidden = false
         
     }
     

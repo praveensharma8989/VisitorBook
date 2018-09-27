@@ -60,6 +60,15 @@ class EventViewController: ResidentAllPageViewController, UITableViewDelegate, U
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let eventPhotoVC = self.storyboard?.instantiateViewController(withIdentifier: "EventPhotosViewController") as! EventPhotosViewController
+        eventPhotoVC.eventData = upComingButton.isSelected == true ? (eventDataUpComing?.eventData[indexPath.row])! : (eventDataComplete?.eventData[indexPath.row])!
+        
+        Push(controller: eventPhotoVC)
+        
+    }
+    
     @IBAction func upComingButton_press(_ sender: Any) {
         
         if !(upComingButton.isSelected){

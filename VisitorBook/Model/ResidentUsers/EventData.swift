@@ -31,3 +31,20 @@ struct EventDatum: Codable {
         case imageNums = "Image_nums"
     }
 }
+
+struct EventImageData: Codable {
+    let code: Int
+    let error: Bool
+    let msg: String
+    let eventImages: [EventImage]
+    
+    enum CodingKeys: String, CodingKey {
+        case code, error, msg
+        case eventImages = "EventImages"
+    }
+}
+
+struct EventImage: Codable {
+    let id, name: String
+    let images: String
+}

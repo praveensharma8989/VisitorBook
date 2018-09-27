@@ -18,6 +18,7 @@ PODS:
     - SwiftMessages/App (= 5.0.1)
   - SwiftMessages/App (5.0.1)
   - SwiftyJSON (4.2.0)
+  - Viewer (3.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - SVProgressHUD
   - SwiftMessages (~> 5.0.1)
   - SwiftyJSON
+  - Viewer
 
 EXTERNAL SOURCES:
   CircleProgressView:
@@ -61,7 +63,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: 32ce3cfc8388b41aae56ff4853cc752a20101147
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Viewer: 1820d06cfe48054775a3e979567208dc37eb270d
 
-PODFILE CHECKSUM: 1b98974c70d7b8d0961029d0b048cf3ca694e224
+PODFILE CHECKSUM: 06598cac79d6d57d995cb44b387a870368baf80e
 
 COCOAPODS: 1.4.0

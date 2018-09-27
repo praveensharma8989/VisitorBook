@@ -28,3 +28,10 @@ struct FlateProfileData: Codable {
         case qrCode = "QrCode"
     }
 }
+
+struct SOSData: Codable {
+    let code: Int
+    let error: Bool
+    let msg, id, name1, mobile1: String?
+    let name2, mobile2, message: String?
+}

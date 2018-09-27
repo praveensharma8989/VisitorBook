@@ -45,10 +45,20 @@ class LeftMenuViewController: ResidentAllPageViewController, UITableViewDelegate
             setData()
         }
         
-        
-        
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     
     func registerCell(){
         tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
@@ -141,13 +151,21 @@ class LeftMenuViewController: ResidentAllPageViewController, UITableViewDelegate
         switch indexPath.row {
         case 0:
             
-            
             let navigation = self.panel?.center as! UINavigationController
             
             let myProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "ResidentProfileViewController") as! ResidentProfileViewController
             self.panel?.closeLeft()
             navigation.pushViewController(myProfileVC, animated: false)
 //            Push(controller: myProfileVC)
+            
+        case 1:
+            
+            let navigation = self.panel?.center as! UINavigationController
+            
+            let myProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "qrCodeViewController") as! qrCodeViewController
+            self.panel?.closeLeft()
+            navigation.pushViewController(myProfileVC, animated: false)
+            
         default:
             break
         }

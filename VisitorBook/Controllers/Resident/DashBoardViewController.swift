@@ -23,9 +23,7 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pagerView: FSPagerView!
-    @IBOutlet weak var ImageView: DailySOSImageView!
-    @IBOutlet weak var blackView: UIView!
-    @IBOutlet weak var userDetailView: UserDetailView!
+    
     
     static let sharedInstance = DashBoardViewController()
     
@@ -67,23 +65,9 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
             tableView.reloadData()
             pagerView.reloadData()
         }
-        hideSubViews()
-        ImageView.dailySOSCancel = {() in
-            self.hideSubViews()
-        }
-        userDetailView.userDetailCancel = {() in
-            self.hideSubViews()
-        }
         
     }
     
-    func hideSubViews(){
-        
-        blackView.isHidden = true
-        ImageView.isHidden = true
-        userDetailView.isHidden = true
-        
-    }
     
     func getDataResident()->ResidentDashboardData?{
         

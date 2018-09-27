@@ -20,4 +20,5 @@ target 'VisitorBook' do
   pod 'CircleProgressView', :git => 'https://github.com/CardinalNow/iOS-CircleProgressView.git'
   pod 'Cosmos'
   pod 'MIBlurPopup'
+  pod 'Viewer'
 end
