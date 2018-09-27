@@ -512,3 +512,22 @@ Pods/Target Support Files/MIBlurPopup/MIBlurPopup-prefix.pch
 Pods/Target Support Files/MIBlurPopup/MIBlurPopup-umbrella.h
 Pods/Target Support Files/MIBlurPopup/MIBlurPopup.modulemap
 Pods/Target Support Files/MIBlurPopup/MIBlurPopup.xcconfig
+Pods/Target Support Files/Viewer/Info.plist
+Pods/Target Support Files/Viewer/Viewer-dummy.m
+Pods/Target Support Files/Viewer/Viewer-prefix.pch
+Pods/Target Support Files/Viewer/Viewer-umbrella.h
+Pods/Target Support Files/Viewer/Viewer.modulemap
+Pods/Target Support Files/Viewer/Viewer.xcconfig
+Pods/Viewer/LICENSE.md
+Pods/Viewer/README.md
+Pods/Viewer/Source/NSIndexPath+Contiguous.swift
+Pods/Viewer/Source/PaginatedScrollView.swift
+Pods/Viewer/Source/SlideshowView.swift
+Pods/Viewer/Source/UIImage+CenteredFrame.swift
+Pods/Viewer/Source/UIViewController+Window.swift
+Pods/Viewer/Source/VideoProgressView.swift
+Pods/Viewer/Source/VideoView.swift
+Pods/Viewer/Source/Viewable.swift
+Pods/Viewer/Source/ViewableController.swift
+Pods/Viewer/Source/ViewableControllerContainer.swift
+Pods/Viewer/Source/ViewerController.swift
