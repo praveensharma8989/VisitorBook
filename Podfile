@@ -16,9 +16,9 @@ target 'VisitorBook' do
   pod 'SJSegmentedScrollView', ‘1.3.8'
   pod 'FSPagerView','~>  0.7.2'
   pod 'FAPanels'
-  pod 'NewPopMenu'
+  pod 'NewPopMenu', '~> 2.1.0'
   pod 'CircleProgressView', :git => 'https://github.com/CardinalNow/iOS-CircleProgressView.git'
-  pod 'Cosmos'
+  pod 'Cosmos', '~> 16.0.0'
   pod 'MIBlurPopup'
   pod 'Viewer'
 end

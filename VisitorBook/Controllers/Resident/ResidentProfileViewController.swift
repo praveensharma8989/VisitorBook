@@ -106,6 +106,11 @@ class ResidentProfileViewController: ResidentAllPageViewController {
     }
     
     @IBAction func editButton_press(_ sender: Any) {
+        
+        let EditProfile = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileResidentViewController") as! EditProfileResidentViewController
+        EditProfile.residentFlatProfileData = residentFlatProfileData
+        Push(controller: EditProfile)
+        
     }
     @IBAction func BackButton_press(_ sender: Any) {
         PopBack()
