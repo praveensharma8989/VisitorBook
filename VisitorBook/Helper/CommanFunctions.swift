@@ -79,6 +79,14 @@ class CommanFunction: NSObject {
         removeGateKeeper()
     }
     
+    func clearFlatUserData(){
+        removeResident()
+        RemoveUserType()
+        setUserType(user: .NoUser)
+        removeResidentFlatProfile()
+        removeResidentDashBoard()
+    }
+    
     
     func saveUserDataResident(data: [String : Any]){
         

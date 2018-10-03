@@ -27,6 +27,7 @@ class EditProfileResidentViewController: ResidentAllPageViewController, UIImageP
     }
     
     func initilize(){
+        setBackBarButton(buttonType: .Defauld)
         imagePickerView.delegate = self
         setData()
     }

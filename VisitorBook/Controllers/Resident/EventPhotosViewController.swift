@@ -11,31 +11,34 @@ import Viewer
 import SDWebImage
 private let reuseIdentifier = "EventPhotosCollectionViewCell"
 
-class EventPhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ViewerControllerDataSource {
+class EventPhotosViewController: ResidentAllPageViewController, UICollectionViewDelegate, UICollectionViewDataSource, ViewerControllerDataSource, ViewerControllerDelegate, EventPhotoHeaderViewDelegate, EventPhotoFooterViewDelegate {
     
-    
-    
-    
+    var viewerController: ViewerController?
     
     var eventData : EventDatum?
     var eventImagesData : EventImageData?
+    var selectedIndex : IndexPath?
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let cellSize = CGSize(width:collectionView.bounds.width / 3, height:collectionView.bounds.width / 3)
+        initilize()
+        // Do any additional setup after loading the view.
+    }
+    
+    func initilize(){
+        
+        setBackBarButton(buttonType: .Defauld)
+        let cellSize = CGSize(width: (collectionView.bounds.width / 3) - 10, height: collectionView.bounds.width / 3)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical //.horizontal
         layout.itemSize = cellSize
-//        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-//        layout.minimumLineSpacing = 1.0
-//        layout.minimumInteritemSpacing = 1.0
         collectionView.setCollectionViewLayout(layout, animated: true)
         
         CallEventImagesApi()
-        // Do any additional setup after loading the view.
+        
     }
     
 
@@ -54,9 +57,21 @@ class EventPhotosViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewerController = ViewerController(initialIndexPath: indexPath, collectionView: collectionView)
-        viewerController.dataSource = self
-        present(viewerController, animated: false, completion: nil)
+        self.viewerController = ViewerController(initialIndexPath: indexPath, collectionView: collectionView)
+        self.viewerController!.dataSource = self
+        self.viewerController!.delegate = self
+        
+        let headerView = EventPhotoHeaderView(headingLabel: (eventImagesData?.eventImages[indexPath.row].name)!)
+        headerView.viewDelegate = self
+        self.viewerController?.headerView = headerView
+        
+        let footerView = EventPhotoFooterView()
+        
+        footerView.viewDelegate = self
+        
+        self.viewerController?.footerView = footerView
+        
+        present(viewerController!, animated: false, completion: nil)
     }
     
     
@@ -91,6 +106,7 @@ class EventPhotosViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func viewerController(_ viewerController: ViewerController, viewableAt indexPath: IndexPath) -> Viewable {
         
+        
 //        Viewable
         let photo = Photo.init(id: (eventImagesData?.eventImages[indexPath.row].images ?? ""))
         
@@ -99,23 +115,48 @@ class EventPhotosViewController: UIViewController, UICollectionViewDelegate, UIC
         
     }
     
+    func headerView(_ headerView: EventPhotoHeaderView, didPressClearButton button: UIButton) {
+        self.viewerController?.dismiss(nil)
+    }
     
     
-//    func viewerController(_ viewerController: ViewerController, didChangeFocusTo indexPath: IndexPath) {
-//        <#code#>
-//    }
-//
-//    func viewerControllerDidDismiss(_ viewerController: ViewerController) {
-//        <#code#>
-//    }
-//
-//    func viewerController(_ viewerController: ViewerController, didFailDisplayingViewableAt indexPath: IndexPath, error: NSError) {
-//        <#code#>
-//    }
-//
-//    func viewerController(_ viewerController: ViewerController, didLongPressViewableAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func footerView(_ footerView: EventPhotoFooterView, didPressShareButton button: UIButton) {
+        let cell = self.collectionView?.cellForItem(at: selectedIndex!) as? EventPhotosCollectionViewCell
+        
+        let image = cell?.eventPhoto.image
+        let imageShare = [ image! ]
+        let activityViewController = UIActivityViewController(activityItems: imageShare , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
+    func viewerController(_ viewerController: ViewerController, didChangeFocusTo indexPath: IndexPath) {
+    
+        self.selectedIndex = indexPath
+        let headerView = EventPhotoHeaderView(headingLabel: (eventImagesData?.eventImages[indexPath.row].name)!)
+        headerView.viewDelegate = self
+        self.viewerController!.changeHeaderView(headerViewNew: headerView)
+        
+        let footerView = EventPhotoFooterView()
+        footerView.viewDelegate = self
+        self.viewerController?.changeFooterView(footerViewNew: footerView)
+        
+    }
+
+    func viewerControllerDidDismiss(_ viewerController: ViewerController) {
+     
+        
+        
+    }
+
+    func viewerController(_ viewerController: ViewerController, didFailDisplayingViewableAt indexPath: IndexPath, error: NSError) {
+        
+    }
+
+    func viewerController(_ viewerController: ViewerController, didLongPressViewableAt indexPath: IndexPath) {
+        
+    }
     
     /*
     // MARK: - Navigation

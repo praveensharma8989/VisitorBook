@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="102" id="KGk-i7-Jjw" customClass="ExpectedVisitorsTableViewCell" customModule="VisitorBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="382" height="101.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkR-gg-Au9">
+                        <rect key="frame" x="15" y="26" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="gtN-Be-lUt"/>
+                            <constraint firstAttribute="height" constant="50" id="xll-ho-lfw"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uk-Ax-GKX">
+                        <rect key="frame" x="75" y="15" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rda-Sg-8i9">
+                        <rect key="frame" x="75" y="36" width="38" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJ7-w2-aM7">
+                        <rect key="frame" x="75" y="54" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.55349105596542358" green="0.90834730863571167" blue="0.49101370573043823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqC-VD-h0X">
+                        <rect key="frame" x="75" y="71.5" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Now &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-Bd-uwP">
+                        <rect key="frame" x="281" y="71" width="86" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DJ7-w2-aM7" firstAttribute="top" secondItem="rda-Sg-8i9" secondAttribute="bottom" id="1Sf-CG-50P"/>
+                    <constraint firstItem="QqC-VD-h0X" firstAttribute="leading" secondItem="DJ7-w2-aM7" secondAttribute="leading" id="6h4-Vm-49u"/>
+                    <constraint firstItem="rda-Sg-8i9" firstAttribute="top" secondItem="6uk-Ax-GKX" secondAttribute="bottom" id="9wD-na-Cpn"/>
+                    <constraint firstItem="tbO-Bd-uwP" firstAttribute="centerY" secondItem="QqC-VD-h0X" secondAttribute="centerY" id="MYI-2s-3gq"/>
+                    <constraint firstItem="rda-Sg-8i9" firstAttribute="leading" secondItem="6uk-Ax-GKX" secondAttribute="leading" id="PDM-7q-SZs"/>
+                    <constraint firstItem="QqC-VD-h0X" firstAttribute="top" secondItem="DJ7-w2-aM7" secondAttribute="bottom" constant="3" id="SqK-47-yKf"/>
+                    <constraint firstItem="6uk-Ax-GKX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="TaQ-g1-0pH"/>
+                    <constraint firstItem="DJ7-w2-aM7" firstAttribute="leading" secondItem="rda-Sg-8i9" secondAttribute="leading" id="U71-1i-7Vz"/>
+                    <constraint firstItem="6uk-Ax-GKX" firstAttribute="leading" secondItem="RkR-gg-Au9" secondAttribute="trailing" constant="10" id="WFe-Td-arg"/>
+                    <constraint firstItem="RkR-gg-Au9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iht-NZ-lhM"/>
+                    <constraint firstAttribute="trailing" secondItem="tbO-Bd-uwP" secondAttribute="trailing" constant="15" id="mgf-Ha-VNg"/>
+                    <constraint firstItem="RkR-gg-Au9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="onD-OT-1Tv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="187.19999999999999" y="144.82758620689657"/>
+        </tableViewCell>
+    </objects>
+</document>

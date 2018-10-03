@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewVisitViewController: AllPageViewController {
+class NewVisitViewController: GatekeeperAllPageViewController {
 
     @IBOutlet weak var visitorPhoneNumer: DesignableUITextField!
     

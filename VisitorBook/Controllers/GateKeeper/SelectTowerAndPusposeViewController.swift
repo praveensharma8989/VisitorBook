@@ -131,7 +131,7 @@ class SelectTowerAndPusposeViewController: AllPageViewController, UIPickerViewDe
     @IBAction func purposeButton_press(_ sender: Any) {
         
         guard purposeData != nil else{
-            showAlertMessage(titleStr: "Error", messageStr: "No flat!")
+            showAlertMessage(titleStr: "Error", messageStr: "No purpose!")
             return
         }
         self.PickerType = .purpose

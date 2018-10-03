@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        if let statusbar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+            statusbar.backgroundColor = UIColor.red
+        }
 //        loadExampleAppStructure()
         appInilize()
         
@@ -33,8 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppIntializer.shared.setupIntial()
         IQKeyboardManager.shared.enable = true
-        
-        
         
     }
 

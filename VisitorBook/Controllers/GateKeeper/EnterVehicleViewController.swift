@@ -9,7 +9,7 @@
 import UIKit
 import MIBlurPopup
 
-class EnterVehicleViewController: AllPageViewController {
+class EnterVehicleViewController: GatekeeperAllPageViewController {
 
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var vehicleDetailView: VehicleDetailView!

@@ -170,14 +170,16 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.section == 2{
+        if indexPath.section == 1{
+            
+            let ExpectedVisitorVC = self.storyboard?.instantiateViewController(withIdentifier: "ExpectedVisitorViewController") as! ExpectedVisitorViewController
+            
+            Push(controller: ExpectedVisitorVC)
+            
+        }else if indexPath.section == 2{
             let popUp = UserDetailViewController.init(nibName: "UserDetailView", bundle: nil)
             popUp.visitorData = (residentDashboardData?.visitorData[indexPath.row])!
             MIBlurPopup.show(popUp, on: self)
-//            userDetailView.visitorData = (residentDashboardData?.visitorData[indexPath.row])!
-////            userDetailView.reloadData()
-////            blackView.isHidden = false
-////            userDetailView.isHidden = false
         }
         
     }

@@ -14,7 +14,7 @@ enum PendingType : Int {
     All
 }
 
-class PendingVisitViewController: AllPageViewController, UITableViewDelegate, UITableViewDataSource {
+class PendingVisitViewController: GatekeeperAllPageViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var noRecordFoundView: UIView!
     @IBOutlet weak var blackView: UIView!

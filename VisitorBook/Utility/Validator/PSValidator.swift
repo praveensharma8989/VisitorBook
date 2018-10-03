@@ -16,6 +16,22 @@ class PSValidator: NSObject {
         return CODE
     }
     
+    class func messageWithString(forCode code: Int, str : String) -> String {
+        var result: String
+        
+        switch code {
+        case 1101:
+            return "Please select " + str + "."
+        case 1102:
+            result = "Please enter " + str + "."
+            break;
+        default:
+            result = "Something seems wrong. Please check."
+            break;
+        }
+        return result
+    }
+    
     class func message(forCode code: Int) -> String {
         var result: String
         
@@ -120,7 +136,10 @@ class PSValidator: NSObject {
             result = "Username Required";
             break;
         case 901:
-            result = "Invalid characters in name. Please check.";
+            result = "Relative 1st name Required";
+            break;
+        case 902:
+            result = "Relative 2nd name Required";
             break;
         case 903:result = "Specify your gender.";
         break;
@@ -372,6 +391,27 @@ class PSValidator: NSObject {
         }
         return 0
     }
+    
+    class func validateSOSName1(_ Name: String?) -> Int {
+        guard let name = Name else {
+            return 901
+        }
+        if name.count == 0 {
+            return 901
+        }
+        return 0
+    }
+    
+    class func validateSOSName2(_ Name: String?) -> Int {
+        guard let name = Name else {
+            return 902
+        }
+        if name.count == 0 {
+            return 902
+        }
+        return 0
+    }
+    
     class func validateCountercode(_ CountryCode: String?) -> Int {
         guard let countryCode = CountryCode else {
             return 1405
@@ -598,12 +638,21 @@ class PSValidator: NSObject {
         return 0
     }
     
-    class func validateSelectCuisine(_ cuisine : String?) -> Int {
-        guard let cuisine = cuisine else {
+    class func validateSelectValue(_ value : String?) -> Int {
+        guard let value = value else {
             return 1101
         }
-        if cuisine.count == 0 {
+        if value.count == 0 {
             return 1101
+        }
+        return 0
+    }
+    class func validateEnterValue(_ value : String?) -> Int {
+        guard let value = value else {
+            return 1102
+        }
+        if value.count == 0 {
+            return 1102
         }
         return 0
     }

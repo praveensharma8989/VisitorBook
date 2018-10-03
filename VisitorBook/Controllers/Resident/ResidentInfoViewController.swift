@@ -23,6 +23,7 @@ class ResidentInfoViewController: ResidentAllPageViewController, UITableViewDele
     
     func initilize(){
         
+        setBackBarButton(buttonType: .Defauld)
         registerCell()
         CallRWAList()
         

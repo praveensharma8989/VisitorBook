@@ -62,11 +62,26 @@ class EventViewController: ResidentAllPageViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let eventPhotoVC = self.storyboard?.instantiateViewController(withIdentifier: "EventPhotosViewController") as! EventPhotosViewController
-        eventPhotoVC.eventData = upComingButton.isSelected == true ? (eventDataUpComing?.eventData[indexPath.row])! : (eventDataComplete?.eventData[indexPath.row])!
-        
-        Push(controller: eventPhotoVC)
-        
+        if upComingButton.isSelected{
+            
+            if (eventDataUpComing?.eventData[indexPath.row])?.imageNums != "0"{
+                let eventPhotoVC = self.storyboard?.instantiateViewController(withIdentifier: "EventPhotosViewController") as! EventPhotosViewController
+                eventPhotoVC.eventData = (eventDataUpComing?.eventData[indexPath.row])!
+                
+                Push(controller: eventPhotoVC)
+            }
+            
+        }else{
+            
+            if (eventDataComplete?.eventData[indexPath.row])?.imageNums != "0"{
+                let eventPhotoVC = self.storyboard?.instantiateViewController(withIdentifier: "EventPhotosViewController") as! EventPhotosViewController
+                eventPhotoVC.eventData = (eventDataComplete?.eventData[indexPath.row])!
+                
+                Push(controller: eventPhotoVC)
+            }
+            
+        }
+    
     }
     
     @IBAction func upComingButton_press(_ sender: Any) {
@@ -107,7 +122,6 @@ class EventViewController: ResidentAllPageViewController, UITableViewDelegate, U
                      "types" : "Complete"
             ]
         }
-        
         
         PSServiceManager.CallEvents(param: param) { (response, status, error) -> (Void) in
             self.dismissLoader()

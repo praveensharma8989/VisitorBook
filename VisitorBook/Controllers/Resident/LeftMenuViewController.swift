@@ -166,11 +166,37 @@ class LeftMenuViewController: ResidentAllPageViewController, UITableViewDelegate
             self.panel?.closeLeft()
             navigation.pushViewController(myProfileVC, animated: false)
             
+        case 7:
+            
+            logoutflatUser()
+            
         default:
             break
         }
     }
     
+    
+    func logoutflatUser(){
+        
+        showLoader()
+        
+        let param : [String : Any] = [
+            "id" : (residentData?.id)!
+        ]
+        
+        PSServiceManager.CallLogoutFlatUser(param: param) { (response, status, error) -> (Void) in
+            self.dismissLoader()
+            if(status){
+                
+                CommanFunction.instance.clearFlatUserData()
+                self.showAlertMessage(titleStr: "Success", messageStr: response!["msg"] as! String)
+                AppIntializer.shared.moveToLoginScreen()
+            }else{
+                self.showAlertMessage(titleStr: "Error", messageStr: error!)
+            }
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

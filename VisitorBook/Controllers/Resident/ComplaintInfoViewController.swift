@@ -26,6 +26,7 @@ class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDel
     
     func initilize(){
         
+        setBackBarButton(buttonType: .Defauld)
         registerCell()
         tableView.dataSource = self
         tableView.delegate = self

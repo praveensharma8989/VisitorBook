@@ -25,12 +25,49 @@ class SOSEditViewViewController: ResidentAllPageViewController {
     
     func initilize(){
         
+        setBackBarButton(buttonType: .Defauld)
         CallSOSDetail()
         
     }
     
     @IBAction func submitButton_Press(_ sender: Any) {
         
+        self.view.endEditing(true)
+        
+        let code = validate()
+        
+        if(code != 0){
+            
+            print(code)
+            let str:String = PSValidator.message(forCode: code)
+            self.showAlertMessage(titleStr: "Error", messageStr: str)
+        }
+        else{
+            
+            CallUpdateSOS()
+            
+        }
+        
+    }
+    
+    func validate() -> Int{
+        
+        if (PSValidator.validateSOSName1(relativeName1Text.text) != 0)
+        {
+            return PSValidator.validateSOSName1(relativeName1Text.text)
+        }
+        if (PSValidator.validateMobile(Mobile: relativePhone1Text.text) != 0){
+            return PSValidator.validateMobile(Mobile: relativePhone1Text.text)
+        }
+        if (PSValidator.validateSOSName2(relativeName2Text.text) != 0)
+        {
+            return PSValidator.validateSOSName2(relativeName2Text.text)
+        }
+        if (PSValidator.validateMobile(Mobile: relativePhone2Text.text) != 0){
+            return PSValidator.validateMobile(Mobile: relativePhone2Text.text)
+        }
+        
+        return 0
         
     }
     
@@ -41,6 +78,33 @@ class SOSEditViewViewController: ResidentAllPageViewController {
         relativePhone1Text.text = sosData?.mobile1
         relativePhone2Text.text = sosData?.mobile2
         messageText.text = sosData?.message
+        
+    }
+    
+    func CallUpdateSOS(){
+        
+        showLoader()
+        
+        let param : [String : Any] = [
+            "id" : (residentData?.id)!,
+            "name1" : relativeName1Text.text!,
+            "name2" : relativeName2Text.text!,
+            "mobile1" : relativePhone1Text.text!,
+            "mobile2" : relativePhone2Text.text!,
+            "message" : messageText.text!
+        ]
+        
+        PSServiceManager.CallUpdateSOSDetail(param: param) { (response, status, error) -> (Void) in
+            self.dismissLoader()
+            if status{
+                
+                self.showAlertMessage(titleStr: "Success", messageStr: response!["msg"] as! String)
+                self.PopBack()
+                
+            }else{
+                self.showAlertMessage(titleStr: "Error", messageStr: error!)
+            }
+        }
         
     }
     

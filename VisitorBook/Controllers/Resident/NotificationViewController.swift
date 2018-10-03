@@ -22,6 +22,7 @@ class NotificationViewController: ResidentAllPageViewController, UITableViewData
     
     func initilize(){
         
+        setBackBarButton(buttonType: .Defauld)
         registerCell()
         CallNotification()
         

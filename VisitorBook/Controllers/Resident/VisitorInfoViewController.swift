@@ -27,6 +27,7 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
     
     func initilize(){
         
+        setBackBarButton(buttonType: .Defauld)
         registerCell()
         CallVisitorFlatVisitor()
     

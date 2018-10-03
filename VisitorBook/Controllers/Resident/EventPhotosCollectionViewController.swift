@@ -24,6 +24,7 @@ class EventPhotosCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
+        
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)

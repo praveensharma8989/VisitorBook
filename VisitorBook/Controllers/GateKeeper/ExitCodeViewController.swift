@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExitCodeViewController: AllPageViewController {
+class ExitCodeViewController: GatekeeperAllPageViewController {
 
     @IBOutlet weak var exitCodeText: DesignableUITextField!
     override func viewDidLoad() {
