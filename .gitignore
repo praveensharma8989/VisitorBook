@@ -531,3 +531,17 @@ Pods/Viewer/Source/Viewable.swift
 Pods/Viewer/Source/ViewableController.swift
 Pods/Viewer/Source/ViewableControllerContainer.swift
 Pods/Viewer/Source/ViewerController.swift
+Pods/ExpandingMenu/LICENSE
+Pods/ExpandingMenu/README.md
+Pods/ExpandingMenu/ExpandingMenu/Assets/Sounds/expanding.caf
+Pods/ExpandingMenu/ExpandingMenu/Assets/Sounds/fold.caf
+Pods/ExpandingMenu/ExpandingMenu/Assets/Sounds/selected.caf
+Pods/ExpandingMenu/ExpandingMenu/Classes/ExpandingMenuButton.swift
+Pods/ExpandingMenu/ExpandingMenu/Classes/ExpandingMenuItem.swift
+Pods/Target Support Files/ExpandingMenu/ExpandingMenu-dummy.m
+Pods/Target Support Files/ExpandingMenu/ExpandingMenu-prefix.pch
+Pods/Target Support Files/ExpandingMenu/ExpandingMenu-umbrella.h
+Pods/Target Support Files/ExpandingMenu/ExpandingMenu.modulemap
+Pods/Target Support Files/ExpandingMenu/ExpandingMenu.xcconfig
+Pods/Target Support Files/ExpandingMenu/Info.plist
+Pods/Target Support Files/ExpandingMenu/ResourceBundle-ExpandingMenu-Info.plist
