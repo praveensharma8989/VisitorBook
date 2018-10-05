@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBarShare" customModule="VisitorBook" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="LzL-xF-mSk"/>
+                <outlet property="titleLable" destination="NTs-tb-LiN" id="4Yu-1L-SDb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="429" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vq-j4-ZnQ">
+                    <rect key="frame" x="0.0" y="0.0" width="429" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztX-EI-ODk">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="GF1-ur-3hY"/>
+                            </constraints>
+                            <state key="normal" image="backIcon"/>
+                            <connections>
+                                <action selector="backButton_Press:" destination="-1" eventType="touchUpInside" id="Efv-uO-YAb"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayon Visitor Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTs-tb-LiN">
+                            <rect key="frame" x="50" y="0.0" width="259" height="60"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9Z-NH-ioR">
+                            <rect key="frame" x="309" y="0.0" width="50" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="ZYr-mE-qWT"/>
+                            </constraints>
+                            <state key="normal" image="homeWhiteIcon"/>
+                            <connections>
+                                <action selector="homeButton_press:" destination="-1" eventType="touchUpInside" id="Mqe-gU-Rvc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSa-25-cuH">
+                            <rect key="frame" x="369" y="0.0" width="50" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="eG1-J0-Qg1"/>
+                            </constraints>
+                            <state key="normal" image="shareIcon"/>
+                            <connections>
+                                <action selector="shareButton_press:" destination="-1" eventType="touchUpInside" id="tux-wc-ccn"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="n9Z-NH-ioR" firstAttribute="top" secondItem="0Vq-j4-ZnQ" secondAttribute="top" id="7ZO-23-Qv8"/>
+                        <constraint firstItem="n9Z-NH-ioR" firstAttribute="leading" secondItem="NTs-tb-LiN" secondAttribute="trailing" id="7tX-tC-1ds"/>
+                        <constraint firstItem="ztX-EI-ODk" firstAttribute="top" secondItem="0Vq-j4-ZnQ" secondAttribute="top" id="B44-rU-TVR"/>
+                        <constraint firstItem="oSa-25-cuH" firstAttribute="top" secondItem="0Vq-j4-ZnQ" secondAttribute="top" id="GWz-1P-rB7"/>
+                        <constraint firstAttribute="bottom" secondItem="oSa-25-cuH" secondAttribute="bottom" id="Nhl-rL-gwQ"/>
+                        <constraint firstItem="ztX-EI-ODk" firstAttribute="leading" secondItem="0Vq-j4-ZnQ" secondAttribute="leading" id="Q3a-WT-5Ou"/>
+                        <constraint firstItem="NTs-tb-LiN" firstAttribute="height" secondItem="0Vq-j4-ZnQ" secondAttribute="height" id="Sh0-Zp-bpr"/>
+                        <constraint firstAttribute="bottom" secondItem="ztX-EI-ODk" secondAttribute="bottom" id="dTX-8z-zMe"/>
+                        <constraint firstItem="NTs-tb-LiN" firstAttribute="centerY" secondItem="0Vq-j4-ZnQ" secondAttribute="centerY" id="kIa-kd-TVA"/>
+                        <constraint firstAttribute="bottom" secondItem="n9Z-NH-ioR" secondAttribute="bottom" id="qrs-k7-XqL"/>
+                        <constraint firstItem="oSa-25-cuH" firstAttribute="leading" secondItem="n9Z-NH-ioR" secondAttribute="trailing" constant="10" id="uub-Vd-wnd"/>
+                        <constraint firstAttribute="trailing" secondItem="oSa-25-cuH" secondAttribute="trailing" constant="10" id="zHE-xC-8m9"/>
+                        <constraint firstItem="NTs-tb-LiN" firstAttribute="leading" secondItem="ztX-EI-ODk" secondAttribute="trailing" id="zHJ-jM-2It"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Vq-j4-ZnQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Fq-1B-4xX"/>
+                <constraint firstItem="0Vq-j4-ZnQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Bgx-Wg-MW0"/>
+                <constraint firstAttribute="trailing" secondItem="0Vq-j4-ZnQ" secondAttribute="trailing" id="Gzf-CO-ovn"/>
+                <constraint firstItem="0Vq-j4-ZnQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gly-tc-vpg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="181.59999999999999" y="-153.82308845577214"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backIcon" width="48" height="48"/>
+        <image name="homeWhiteIcon" width="48" height="48"/>
+        <image name="shareIcon" width="48" height="48"/>
+    </resources>
+</document>

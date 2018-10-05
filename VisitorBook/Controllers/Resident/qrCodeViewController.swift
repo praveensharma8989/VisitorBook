@@ -12,6 +12,14 @@ class qrCodeViewController: ResidentAllPageViewController {
 
     @IBOutlet weak var userQRImage: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var flatLbl: UILabel!
+    
+    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var genderDOBLbl: UILabel!
+    
+    
     
     var residentFlatProfileData : FlateProfileData?
     
@@ -50,6 +58,15 @@ class qrCodeViewController: ResidentAllPageViewController {
         
         userQRImage.set_sdWebImage(With: (residentFlatProfileData?.qrCode)!, placeHolderImage: "userIcon")
         userNameLbl.text = (residentFlatProfileData?.name)!
+        
+        let tower = residentFlatProfileData?.tower ?? ""
+        let floor = residentFlatProfileData?.floor ?? ""
+        let flate = residentFlatProfileData?.flat ?? ""
+        
+        userImage.set_sdWebImage(With: (residentFlatProfileData?.photo)!, placeHolderImage: "userIcon")
+        flatLbl.text = tower + ":" + floor + "," + flate
+        addressLbl.text = residentFlatProfileData?.address ?? ""
+        genderDOBLbl.text = (residentFlatProfileData?.gender ?? "") + "   " + (residentFlatProfileData?.age ?? "")
         
     }
     

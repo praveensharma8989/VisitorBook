@@ -36,6 +36,7 @@ class ResidentProfileViewController: ResidentAllPageViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        CallFlateProfile()
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -47,15 +48,17 @@ class ResidentProfileViewController: ResidentAllPageViewController {
     
     func Initilize(){
         
-        residentFlatProfileData = CommanFunction.instance.getResidentFlatProfile()
-        
-        if residentFlatProfileData == nil{
-            CallFlateProfile()
-        }else{
-            setData()
-        }
+//        residentFlatProfileData = CommanFunction.instance.getResidentFlatProfile()
+//
+//        if residentFlatProfileData == nil{
+//            CallFlateProfile()
+//        }else{
+//            setData()
+//        }
         
     }
+    
+    
     
     func setData(){
         let tower = residentFlatProfileData?.tower ?? ""

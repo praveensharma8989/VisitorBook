@@ -48,7 +48,13 @@ enum CARequestApiName:String {
     SOSDetailResident       = "SOSDetail.php",
     UpdateSOS               = "UpdateSOS.php",
     LogoutFlatUser          = "LogoutFlatUser.php",
-    CreateExpectedVisitor   = "CreateExpectedVisitor.php"
+    CreateExpectedVisitor   = "CreateExpectedVisitor.php",
+    AllExpectedVisitor      = "AllExpectedVisitor.php",
+    ExpectedVisitorVisit    = "ExpectedVisitorVisit.php",
+    UpdateFlatUser          = "UpdateFlatUser.php",
+    FAQ                     = "FAQ.php",
+    AboutUs                 = "Aboutus.php",
+    ClaimForOffer           = "ClaimForOffer.php"
     
 }
 

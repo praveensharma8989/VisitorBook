@@ -63,8 +63,8 @@ class PageSegmentViewController: SJSegmentedViewController{
             
             
             let thirdViewController = storyboard
-                .instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
-            thirdViewController.title = "Post"
+                .instantiateViewController(withIdentifier: "OffersListViewController") as! OffersListViewController
+            thirdViewController.title = "Offers"
             
             segmentControllers = [firstViewController,
                                   secondViewController,
@@ -72,7 +72,8 @@ class PageSegmentViewController: SJSegmentedViewController{
             
             
             selectedSegmentViewHeight = 5.0
-//            headerViewOffsetHeight = 40.0
+//            headerViewOffsetHeight = 0.0
+            
             segmentTitleColor = .gray
             selectedSegmentViewColor = .red
             segmentShadow = SJShadow.light()

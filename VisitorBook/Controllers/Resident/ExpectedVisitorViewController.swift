@@ -58,7 +58,7 @@ class ExpectedVisitorViewController: ResidentAllPageViewController, UIPickerView
     func initilize(){
         
         callPurpose()
-        setBackBarButton(buttonType: .Defauld)
+        setBackBarButton(buttonType: .DefaultHome)
         viewSection.isHidden = true
         pickerView.isHidden = true
         pickerToolbar.isHidden = true
@@ -177,6 +177,9 @@ class ExpectedVisitorViewController: ResidentAllPageViewController, UIPickerView
     
     
     @IBAction func viewAllVisitorButton_press(_ sender: Any) {
+        
+        let ExpectedVisitorListVC = self.storyboard?.instantiateViewController(withIdentifier: "ExpectedVisitorListViewController") as! ExpectedVisitorListViewController
+        Push(controller: ExpectedVisitorListVC)
         
     }
     
@@ -348,11 +351,11 @@ class ExpectedVisitorViewController: ResidentAllPageViewController, UIPickerView
         showLoader()
         
         let param : [String : Any] = [
-            "uid" : (residentData?.cid)!,
-            "name" : visitorText.text!,
-            "mobile" : visitorMobileText.text!,
-            "purpose" : purposeText.text!,
-            "valid_for" : validityVisitorText.text == "Customize" ? "" : validityIndexArray[validityVisitorIndex]
+            "uid" : (residentData?.id)!,
+            "name" : (visitorText.text)!,
+            "mobile" : (visitorMobileText.text)!,
+            "purpose" : (purposeText.text)!,
+            "valid_for" : validityVisitorText.text == "Customize" ? (startDateText.text! + "|" + endDateText.text!) : validityIndexArray[validityVisitorIndex]
         ]
         
         PSServiceManager.CallCreateExpectedVisitor(param: param) { (response, status, error) -> (Void) in
@@ -361,7 +364,10 @@ class ExpectedVisitorViewController: ResidentAllPageViewController, UIPickerView
             
             if(status){
                 
+                self.showAlertMessage(titleStr: "Success", messageStr: response!["msg"] as! String)
                 
+                let ExpectedVisitorListVC = self.storyboard?.instantiateViewController(withIdentifier: "ExpectedVisitorListViewController") as! ExpectedVisitorListViewController
+                self.Push(controller: ExpectedVisitorListVC)
                 
             }else{
                 self.showAlertMessage(titleStr: "Error", messageStr: error!)

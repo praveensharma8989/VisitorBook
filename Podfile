@@ -21,4 +21,5 @@ target 'VisitorBook' do
   pod 'Cosmos', '~> 16.0.0'
   pod 'MIBlurPopup'
   pod 'Viewer'
+  pod 'ExpandingMenu'
 end

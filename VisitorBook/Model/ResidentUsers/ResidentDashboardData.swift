@@ -28,8 +28,10 @@ struct ResidentDashboardData: Codable {
     let notification, complaint, name, userType: String?
     let maintanance: String?
     let photo: String?
+    let flat : String?
     let bannerData: [BannerDatum]
     let visitorData: [VisitorData]
+    let offerDetails: [OfferDetail]
     
     enum CodingKeys: String, CodingKey {
         case code, error, msg
@@ -40,9 +42,10 @@ struct ResidentDashboardData: Codable {
         case complaint = "Complaint"
         case name
         case userType = "user_type"
-        case maintanance, photo
+        case maintanance, photo, flat
         case bannerData = "Banner_Data"
         case visitorData = "Visitor_Data"
+        case offerDetails = "Offer_details"
     }
 }
 
@@ -84,5 +87,17 @@ struct VisitorData: Codable {
         case sosName2 = "sos_name2"
         case sosMob2 = "sos_mob2"
         case sosMsg = "sos_msg"
+    }
+}
+
+struct OfferDetail: Codable {
+    let id, offerName, discription, validity: String
+    let url: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case offerName = "offer_name"
+        case discription, validity
+        case url = "URL"
     }
 }

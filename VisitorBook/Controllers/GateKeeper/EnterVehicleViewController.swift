@@ -11,8 +11,8 @@ import MIBlurPopup
 
 class EnterVehicleViewController: GatekeeperAllPageViewController {
 
-    @IBOutlet weak var blackView: UIView!
-    @IBOutlet weak var vehicleDetailView: VehicleDetailView!
+//    @IBOutlet weak var blackView: UIView!
+//    @IBOutlet weak var vehicleDetailView: VehicleDetailView!
     @IBOutlet weak var enterVehicleText: DesignableUITextField!
     
     var vehicleData : VehicleData?
@@ -25,8 +25,8 @@ class EnterVehicleViewController: GatekeeperAllPageViewController {
 
     func initilize(){
         
-        blackView.isHidden = true
-        vehicleDetailView.isHidden = true
+//        blackView.isHidden = true
+//        vehicleDetailView.isHidden = true
 //        vehicleDetailView.vehicleCancel = {() in
 //
 //            self.blackView.isHidden = true

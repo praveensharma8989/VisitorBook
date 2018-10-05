@@ -71,7 +71,7 @@ class LeftMenuViewController: ResidentAllPageViewController, UITableViewDelegate
         
         userImage.set_sdWebImage(With: (residentDashboardDataNew?.photo)!, placeHolderImage: "userIcon")
         userNameLbl.text = residentDashboardDataNew?.name
-        flateLbl.text = residentDashboardDataNew?.userType
+        flateLbl.text = (residentDashboardDataNew?.userType)! + " " + (residentDashboardDataNew?.flat)!
         moneyLbl.text = "Rs. " + (residentDashboardDataNew?.maintanance)!
         
     }
@@ -165,6 +165,21 @@ class LeftMenuViewController: ResidentAllPageViewController, UITableViewDelegate
             let myProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "qrCodeViewController") as! qrCodeViewController
             self.panel?.closeLeft()
             navigation.pushViewController(myProfileVC, animated: false)
+            
+        case 4:
+            
+            let navigation = self.panel?.center as! UINavigationController
+            
+            let FAQVC = self.storyboard?.instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
+            self.panel?.closeLeft()
+            navigation.pushViewController(FAQVC, animated: false)
+            
+        case 6:
+            let navigation = self.panel?.center as! UINavigationController
+            
+            let AboutUsVC = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+            self.panel?.closeLeft()
+            navigation.pushViewController(AboutUsVC, animated: false)
             
         case 7:
             

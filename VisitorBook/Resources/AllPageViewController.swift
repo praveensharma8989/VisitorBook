@@ -16,7 +16,8 @@ enum BarButtonPosition : Int {
 public enum  BackButtonType : Int {
     
     case Defauld,
-    Home
+    Home,
+    DefaultHome
     
 }
 
@@ -62,6 +63,11 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         case .Defauld:
             
             btn.addTarget(self, action: #selector(BackButtonClicked), for: .touchUpInside)
+            btn.setImage(#imageLiteral(resourceName: "backIcon"), for: .normal)
+            
+        case .DefaultHome:
+            
+            btn.addTarget(self, action: #selector(HomeButtonClicked), for: .touchUpInside)
             btn.setImage(#imageLiteral(resourceName: "backIcon"), for: .normal)
             
         case .Home:
