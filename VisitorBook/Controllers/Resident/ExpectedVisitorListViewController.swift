@@ -25,6 +25,7 @@ class ExpectedVisitorListViewController: ResidentAllPageViewController, UITableV
     func initilize(){
         
         setBackBarButton(buttonType: .DefaultHome)
+        setNavigationTitle(With: "Expected Visitor Info", type: .white)
         AddNewVisitButton()
         registerCell()
         CallVisitorList()

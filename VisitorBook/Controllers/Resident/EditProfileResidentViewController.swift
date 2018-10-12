@@ -36,6 +36,7 @@ class EditProfileResidentViewController: ResidentAllPageViewController, UIImageP
     
     func initilize(){
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "Edit Profile", type: .white)
         imagePickerView.delegate = self
         datePickerView.isHidden = true
         genderPickerView.isHidden = true

@@ -23,6 +23,7 @@ class AboutUsViewController: ResidentAllPageViewController {
         
         navigationController?.navigationBar.items![1].setHidesBackButton(true, animated: false)
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "Edit Profile", type: .white)
         CallAboutUs()
         
     }

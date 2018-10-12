@@ -26,6 +26,7 @@ class VisitorVisitListViewController: ResidentAllPageViewController, UITableView
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: (expectedVisitor?.name)! + " total visit : " + (expectedVisitor?.noOfVisit)!, type: .white)
         AddNewVisitButton()
         registerCell()
         CallVisitorVisitList()

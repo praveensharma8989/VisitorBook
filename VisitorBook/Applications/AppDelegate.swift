@@ -9,8 +9,28 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import FirebaseCore
+import UserNotifications
+import FirebaseMessaging
+import FirebaseInstanceID
+import FAPanels
 
 
+enum PushNotificationEnum: String {
+    case Notification       = "Notification"
+    case GuardNotif         = "GuardNotif"
+    case GuardSOS           = "GuardSOS"
+    case Staff              = "Staff"
+    case Expected           = "Expected"
+    case BlogLikes          = "BlogLikes"
+    case Events             = "Events"
+    case BlogComment        = "BlogComment"
+    case Complain           = "Complain"
+    case RWAReply           = "RWAReply"
+    case GuardReply         = "GuardReply"
+    case FlatReply          = "FlatReply"
+    case SOSReply           = "SOSReply"
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,14 +39,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var currentView: UIViewController?
     var gateKeeperSelectedIndex : Int = 0
+    var isScannerApear : Bool = false
+    let notificationDelegate = SampleNotificationDelegate()
+    let gcmMessageIDKey = "gcm.message_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         if let statusbar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
             statusbar.backgroundColor = UIColor.red
         }
+        registerPushNotification(application)
+        
 //        loadExampleAppStructure()
         appInilize()
+        
+        if launchOptions != nil
+        {
+            if let userInfo : [String:AnyObject] = launchOptions![UIApplicationLaunchOptionsKey.remoteNotification] as? [String:AnyObject]
+            {
+                pushHandling(with:userInfo)
+            }
+            else
+            {
+                
+            }
+        }
         
         // Override point for customization after application launch.
         return true
@@ -34,11 +71,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func appInilize(){
         
+        
         AppIntializer.shared.setupIntial()
         IQKeyboardManager.shared.enable = true
         
     }
 
+    func ConnectFCM(){
+        
+        Messaging.messaging().isAutoInitEnabled = true
+        Messaging.messaging().shouldEstablishDirectChannel = true
+        
+        
+    }
+    
+    
+    
 //    fileprivate func loadExampleAppStructure() {
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
 //        self.window?.makeKeyAndVisible()
@@ -65,6 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+//        Messaging.messaging().shouldEstablishDirectChannel = false
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -73,6 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        ConnectFCM()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -126,5 +176,253 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func registerPushNotification(_ application: UIApplication) {
+        // For iOS 10 display notification (sent via APNS)
+        
+        application.registerForRemoteNotifications()
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions) {(isGranted, error) in
+
+                if (error != nil){
+
+                }else{
+                    UNUserNotificationCenter.current().delegate = self
+                    Messaging.messaging().delegate = self
+
+                }
+
+        }
+        
+//
+//        print(#function)
+//        if #available(iOS 10.0, *) {
+//            // For iOS 10 display notification (sent via APNS)
+//            UNUserNotificationCenter.current().delegate = self
+//
+//            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//            UNUserNotificationCenter.current().requestAuthorization(
+//                options: authOptions,
+//                completionHandler: {_, _ in })
+//
+//            // For iOS 10 data message (sent via FCM)
+//            Messaging.messaging().delegate = self
+//
+//        } else {
+//            let settings: UIUserNotificationSettings =
+//                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//            application.registerUserNotificationSettings(settings)
+//
+//        }
+        application.registerForRemoteNotifications()
+        FirebaseApp.configure()
+        
+        // For iOS 10 data message (sent via FCM)
+        
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        //When the notifications of this code worked well, there was not yet.
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    // [START receive_message]
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            debugPrint("Message ID: \(messageID)")
+        }
+        
+        if(application.applicationState == UIApplicationState.inactive)
+        {
+            // checking that userInfo is having dictionary type or not
+            if userInfo is [String : AnyHashable]
+            {
+                pushHandling(with:userInfo as! [String : AnyObject])
+            }
+            
+        }
+        // Print full message.
+        debugPrint(userInfo)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        debugPrint(userInfo)
+        
+        completionHandler(.newData)
+    }
+    
+    // showing push notification
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        
+            // checking that userInfo is having dictionary type or not
+        if userInfo is [String : AnyHashable]
+        {
+            pushHandling(with:userInfo as! [String : AnyObject])
+        }
+            
+        
+        
+        // Print full message.
+        print(userInfo)
+        
+        completionHandler()
+    }
+
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        // Print message ID.
+        
+        let content = notification.request.content
+        // Process notification content
+        print("\(content.userInfo)")
+        completionHandler([.alert, .sound]) // Display notification as
+        
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
+        
+//        if let messageID = userInfo[gcmMessageIDKey] {
+//            print("Message ID: \(messageID)")
+//        }
+//
+//        // Print full message.
+//        print(userInfo)
+//
+//        // Change this to your preferred presentation option
+//        completionHandler([])
+    }
+    
+    
+    func tokenRefreshNotification(_ notification: Notification) {
+        print(#function)
+        if let refreshedToken = InstanceID.instanceID().token() {
+//            log.info("Notification: refresh token from FCM -> \(refreshedToken)")
+        }
+        
+        // Connect to FCM since connection may have failed when attempted before having a token.
+        ConnectFCM()
+        
+    }
+    
+    
+}
+
+// [START ios_10_data_message_handling]
+extension AppDelegate : MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        CommanFunction.instance.setFCMTocken(user: fcmToken)
+        
+        let dataDict:[String: String] = ["token": fcmToken]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+    }
+    
+    
+    
+    // Receive data message on iOS 10 devices while app is in the foreground.
+    func application(received remoteMessage: MessagingRemoteMessage) {
+        debugPrint(remoteMessage.appData)
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        
+        
+        
+        print(messaging.fcmToken)
+    }
+    
+    func pushHandling(with userInfo :[String:AnyObject]){
+        
+        if let purpose : PushNotificationEnum = PushNotificationEnum(rawValue: userInfo["gcm.notification.purpose"] as! String){
+            var nsvigationNew = UINavigationController()
+            
+            var RVC = FAPanelController()
+            if (UIApplication.shared.keyWindow?.rootViewController!.isKind(of: FAPanelController.self))!{
+                RVC = UIApplication.shared.keyWindow?.rootViewController as! FAPanelController
+                nsvigationNew = RVC.center as! UINavigationController
+            }
+//            if (UIApplication.shared.keyWindow?.window?.rootViewController?.isEqual())!{
+//
+//            }
+            
+            
+            let GateKeeperStoryboard = UIStoryboard.init(name: "GateKeeper", bundle: nil)
+            let ResidentStoryboard = UIStoryboard.init(name: "Resident", bundle: nil)
+            
+            
+            switch purpose{
+            case .RWAReply:
+                
+                let ResidentChatVC = ResidentStoryboard.instantiateViewController(withIdentifier: "ResidentChatViewController") as! ResidentChatViewController
+                ResidentChatVC.fromId = (userInfo["gcm.notification.name"] as! String)
+                
+                nsvigationNew.pushViewController(ResidentChatVC, animated: true)
+                
+            case .Notification:
+                
+                let NotificationVC = ResidentStoryboard.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
+                
+                nsvigationNew.pushViewController(NotificationVC, animated: true)
+            
+            case .BlogLikes:
+                
+                let PostListVC = ResidentStoryboard.instantiateViewController(withIdentifier: "PostListViewController") as! PostListViewController
+                PostListVC.postID = (userInfo["gcm.notification.id"] as! String)
+                nsvigationNew.pushViewController(PostListVC, animated: true)
+                
+            case .BlogComment:
+                
+                let PostListVC = ResidentStoryboard.instantiateViewController(withIdentifier: "PostListViewController") as! PostListViewController
+                PostListVC.postID = (userInfo["gcm.notification.id"] as! String)
+                nsvigationNew.pushViewController(PostListVC, animated: true)
+                
+            case .Complain:
+                
+                let ComplaintDetailVC = ResidentStoryboard.instantiateViewController(withIdentifier: "ComplaintDetailViewController") as! ComplaintDetailViewController
+                ComplaintDetailVC.complainID = (userInfo["id"] as! String)
+                nsvigationNew.pushViewController(ComplaintDetailVC, animated: true)
+                
+            default:
+                break
+            }
+        }
+        
+    }
+    
 }
 

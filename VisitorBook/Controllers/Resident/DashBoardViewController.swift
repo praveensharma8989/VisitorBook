@@ -199,7 +199,12 @@ class DashBoardViewController: ResidentAllPageViewController, UITableViewDelegat
             }
             
             Push(controller: VisitorInfoVC)
-            
+        }else if ClickAction == .PostClik{
+            let PostListVC = self.storyboard?.instantiateViewController(withIdentifier: "PostListViewController") as! PostListViewController
+            Push(controller: PostListVC)
+        }else if ClickAction == .ServiceClick{
+            let ServiceTypeVC = self.storyboard?.instantiateViewController(withIdentifier: "ServiceTypeViewController") as! ServiceTypeViewController
+            Push(controller: ServiceTypeVC)
         }else if ClickAction == .ResidentClick{
             let ResidentInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "ResidentInfoViewController") as! ResidentInfoViewController
             Push(controller: ResidentInfoVC)

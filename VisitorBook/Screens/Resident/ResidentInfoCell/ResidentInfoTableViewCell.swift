@@ -10,6 +10,7 @@ import UIKit
 
 
 typealias ResidentInfoClick = () -> (Void)
+typealias ResidentInfoMessageClick = () -> (Void)
 class ResidentInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var UserImage: UIImageView!
@@ -18,7 +19,7 @@ class ResidentInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var userFlateLbl: UILabel!
     
     var residentInfoClick : ResidentInfoClick? = nil
-    
+    var residentInfoMessageClick : ResidentInfoMessageClick? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +31,7 @@ class ResidentInfoTableViewCell: UITableViewCell {
         UserImage.set_sdWebImage(With: data.photo!, placeHolderImage: "userIcon")
         userNameLbl.text = data.name
         userTypeLbl.text = data.usertype
-        userFlateLbl.text = ((data.tower != nil) ? data.tower! : "") + ((data.floor != nil) ? data.floor! : "") + ((data.flat != nil) ? data.flat! : "")
+        userFlateLbl.text = ((data.tower != nil) ? data.tower! : "") + " " + ((data.floor != nil) ? data.floor! : "") + " " + ((data.flat != nil) ? data.flat! : "")
         
     }
 
@@ -43,6 +44,13 @@ class ResidentInfoTableViewCell: UITableViewCell {
         
         if residentInfoClick != nil{
             residentInfoClick!()
+        }
+        
+    }
+    @IBAction func messageButton_press(_ sender: Any) {
+        
+        if residentInfoMessageClick != nil{
+            residentInfoMessageClick!()
         }
         
     }

@@ -85,18 +85,28 @@
                                     <constraint firstAttribute="height" constant="36" id="cmW-d5-WP7"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tl-k4-9oJ">
+                                <rect key="frame" x="269" y="27" width="36" height="36"/>
+                                <connections>
+                                    <action selector="messageButton_press:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZeH-D7-MI6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="YOJ-19-A8l" secondAttribute="bottom" id="0Ha-ko-PLg"/>
+                            <constraint firstItem="0Tl-k4-9oJ" firstAttribute="height" secondItem="GDN-2U-K7I" secondAttribute="height" id="22X-js-2g9"/>
+                            <constraint firstItem="0Tl-k4-9oJ" firstAttribute="width" secondItem="GDN-2U-K7I" secondAttribute="width" id="2eH-2X-70y"/>
                             <constraint firstItem="7hA-hh-U0d" firstAttribute="leading" secondItem="2vp-mM-WBo" secondAttribute="trailing" constant="20" id="2gk-sF-TKN"/>
                             <constraint firstItem="8rF-Tj-PtO" firstAttribute="leading" secondItem="2vp-mM-WBo" secondAttribute="trailing" constant="20" id="3NL-QA-t7I"/>
                             <constraint firstAttribute="trailing" secondItem="GDN-2U-K7I" secondAttribute="trailing" constant="15" id="3SG-Fa-o4Y"/>
                             <constraint firstAttribute="trailing" secondItem="YOJ-19-A8l" secondAttribute="trailing" id="3Xa-t1-jCM"/>
                             <constraint firstItem="L1I-Ok-YQs" firstAttribute="centerX" secondItem="2vp-mM-WBo" secondAttribute="centerX" id="8zP-Ou-ZLa"/>
                             <constraint firstItem="8rF-Tj-PtO" firstAttribute="top" secondItem="Ek5-g1-R5e" secondAttribute="top" constant="10" id="DHP-eE-DHa"/>
+                            <constraint firstItem="0Tl-k4-9oJ" firstAttribute="leading" secondItem="GDN-2U-K7I" secondAttribute="leading" id="GIe-SJ-PRc"/>
                             <constraint firstItem="7hA-hh-U0d" firstAttribute="width" secondItem="Ek5-g1-R5e" secondAttribute="width" multiplier="0.5" id="HSE-N9-PYO"/>
                             <constraint firstItem="2vp-mM-WBo" firstAttribute="leading" secondItem="Ek5-g1-R5e" secondAttribute="leading" constant="10" id="Hw4-qE-7Bp"/>
+                            <constraint firstItem="0Tl-k4-9oJ" firstAttribute="top" secondItem="GDN-2U-K7I" secondAttribute="top" id="LLK-Qz-smH"/>
                             <constraint firstItem="L1I-Ok-YQs" firstAttribute="centerY" secondItem="2vp-mM-WBo" secondAttribute="centerY" id="Lj4-vU-Vo7"/>
                             <constraint firstItem="GDN-2U-K7I" firstAttribute="centerY" secondItem="Ek5-g1-R5e" secondAttribute="centerY" id="NDe-Hc-uGe"/>
                             <constraint firstItem="L1I-Ok-YQs" firstAttribute="width" secondItem="2vp-mM-WBo" secondAttribute="width" id="Op4-20-HTD"/>
@@ -118,8 +128,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="UserImage" destination="2vp-mM-WBo" id="3Vc-Xr-Wml"/>
-                <outlet property="userFlateLbl" destination="8rF-Tj-PtO" id="wHR-JJ-L6Z"/>
-                <outlet property="userNameLbl" destination="8rF-Tj-PtO" id="AO1-29-4Ui"/>
+                <outlet property="userFlateLbl" destination="NnS-N7-8Oz" id="Mbv-6j-Nwa"/>
+                <outlet property="userNameLbl" destination="8rF-Tj-PtO" id="576-xe-33r"/>
                 <outlet property="userTypeLbl" destination="KnE-n7-lRA" id="vOZ-JZ-JIC"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="128.63568215892056"/>

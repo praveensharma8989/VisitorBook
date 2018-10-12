@@ -15,6 +15,8 @@ enum QuickActionClickType : Int {
     case TodayClick  = 0
     case WeekClick
     case TotalClick
+    case ServiceClick
+    case PostClik
     case NotificationClick
     case ComplaintClick
     case ResidentClick
@@ -58,12 +60,12 @@ class QuickActionTableViewCell: UITableViewCell {
     }
     @IBAction func weeklyVisitorButton_press(_ sender: Any) {
         if quickActionClick != nil{
-            return quickActionClick!(.WeekClick)
+            return quickActionClick!(.ServiceClick)
         }
     }
     @IBAction func totalVisitorButton_press(_ sender: Any) {
         if quickActionClick != nil{
-            return quickActionClick!(.TotalClick)
+            return quickActionClick!(.PostClik)
         }
     }
     @IBAction func notificationButton_press(_ sender: Any) {

@@ -24,6 +24,7 @@ class FAQViewController: ResidentAllPageViewController, UITableViewDataSource, U
         
         navigationController?.navigationBar.items![1].setHidesBackButton(true, animated: false)
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "FAQ", type: .white)
         registerCell()
         CallFAQ()
     }

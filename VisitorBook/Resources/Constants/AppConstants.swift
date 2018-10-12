@@ -54,15 +54,33 @@ enum CARequestApiName:String {
     UpdateFlatUser          = "UpdateFlatUser.php",
     FAQ                     = "FAQ.php",
     AboutUs                 = "Aboutus.php",
-    ClaimForOffer           = "ClaimForOffer.php"
+    ClaimForOffer           = "ClaimForOffer.php",
+    StaffVerify             = "StaffVerify.php",
+    StaffLogin              = "StaffLogin.php",
+    StaffLogout             = "StaffLogout.php",
+    SendComplain            = "send_complain.php",
+    ComplainInfo            = "ComplainInfo.php",
+    ComplainReply           = "ComplainReply.php",
+    RWAInfo                 = "RWAInfo.php",
+    RWAReply                = "RWAReply.php",
+    StaffCategory           = "StaffCategory.php",
+    StaffDetail             = "StaffDetail.php",
+    AllBlogs                = "AllBlogs.php",
+    AllBlogLikes            = "AllBlogLikes.php",
+    AllBlogComment          = "AllBlogComment.php",
+    BlogLikes               = "BlogLikes.php",
+    RemoveBlog              = "RemoveBlog.php",
+    BlogComment             = "BlogComment.php",
+    CreateBlog              = "CreateBlog.php",
+    SendSOS                 = "SendSOS.php"
     
 }
 
 
 struct ServiceConstant {
 
-//    static var BaseURL: String = "https://app.chachisfood.com/"             //Live
-    static var BaseURL: String = "https://gobuzy.com/vb/json/"       //Staging\
+//    static var BaseURL: String = "https://gobuzy.com/vb/json/"
+    static var BaseURL: String = "http://ayonvisitorbook.com/json/"  //Staging\
 
     
 }
@@ -85,6 +103,7 @@ struct AppConstants {
     static var k_NOTIFY: String = ""
     static var k_masterData : String = "masterData"
     
+    static var k_FCMTocken : String = "FCMTocken"
     static var k_userType : String = "userType"
     static var k_gateKeeperUser : String = "gateKeeperUser"
     static var k_gateKeeperUserPassword : String = "gateKeeperUserPassword"

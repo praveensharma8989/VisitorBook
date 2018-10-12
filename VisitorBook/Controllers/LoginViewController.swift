@@ -187,13 +187,15 @@ class LoginViewController: AllPageViewController, UITextFieldDelegate {
                 "email": emailText.text!,
                 "password": passwordText.text!,
                 "usertype": "Visitor",
-                "token": ""
+                "token": CommanFunction.instance.getFCMTocken(),
+                "device" : "1"
             ]
         }else{
             param = [
                 "mobile": phoneText.text!,
                 "usertype": "Flat",
-                "token": ""
+                "token": CommanFunction.instance.getFCMTocken(),
+                "device" : "1"
             ]
         }
         

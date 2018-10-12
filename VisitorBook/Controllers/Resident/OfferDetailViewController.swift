@@ -27,6 +27,7 @@ class OfferDetailViewController: ResidentAllPageViewController {
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "Offer Details", type: .white)
         setData()
         
     }

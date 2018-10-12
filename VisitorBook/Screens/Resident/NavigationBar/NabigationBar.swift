@@ -9,6 +9,7 @@
 import UIKit
 
 typealias LeftMenuClick = () -> (Void)
+typealias SOSMenuClick = () -> (Void)
 
 class NavigationBarView: UIView {
 
@@ -19,9 +20,11 @@ class NavigationBarView: UIView {
         // Drawing code
     }
     */
+    @IBOutlet weak var SOSButton: UIButton!
     @IBOutlet var contentView: UIView!
     var leftMenuClick : LeftMenuClick? = nil
-    
+    var sosMenuClick : SOSMenuClick? = nil
+    var timer : Timer? = nil
     override init(frame: CGRect) {
         super.init(frame: frame)
         commanInit()
@@ -38,11 +41,37 @@ class NavigationBarView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          addSubview(contentView)
+        
+        if timer != nil{
+            timer!.invalidate()
+            timer = nil
+        }
+        
+        timer  = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { (timerNew) in
+                self.SOSImageChange()
+        })
+        
     }
+    
+    func SOSImageChange(){
+        
+        if SOSButton.isSelected{
+            SOSButton.isSelected = false
+        }else{
+            SOSButton.isSelected = true
+        }
+        
+    }
+    
 
     @IBAction func LeftMenuButton_press(_ sender: Any) {
         if leftMenuClick != nil{
             leftMenuClick!()
+        }
+    }
+    @IBAction func SOSButton_press(_ sender: Any) {
+        if sosMenuClick != nil{
+            sosMenuClick!()
         }
     }
 }

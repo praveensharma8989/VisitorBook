@@ -230,4 +230,26 @@ class CommanFunction: NSObject {
         UserDefaults.standard.synchronize()
     }
     
+    func getFCMTocken()->String{
+        
+        if UserDefaults.standard.string(forKey: AppConstants.k_FCMTocken) != nil {
+            return UserDefaults.standard.string(forKey: AppConstants.k_FCMTocken)!
+        }else{
+            return ""
+        }
+        
+    }
+    
+    func setFCMTocken(user : String){
+        
+        UserDefaults.standard.set(user, forKey: AppConstants.k_FCMTocken)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func RemoveFCMTocken(){
+        
+        UserDefaults.standard.removeObject(forKey: AppConstants.k_FCMTocken)
+        UserDefaults.standard.synchronize()
+    }
+    
 }

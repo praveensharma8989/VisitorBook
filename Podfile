@@ -22,4 +22,9 @@ target 'VisitorBook' do
   pod 'MIBlurPopup'
   pod 'Viewer'
   pod 'ExpandingMenu'
+  pod 'QRCodeReader.swift'
+  pod 'BSImagePicker', '~> 2.8'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+
 end

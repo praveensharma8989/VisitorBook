@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MIBlurPopup
 
-class VehicleDetailViewController: UIViewController {
+class VehicleDetailViewController: UIViewController, MIBlurPopupDelegate {
 
     @IBOutlet var contentView: UIView!
     var vehicleCancel : VehicleCancel? = nil
@@ -23,6 +24,17 @@ class VehicleDetailViewController: UIViewController {
     @IBOutlet weak var purposeLabel: UILabel!
     @IBOutlet weak var mobileLabel: UILabel!
     
+    var popupView: UIView {
+        return contentView ?? UIView()
+    }
+    
+    var blurEffectStyle: UIBlurEffectStyle{
+        return .dark
+    }
+    
+    var initialScaleAmmount: CGFloat = 0.0
+    
+    var animationDuration: TimeInterval = 0.5
     
     
     
@@ -40,14 +52,18 @@ class VehicleDetailViewController: UIViewController {
     
     @IBAction func mobileButton_press(_ sender: Any) {
         
-        if callButton != nil{
-            callButton!()
+        if let phoneCallURL = URL(string: "tel://\((vehicleData!.mobile)!)") {
+            
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
         }
     }
     @IBAction func cencelButton_press(_ sender: Any) {
-        if vehicleCancel != nil{
-            vehicleCancel!()
-        }
+        
+        dismiss(animated: true)
+        
     }
     
     

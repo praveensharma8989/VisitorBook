@@ -240,6 +240,8 @@ class HTTPClient : NSObject{
     func multiPartPostHTTPRequest(baseUrl: String, imageData: Data? , imageName : String?, params:[String:Any]?, progressBlock: @escaping ProgressBlock, completionBlock:@escaping CompletionBlock) -> Void {
         let request = setHTTPRequest(withAPIUrl: baseUrl, withHttpMethod: .post, withParameters: params)
         
+        
+        
         Alamofire.upload(multipartFormData: { multipartFormData in
             
             // Adding ImageData
@@ -249,7 +251,7 @@ class HTTPClient : NSObject{
                 let formatter = DateFormatter()
                 formatter.dateFormat = "ddMMyyyyhhmmss"
                 
-                multipartFormData.append(imageData!, withName: imageName ?? "image", fileName: formatter.string(from: date), mimeType: "image/jpeg")
+                multipartFormData.append(imageData!, withName: imageName ?? "image", fileName: formatter.string(from: date) + ".jpeg", mimeType: "image/jpeg")
             }
             
             // Adding Param Dictionary
@@ -379,6 +381,88 @@ class HTTPClient : NSObject{
         //                                completionBlock(nil ,0,encodingError)
         //                            }
         //        })
+    }
+    
+    func multipleMultiPartPostHTTPRequest(baseUrl: String, imageData: [Data]? , imageName : String?, params:[String:Any]?, progressBlock: @escaping ProgressBlock, completionBlock:@escaping CompletionBlock) -> Void {
+        let request = setHTTPRequest(withAPIUrl: baseUrl, withHttpMethod: .post, withParameters: params)
+        
+        
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            
+            // Adding ImageData
+            if imageData != nil
+            {
+                for (index, imagedata) in (imageData?.enumerated())!{
+                
+                    let date = Date()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "ddMMyyyyhhmmss" + String(index)
+                    
+                    multipartFormData.append(imagedata, withName: imageName ?? "image", fileName: formatter.string(from: date), mimeType: "image/jpeg")
+                    
+                }
+                
+            }
+            
+            // Adding Param Dictionary
+            if params != nil
+            {
+                for (key, value) in params!
+                {
+                    if value is String || value is Int || value is NSNumber
+                    {
+                        multipartFormData.append("\(String(describing: value))".data(using: .utf8)!, withName: key)
+                    }
+                }
+            }
+        }, with: request! as URLRequestConvertible) { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (Progress) in
+                    print("Upload Progress: \(Progress.fractionCompleted)")
+                })
+                
+                upload.responseJSON { responseData in
+                    
+                    switch responseData.result {
+                    case .success:
+                        if let response = responseData.result.value{
+                            if let acesstoken = responseData.response?.allHeaderFields["AccessToken"] as? String{
+                                AppConstants.SAVE_USER_DEFAULTS(value: acesstoken, key: AppConstants.K_ACCESSTOKEN)
+                            }
+                            print("JSON://////////// \(response)") // serialized json response
+                            
+                            completionBlock(responseData.result.value as? [String : Any] ,(responseData.response?.statusCode) ?? 0,responseData.result.error)
+                            break
+                        }
+                        
+                    case .failure(let error):
+                        if (responseData.result.value == nil) {
+                            
+                            if error._code == NSURLErrorNotConnectedToInternet{
+                                completionBlock(nil ,600,responseData.result.error)
+                                
+                            }
+                            else if responseData.response?.statusCode == 500 {
+                                completionBlock(nil ,500,"Unable to connect to server. Please try again after sometime." as? Error)
+                                
+                            }
+                            else{
+                                completionBlock(nil ,(responseData.response?.statusCode) ?? 0,responseData.result.error)
+                            }
+                        }
+                        else{
+                            completionBlock(responseData.result.value as? [String : Any] ,(responseData.response?.statusCode) ?? 0,responseData.result.error)
+                        }
+                    }
+                }
+                break
+            case .failure(let encodingError):
+                completionBlock(nil ,0,encodingError)
+            }
+        }
     }
     
     func setAllAuthenticationKeys() -> [String:String] {

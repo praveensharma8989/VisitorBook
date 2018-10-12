@@ -23,6 +23,9 @@ class ResidentProfileViewController: ResidentAllPageViewController {
     @IBOutlet weak var progressView: CircleProgressView!
     
     @IBOutlet weak var percentageLbl: UILabel!
+    @IBOutlet weak var totalMemerLabel: UILabel!
+    @IBOutlet weak var totalVehiclelabel: UILabel!
+    @IBOutlet weak var totalStaffLabel: UILabel!
     
     var residentFlatProfileData : FlateProfileData?
     
@@ -58,8 +61,6 @@ class ResidentProfileViewController: ResidentAllPageViewController {
         
     }
     
-    
-    
     func setData(){
         let tower = residentFlatProfileData?.tower ?? ""
         let floor = residentFlatProfileData?.floor ?? ""
@@ -72,6 +73,11 @@ class ResidentProfileViewController: ResidentAllPageViewController {
         genderDOBLbl.text = (residentFlatProfileData?.gender ?? "") + "   " + (residentFlatProfileData?.age ?? "")
         vehicleLbl.text = "Vehicle No. " + (residentFlatProfileData?.vehicleNo ?? "")
         stickerLbl.text = "Sticker No. " + (residentFlatProfileData?.stickerNo ?? "")
+        
+        
+        totalMemerLabel.text = "Total member Add : " + (residentFlatProfileData?.totalSubuser)!
+        totalVehiclelabel.text = "Total Vehicle : " + (residentFlatProfileData?.totalVehicle)!
+        totalStaffLabel.text = "Total Staff : " + (residentFlatProfileData?.totalStaff)!
         
         progressView.progress = Double((residentFlatProfileData?.percentage)!) / 100
         percentageLbl.text = String((residentFlatProfileData?.percentage)!) + "%"
@@ -118,6 +124,22 @@ class ResidentProfileViewController: ResidentAllPageViewController {
     @IBAction func BackButton_press(_ sender: Any) {
         PopBack()
     }
+    
+    @IBAction func MemberButton_press(_ sender: Any) {
+    }
+    @IBAction func MemberAddButton_press(_ sender: Any) {
+    }
+    @IBAction func vehicleButton_press(_ sender: Any) {
+    }
+    @IBAction func vehicleAddButton_press(_ sender: Any) {
+    }
+    @IBAction func staffButton_press(_ sender: Any) {
+    }
+    @IBAction func staffAddButton_press(_ sender: Any) {
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBarView" customModule="VisitorBook" customModuleProvider="target">
             <connections>
+                <outlet property="SOSButton" destination="4O7-si-dcM" id="Y0R-ec-ux5"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Sve-Wa-hU4"/>
             </connections>
         </placeholder>
@@ -45,10 +46,23 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4O7-si-dcM">
+                            <rect key="frame" x="323" y="9" width="42" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="ZMS-js-4ne"/>
+                                <constraint firstAttribute="width" constant="42" id="pJJ-CR-xPu"/>
+                            </constraints>
+                            <state key="normal" image="SOSIcon"/>
+                            <state key="selected" image="SOS1Icon"/>
+                            <connections>
+                                <action selector="SOSButton_press:" destination="-1" eventType="touchUpInside" id="bei-lK-bHG"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="1Pq-Ku-CGf" firstAttribute="centerY" secondItem="1be-1y-ji1" secondAttribute="centerY" id="2ac-BZ-CJj"/>
+                        <constraint firstAttribute="trailing" secondItem="4O7-si-dcM" secondAttribute="trailing" constant="10" id="30X-ll-2dS"/>
                         <constraint firstAttribute="bottom" secondItem="ySH-lf-bZH" secondAttribute="bottom" id="CnZ-i3-29z"/>
                         <constraint firstItem="1Pq-Ku-CGf" firstAttribute="leading" secondItem="SgN-R1-Dm3" secondAttribute="trailing" id="II2-Wq-9iB"/>
                         <constraint firstItem="ySH-lf-bZH" firstAttribute="leading" secondItem="1be-1y-ji1" secondAttribute="leading" id="Ikd-FY-s29"/>
@@ -57,6 +71,7 @@
                         <constraint firstItem="1Pq-Ku-CGf" firstAttribute="centerX" secondItem="1be-1y-ji1" secondAttribute="centerX" id="VAn-Mw-gnr"/>
                         <constraint firstAttribute="bottom" secondItem="SgN-R1-Dm3" secondAttribute="bottom" id="VeL-Qj-qUI"/>
                         <constraint firstItem="SgN-R1-Dm3" firstAttribute="top" secondItem="1be-1y-ji1" secondAttribute="top" id="b8m-uP-l1R"/>
+                        <constraint firstItem="4O7-si-dcM" firstAttribute="centerY" secondItem="1be-1y-ji1" secondAttribute="centerY" id="hck-NY-L0t"/>
                     </constraints>
                 </view>
             </subviews>
@@ -72,6 +87,8 @@
         </view>
     </objects>
     <resources>
+        <image name="SOS1Icon" width="84" height="84"/>
+        <image name="SOSIcon" width="84" height="84"/>
         <image name="logoIcon" width="64" height="64"/>
         <image name="menuIcon" width="48" height="48"/>
     </resources>

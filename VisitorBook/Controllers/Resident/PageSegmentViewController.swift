@@ -30,10 +30,12 @@ class PageSegmentViewController: SJSegmentedViewController{
         navigationBarView = NavigationBarView.init(frame: (navigationController?.navigationBar.bounds)!)
         
         navigationBarView!.leftMenuClick = {() in
-            
             self.panel?.openLeft(animated: true)
-            
-            
+        }
+        
+        navigationBarView?.sosMenuClick = {() in
+            let SOSNotificationSentVC = self.storyboard?.instantiateViewController(withIdentifier: "SOSNotificationSentViewController") as! SOSNotificationSentViewController
+            self.Push(controller: SOSNotificationSentVC)
         }
         
     }

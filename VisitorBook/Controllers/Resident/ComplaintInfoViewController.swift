@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ExpandingMenu
 
 class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
@@ -24,19 +25,44 @@ class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDel
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        CallComplaintApi()
+    }
+    
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "Complaint Info", type: .white)
         registerCell()
         tableView.dataSource = self
         tableView.delegate = self
         openButton.isSelected = true
         closeButton.isSelected = false
-        CallComplaintApi()
+        
+        AddNewComplaintButton()
     }
     
     func registerCell(){
         tableView.register(UINib(nibName: "ComplaintInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "ComplaintInfoTableViewCell")
+    }
+    
+    func AddNewComplaintButton(){
+        
+        let menuButtonSize: CGSize = CGSize(width: 64.0, height: 64.0)
+        let menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), centerImage: #imageLiteral(resourceName: "pluseMenuIcon"), centerHighlightedImage: #imageLiteral(resourceName: "pluseMenuIcon"))
+        menuButton.center = CGPoint(x: self.view.bounds.width - 32.0, y: self.view.bounds.height - 72.0)
+        view.addSubview(menuButton)
+        
+        let item1 = ExpandingMenuItem(size: menuButtonSize, title: "Create Complaint", image: #imageLiteral(resourceName: "CreateNewIcon"), highlightedImage: #imageLiteral(resourceName: "CreateNewIcon"), backgroundImage: #imageLiteral(resourceName: "CreateNewIcon"), backgroundHighlightedImage: #imageLiteral(resourceName: "CreateNewIcon")) { () -> Void in
+            let ExpectedVisitorVC = self.storyboard?.instantiateViewController(withIdentifier: "feedComplaintViewController") as! feedComplaintViewController
+            
+            self.Push(controller: ExpectedVisitorVC)
+        }
+        
+        
+        menuButton.addMenuItems([item1])
+        
     }
     
     
@@ -55,6 +81,17 @@ class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDel
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if openButton.isSelected{
+            let ComplaintDetailtVC = self.storyboard?.instantiateViewController(withIdentifier: "ComplaintDetailViewController") as! ComplaintDetailViewController
+            ComplaintDetailtVC.complainData = (complainListDataOpen?.complain![indexPath.row])!
+            Push(controller: ComplaintDetailtVC)
+        }
+        
+    }
+    
+    
     @IBAction func openButton_press(_ sender: Any) {
         
         if !(openButton.isSelected){
@@ -86,7 +123,7 @@ class ComplaintInfoViewController: ResidentAllPageViewController, UITableViewDel
         
         if openButton.isSelected{
             param = ["id" : (residentData?.id)!,
-                     "status" : "open"
+                     "status" : "Open"
             ]
         }else{
             param = ["id" : (residentData?.id)!,

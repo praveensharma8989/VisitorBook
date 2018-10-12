@@ -107,8 +107,10 @@ class EnterVehicleViewController: GatekeeperAllPageViewController {
                 let jsonDecoder = JSONDecoder()
                 self.vehicleData = try? jsonDecoder.decode(VehicleData.self, from: jsonData!)
                 
+                
                 let popUp = VehicleDetailViewController.init(nibName: "VehicleDetailView", bundle: nil)
                 popUp.vehicleData = self.vehicleData?.complain[0]
+                
                 MIBlurPopup.show(popUp, on: self)
 //                self.vehicleDetailView.vehicleData = self.vehicleData?.complain[0]
 //                self.blackView.isHidden = false
@@ -120,6 +122,14 @@ class EnterVehicleViewController: GatekeeperAllPageViewController {
             }
             
         }
+    }
+    
+    func showPopup(data : Complain){
+    
+        let popUp = VehicleDetailViewController.init(nibName: "VehicleDetailView", bundle: nil)
+        popUp.vehicleData = data //self.vehicleData?.complain[0]
+        MIBlurPopup.show(popUp, on: self)
+    
     }
     
     /*

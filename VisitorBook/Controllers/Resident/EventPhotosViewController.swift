@@ -30,6 +30,7 @@ class EventPhotosViewController: ResidentAllPageViewController, UICollectionView
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "Event Photos", type: .white)
         let cellSize = CGSize(width: (collectionView.bounds.width / 3) - 10, height: collectionView.bounds.width / 3)
         
         let layout = UICollectionViewFlowLayout()

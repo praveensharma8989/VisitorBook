@@ -13,7 +13,8 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet weak var eventHeadingLbl: UILabel!
     @IBOutlet weak var eventMessgeLbl: UILabel!
     @IBOutlet weak var eventTimeLbl: UILabel!
-    @IBOutlet weak var countAttechButton: UIButton!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var attechImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,10 +32,12 @@ class EventsTableViewCell: UITableViewCell {
         eventMessgeLbl.text = data.discription
         eventTimeLbl.text = data.eventDate
         if data.imageNums == "0"{
-            countAttechButton.isHidden = true
+            countLabel.isHidden = true
+            attechImage.isHidden = true
         }else{
-            countAttechButton.isHidden = false
-            countAttechButton.titleLabel?.text = data.imageNums
+            countLabel.isHidden = false
+            attechImage.isHidden = false
+            countLabel.text = data.imageNums
         }
         
     }

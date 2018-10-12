@@ -91,6 +91,19 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
         PopToRoot()
     }
     
+    public func  setNavigationTitle(With title: String, type : navigationType){
+        
+        if(title == "MEAL PLAN"){
+            self.title = "PLANNER"
+            self.navigationItem.title = title
+        }
+        else{
+            self.title = title
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        }
+        
+    }
+    
     func setNavigationBar(Navigationtype: navigationType ) {
         
         if Navigationtype == .Transparent {
@@ -107,7 +120,7 @@ public class AllPageViewController: UIViewController, UINavigationControllerDele
             navigationController?.navigationBar.isTranslucent = false
             navigationController?.navigationBar.barTintColor = UIColor.red
             
-            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.APPTHEMECOLOR]
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         }
         
     }

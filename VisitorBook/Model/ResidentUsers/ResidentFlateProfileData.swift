@@ -15,6 +15,7 @@ struct FlateProfileData: Codable {
     let name, mobile, email, address: String?
     let photo: String?
     let gender, age, vehicleNo, stickerNo: String?
+    let totalStaff, totalSubuser, totalVehicle : String?
     let maintanance, tower, floor, flat: String?
     let percentage: Int
     let qrCode: String?
@@ -26,6 +27,9 @@ struct FlateProfileData: Codable {
         case maintanance, tower, floor, flat
         case percentage = "Percentage"
         case qrCode = "QrCode"
+        case totalStaff = "Total_Staff"
+        case totalSubuser = "Total_Subuser"
+        case totalVehicle = "Total_Vehicle"
     }
 }
 

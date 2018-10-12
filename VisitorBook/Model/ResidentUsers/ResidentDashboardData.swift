@@ -11,7 +11,7 @@ import Foundation
 struct VisitorResponseData: Codable {
     let code: Int
     let error: Bool
-    let nums: Int
+    var nums: Int
     let msg: String
     let visitor: [VisitorData]
     

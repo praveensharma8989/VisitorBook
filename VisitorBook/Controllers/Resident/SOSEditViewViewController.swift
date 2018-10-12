@@ -26,6 +26,7 @@ class SOSEditViewViewController: ResidentAllPageViewController {
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "SOS Setting", type: .white)
         CallSOSDetail()
         
     }

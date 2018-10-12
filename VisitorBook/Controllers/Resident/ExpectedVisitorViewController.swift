@@ -59,6 +59,7 @@ class ExpectedVisitorViewController: ResidentAllPageViewController, UIPickerView
         
         callPurpose()
         setBackBarButton(buttonType: .DefaultHome)
+        setNavigationTitle(With: "Expected Visitor", type: .white)
         viewSection.isHidden = true
         pickerView.isHidden = true
         pickerToolbar.isHidden = true

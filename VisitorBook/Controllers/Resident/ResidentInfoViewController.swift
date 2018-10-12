@@ -12,6 +12,8 @@ import MIBlurPopup
 class ResidentInfoViewController: ResidentAllPageViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var allButton: UIButton!
+    @IBOutlet weak var recentChatButton: UIButton!
     
     var residentInfoData : ResidentInfoData?
     
@@ -24,6 +26,9 @@ class ResidentInfoViewController: ResidentAllPageViewController, UITableViewDele
     func initilize(){
         
         setBackBarButton(buttonType: .Defauld)
+        setNavigationTitle(With: "Resident Info", type: .white)
+        allButton.isSelected = true
+        recentChatButton.isSelected = false
         registerCell()
         CallRWAList()
         
@@ -49,6 +54,15 @@ class ResidentInfoViewController: ResidentAllPageViewController, UITableViewDele
             MIBlurPopup.show(popUp, on: self)
             
         }
+        
+        cell.residentInfoMessageClick = {() in
+            
+            let ResidentChatVC = self.storyboard?.instantiateViewController(withIdentifier: "ResidentChatViewController") as! ResidentChatViewController
+            ResidentChatVC.flatUser = (self.residentInfoData?.flatUser[indexPath.row])!
+            self.Push(controller: ResidentChatVC)
+            
+        }
+        
         return cell
         
     }
@@ -60,14 +74,47 @@ class ResidentInfoViewController: ResidentAllPageViewController, UITableViewDele
         MIBlurPopup.show(popUp, on: self)
         
     }
+    @IBAction func allButton_press(_ sender: Any) {
+        
+        if !(allButton.isSelected){
+            allButton.isSelected = true
+            recentChatButton.isSelected = false
+            allButton.backgroundColor = UIColor.red
+            recentChatButton.backgroundColor = UIColor.darkGray
+            CallRWAList()
+        }
+        
+    }
+    @IBAction func recentChatButton_press(_ sender: Any) {
+        
+        if !(recentChatButton.isSelected){
+            recentChatButton.isSelected = true
+            allButton.isSelected = false
+            allButton.backgroundColor = UIColor.darkGray
+            recentChatButton.backgroundColor = UIColor.red
+            CallRWAList()
+        }
+        
+    }
     
     func CallRWAList(){
         showLoader()
         
-        let param : [String : Any] = [
+        var param : [String : Any]
+        
+        if allButton.isSelected{
+            param = [
             "id" : (residentData?.id)!,
-            "cid" : (residentData?.cid)!
-        ]
+            "cid" : (residentData?.cid)!,
+            "Types" : ""
+            ]
+        }else{
+            param = [
+            "id" : (residentData?.id)!,
+            "cid" : (residentData?.cid)!,
+            "Types" : "Recent"
+            ]
+        }
         
         PSServiceManager.CallRWAList(param: param) { (response, status, error) -> (Void) in
             self.dismissLoader()

@@ -18,6 +18,8 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
     var visitorType : VisitorActiontype?
     var limit : Int = 0
     var visitorResponseData : VisitorResponseData?
+    var visitorDataArray : [VisitorData]? = nil
+    var isApiCall : Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +41,16 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return visitorResponseData != nil ? (visitorResponseData?.visitor.count)! : 0
+        return visitorDataArray != nil ? (visitorDataArray!.count) : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecentVisitorTableViewCell") as! RecentVisitorTableViewCell
-        cell.setData(data: (visitorResponseData?.visitor[indexPath.row])!)
+        cell.setData(data: (visitorDataArray![indexPath.row]))
         cell.visitorImageClick = {() in
             
             let popUp = ImgeViewController.init(nibName: "DailySOSImageView", bundle: nil)
-            popUp.visitorInfo = (self.visitorResponseData?.visitor[indexPath.row])!
+            popUp.visitorInfo = (self.visitorDataArray![indexPath.row])
             MIBlurPopup.show(popUp, on: self)
             
         }
@@ -58,21 +60,33 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let popUp = UserDetailViewController.init(nibName: "UserDetailView", bundle: nil)
-        popUp.visitorData = (self.visitorResponseData?.visitor[indexPath.row])!
+        popUp.visitorData = (self.visitorDataArray![indexPath.row])
         MIBlurPopup.show(popUp, on: self)
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if isApiCall{
+            if indexPath.row == (visitorDataArray!.count) - 2{
+                CallVisitorFlatVisitor()
+            }
+        }
     }
     
     
     func CallVisitorFlatVisitor(){
         
-        showLoader()
+        if limit == 0{
+            showLoader()
+        }
+        
         
         var types : String
         
         switch visitorType! {
         case .TodayVisitor:
-            types = "Today"
+            types = "Total"
             
         case .WeeklyVisitor:
             types = "Week"
@@ -93,11 +107,29 @@ class VisitorInfoViewController: ResidentAllPageViewController, UITableViewDeleg
                 let jsonData = try? JSONSerialization.data(withJSONObject: response!)
                 let jsonDecoder = JSONDecoder()
                 self.visitorResponseData = try? jsonDecoder.decode(VisitorResponseData.self, from: jsonData!)
+                
+                if self.visitorDataArray == nil{
+                    self.visitorDataArray = self.visitorResponseData!.visitor
+                }else{
+                    self.visitorDataArray = self.visitorDataArray! + self.visitorResponseData!.visitor
+                }
+                
+                if (self.visitorResponseData?.nums)! < 20 {
+                    self.isApiCall = false
+                    self.limit = self.limit + (self.visitorResponseData?.nums)!
+                }else{
+                    self.limit = self.limit + (self.visitorResponseData?.nums)!
+                }
+                
                 self.noRecordFoundView.isHidden = true
                 self.tableVIew.reloadData()
             }else{
-                self.noRecordFoundView.isHidden = false
-                self.showAlertMessage(titleStr: "Error", messageStr: error!)
+                if self.visitorDataArray != nil{
+                    self.isApiCall = false
+                }else{
+                    self.noRecordFoundView.isHidden = false
+                    self.showAlertMessage(titleStr: "Error", messageStr: error!)
+                }
             }
             
         }
